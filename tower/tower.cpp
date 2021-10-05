@@ -6,3 +6,7 @@ Tower::Tower(std::string name, double cooldown, int pierce, int damage, int numP
 double Tower::getDamagePerSecond() {
 	return pierce * damage * numProjectiles / cooldown;
 }
+
+double Tower::getSingleTargetDps() {
+	return damage * numProjectiles / cooldown;
+}

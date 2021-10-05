@@ -11,5 +11,6 @@ private:
 public:
 	Tower(std::string name, double cooldown, int pierce, int damage = 1, int numProjectiles = 1);
 	double getDamagePerSecond();
+	double getSingleTargetDps();
 };
 #endif
