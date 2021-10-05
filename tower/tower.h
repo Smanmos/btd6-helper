@@ -14,5 +14,6 @@ public:
 	double getDamagePerSecond();
 	double getSingleTargetDps();
 	double getCost();
+	std::string getName();
 };
 #endif

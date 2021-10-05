@@ -14,3 +14,7 @@ double Tower::getSingleTargetDps() {
 double Tower::getCost() {
 	return cost;
 }
+
+std::string Tower::getName() {
+	return name;
+}
