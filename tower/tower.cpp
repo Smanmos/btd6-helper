@@ -11,8 +11,17 @@ double Tower::getSingleTargetDps() {
 	return damage * numProjectiles / cooldown;
 }
 
-double Tower::getCost() {
+int Tower::getCost() {
 	return cost;
+}
+
+int roundToNearestFive(int value) {
+	return (value + 2) / 5 * 5;
+}
+
+int Tower::getCost(Difficulty difficulty) {
+	int raw_cost = int(cost * DIFFICULTY_MULTIPLIERS[difficulty]);
+	return roundToNearestFive(raw_cost);
 }
 
 std::string Tower::getName() {
