@@ -3,7 +3,12 @@
 
 #include <iostream>
 #include <sstream>
-#include "tower/towers.h"
+#include "tower/tower.h"
+
+std::string trim(std::string &str) {
+    size_t start = str.find_first_not_of(" \t");
+    return (start == std::string::npos) ? "" : str.substr(start);
+}
 
 int main(int argc, char *argv[]){
     while (true) {
@@ -14,16 +19,12 @@ int main(int argc, char *argv[]){
         tokener >> command;
         if (command == std::string("info")) {
             std::string towerName;
-            tokener >> towerName;
-            Tower* tower = nullptr;
-            if (towerName == std::string("dart")) {
-                tower = new DartMonkey();
-            }
-            else if (towerName == std::string("boomerang")) {
-                tower = new BoomerangMonkey();
-            }
-            if (tower != nullptr) {
-                std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
+            std::getline(tokener, towerName);
+            towerName = trim(towerName);
+            for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
+                if (towerName == tower->getName()) {
+                    std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
+                }
             }
         }
         else if (command == std::string("exit")) {
