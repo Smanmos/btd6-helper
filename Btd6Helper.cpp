@@ -3,9 +3,7 @@
 
 #include <iostream>
 #include <sstream>
-#include "tower/tower.h"
-#include "tower/dartmonkey.h"
-#include "tower/boomerangmonkey.h"
+#include "tower/towers.h"
 
 int main(int argc, char *argv[]){
     std::string input;
