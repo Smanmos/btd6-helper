@@ -1,6 +1,7 @@
 #ifndef TOWER
 #define TOWER
 #include <string>
+#include <vector>
 #include "../difficulty.h"
 class Tower {
 private:
@@ -18,4 +19,5 @@ public:
 	int getCost(Difficulty diff);
 	std::string getName();
 };
+std::vector getAllTowers();
 #endif
