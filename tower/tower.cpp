@@ -28,4 +28,5 @@ std::string Tower::getName() {
 	return name;
 }
 
+Tower dartMonkey = Tower(std::string("Dart Monkey"), 200, 0.95, 2);
 std::vector<Tower> TOWERS{dartMonkey};
