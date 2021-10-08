@@ -6,27 +6,33 @@
 #include "tower/towers.h"
 
 int main(int argc, char *argv[]){
-    std::string input;
-    std::getline(std::cin, input);
-    std::istringstream tokener(input);
-    std::string command;
-    tokener >> command;
-    if (command == std::string("info")) {
-        std::string towerName;
-        tokener >> towerName;
-        Tower* tower = nullptr;
-        if (towerName == std::string("dart")) {
-            tower = new DartMonkey();
+    while (true) {
+        std::string input;
+        std::getline(std::cin, input);
+        std::istringstream tokener(input);
+        std::string command;
+        tokener >> command;
+        if (command == std::string("info")) {
+            std::string towerName;
+            tokener >> towerName;
+            Tower* tower = nullptr;
+            if (towerName == std::string("dart")) {
+                tower = new DartMonkey();
+            }
+            else if (towerName == std::string("boomerang")) {
+                tower = new BoomerangMonkey();
+            }
+            if (tower != nullptr) {
+                std::cout << "dps: " << tower->getDamagePerSecond();
+            }
         }
-        else if (towerName == std::string("boomerang")) {
-            tower = new BoomerangMonkey();
+        else if (command == std::string("exit")) {
+            std::cout << "Thanks for using Btd6Helper!" << std::endl;
+            break;
         }
-        if (tower != nullptr) {
-            std::cout << "dps: " << tower->getDamagePerSecond();
+        else {
+            std::cout << "Command not recognised" << std::endl;
         }
-    }
-    else {
-        std::cout << "Command not recognised" << std::endl;
     }
     return 0;
 }
