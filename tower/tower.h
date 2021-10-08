@@ -19,5 +19,5 @@ public:
 	int getCost(Difficulty diff);
 	std::string getName();
 };
-std::vector getAllTowers();
+extern std::vector<Tower> TOWERS;
 #endif

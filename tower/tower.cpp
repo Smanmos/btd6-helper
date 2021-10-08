@@ -28,9 +28,4 @@ std::string Tower::getName() {
 	return name;
 }
 
-namespace {
-	std::vector<Tower> towers = std::vector<Tower>();
-	std::vector<Tower> getAllTowers() {
-		return towers;
-	}
-}
+std::vector<Tower> TOWERS{dartMonkey};
