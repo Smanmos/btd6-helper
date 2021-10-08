@@ -28,5 +28,10 @@ std::string Tower::getName() {
 	return name;
 }
 
+<<<<<<< HEAD
 Tower dartMonkey = Tower(std::string("Dart Monkey"), 200, 0.95, 2);
 std::vector<Tower> TOWERS{dartMonkey};
+=======
+Tower boomerangMonkey = Tower(std::string("Boomerang Monkey"), 325, 1.2, 4);
+std::vector<Tower> TOWERS{dartMonkey, boomerangMonkey};
+>>>>>>> boomerang-monkey
