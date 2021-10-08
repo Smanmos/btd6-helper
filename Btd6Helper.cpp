@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
                 tower = new BoomerangMonkey();
             }
             if (tower != nullptr) {
-                std::cout << "dps: " << tower->getDamagePerSecond();
+                std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
             }
         }
         else if (command == std::string("exit")) {
