@@ -21,10 +21,16 @@ int main(int argc, char *argv[]){
             std::string towerName;
             std::getline(tokener, towerName);
             towerName = trim(towerName);
+            bool towerFound = false;
             for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
                 if (towerName == tower->getName()) {
                     std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
+                    towerFound = true;
+                    break;
                 }
+            }
+            if (!towerFound) {
+                std::cout << "No such tower found" << std::endl;
             }
         }
         else if (command == std::string("exit")) {
