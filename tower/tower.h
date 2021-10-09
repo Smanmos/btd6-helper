@@ -2,7 +2,7 @@
 #define TOWER
 #include <string>
 #include <vector>
-#include "../difficulty.h"
+#include "difficulty.h"
 class Tower {
 private:
 	std::string name;
