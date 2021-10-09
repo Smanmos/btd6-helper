@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
         std::istringstream tokener(input);
         std::string command;
         tokener >> command;
-        if (command == std::string("info")) {
+        if (command == std::string("dps")) {
             std::string towerName;
             std::getline(tokener, towerName);
             towerName = trim(towerName);
