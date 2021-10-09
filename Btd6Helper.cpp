@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
         std::istringstream tokener(input);
         std::string command;
         tokener >> command;
-        if (command == std::string("info")) {
+        if (command == std::string("dps")) {
             std::string towerName;
             std::getline(tokener, towerName);
             towerName = trim(towerName);
@@ -28,9 +28,25 @@ int main(int argc, char *argv[]){
                     towerFound = true;
                     break;
                 }
+                if (!towerFound) {
+                    std::cout << "No such tower found" << std::endl;
+                }
+            }
+        }
+        else if (command == std::string("info")) {
+            std::string towerName;
+            std::getline(tokener, towerName);
+            towerName = trim(towerName);
+            bool towerFound = false;
+            for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
+                if (towerName == tower->getName()) {
+                    std::cout << tower->getStats();
+                    towerFound = true;
+                    break;
+                }
             }
             if (!towerFound) {
-                std::cout << "No such tower found" << std::endl;
+                std::cout << "Tower not found" << std::endl;
             }
         }
         else if (command == std::string("exit")) {
