@@ -24,7 +24,23 @@ int main(int argc, char *argv[]){
             for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
                 if (towerName == tower->getName()) {
                     std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
+                } 
+            }
+        }
+        else if (command == std::string("info")) {
+            std::string towerName;
+            std::getline(tokener, towerName);
+            towerName = trim(towerName);
+            bool towerFound = false;
+            for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
+                if (towerName == tower->getName()) {
+                    std::cout << tower->getStats();
+                    towerFound = true;
+                    break;
                 }
+            }
+            if (!towerFound) {
+                std::cout << "Tower not found" << std::endl;
             }
         }
         else if (command == std::string("exit")) {
