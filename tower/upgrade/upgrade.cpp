@@ -17,10 +17,10 @@ Upgrade Upgrade::ofCooldownUpgrade(int cost, double cooldownDecrease) {
 	return Upgrade(cost, 0, cooldownDecrease, 0, 0);
 }
 
-Upgrade Upgrade::ofDamageUpgrade(int cost, double damageIncrease) {
+Upgrade Upgrade::ofDamageUpgrade(int cost, int damageIncrease) {
 	return Upgrade(cost, 0, 1.0, damageIncrease, 0);
 }
 
-Upgrade Upgrade::ofProjectileUpgrade(int cost, double projectileIncrease) {
+Upgrade Upgrade::ofProjectileUpgrade(int cost, int projectileIncrease) {
 	return Upgrade(cost, 0, 1.0, 0, projectileIncrease);
 }

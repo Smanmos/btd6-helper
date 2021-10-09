@@ -1,4 +1,5 @@
 #include "tower.h"
+#include <sstream>
 
 Tower::Tower(std::string name, int cost, double cooldown, int pierce, int damage, int numProjectiles) :
 	name(name), cost(cost), cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
@@ -26,6 +27,16 @@ int Tower::getCost(Difficulty difficulty) {
 
 std::string Tower::getName() {
 	return name;
+}
+
+std::string Tower::getStats() {
+	std::ostringstream statStream = std::ostringstream();
+	statStream << "Cost: " << cost << std::endl;
+	statStream << "Cooldown: " << cooldown << std::endl;
+	statStream << "Pierce: " << pierce << std::endl;
+	statStream << "Damage: " << damage << std::endl;
+	statStream << "Projectiles: " << numProjectiles << std::endl;
+	return statStream.str();
 }
 
 Tower dartMonkey = Tower(std::string("Dart Monkey"), 200, 0.95, 2);

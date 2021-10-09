@@ -2,7 +2,7 @@
 #define TOWER
 #include <string>
 #include <vector>
-#include "../difficulty.h"
+#include "difficulty.h"
 class Tower {
 private:
 	std::string name;
@@ -18,6 +18,7 @@ public:
 	int getCost();
 	int getCost(Difficulty diff);
 	std::string getName();
+	std::string getStats();
 };
 extern std::vector<Tower> TOWERS;
 #endif
