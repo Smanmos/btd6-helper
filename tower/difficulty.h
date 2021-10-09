@@ -1,0 +1,8 @@
+#ifndef DIFFICULTY
+#define DIFFICULTY
+enum Difficulty {
+	EASY, MEDIUM, HARD, IMPOPPABLE
+};
+
+extern double DIFFICULTY_MULTIPLIERS[4];
+#endif // DIFFICULTY
