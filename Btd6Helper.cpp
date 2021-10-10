@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include "tower/tower.h"
+#include "loader.h"
 
 std::string trim(std::string &str) {
     size_t start = str.find_first_not_of(" \t");
@@ -11,6 +12,7 @@ std::string trim(std::string &str) {
 }
 
 int main(int argc, char *argv[]){
+    std::vector<Tower> towers = loadTowers();
     while (true) {
         std::string input;
         std::getline(std::cin, input);
@@ -22,7 +24,7 @@ int main(int argc, char *argv[]){
             std::getline(tokener, towerName);
             towerName = trim(towerName);
             bool towerFound = false;
-            for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
+            for (auto tower = towers.begin(); tower != TOWERS.end(); ++tower) {
                 if (towerName == tower->getName()) {
                     std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
                     towerFound = true;
