@@ -14,6 +14,12 @@ std::vector<Tower> loadTowers() {
 		.cooldown(1.2)
 		.pierce(4)
 		.build();
+	Tower bombShooter = TowerBuilder()
+		.name("Bomb Shooter")
+		.cost(600)
+		.cooldown(1.4)
+		.pierce(14)
+		.build();
 	Tower tackShooter = TowerBuilder()
 		.name("Tack Shooter")
 		.cost(280)
@@ -21,6 +27,6 @@ std::vector<Tower> loadTowers() {
 		.pierce(1)
 		.projectiles(8)
 		.build();
-	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, tackShooter };
+	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, bombShooter, tackShooter };
 	return towers;
 }
