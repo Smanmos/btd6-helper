@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
             std::getline(tokener, towerName);
             towerName = trim(towerName);
             bool towerFound = false;
-            for (auto tower = towers.begin(); tower != TOWERS.end(); ++tower) {
+            for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
                 if (towerName == tower->getName()) {
                     std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
                     towerFound = true;
@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
             std::getline(tokener, towerName);
             towerName = trim(towerName);
             bool towerFound = false;
-            for (auto tower = TOWERS.begin(); tower != TOWERS.end(); ++tower) {
+            for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
                 if (towerName == tower->getName()) {
                     std::cout << tower->getStats();
                     towerFound = true;
