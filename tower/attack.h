@@ -9,6 +9,10 @@ class Attack {
 public:
 	Attack();
 	Attack(double, int, int, int);
+	double getCooldown();
+	int getPierce();
+	int getDamage();
+	int getNumProjectiles();
 	friend class AttackBuilder;
 };
 #endif // !ATTACK
