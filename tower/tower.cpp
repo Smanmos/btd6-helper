@@ -1,6 +1,9 @@
 #include "tower.h"
 #include <sstream>
 
+Tower::Tower() :
+	name(""), cost(0), cooldown(0.0), pierce(1), damage(1), numProjectiles(1) {}
+
 Tower::Tower(std::string name, int cost, double cooldown, int pierce, int damage, int numProjectiles) :
 	name(name), cost(cost), cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
 
@@ -41,4 +44,5 @@ std::string Tower::getStats() {
 
 Tower dartMonkey = Tower(std::string("Dart Monkey"), 200, 0.95, 2);
 Tower boomerangMonkey = Tower(std::string("Boomerang Monkey"), 325, 1.2, 4);
+Tower tackShooter = Tower(std::string("Tack Shooter"), 280, 1.4, 1, 1, 8);
 std::vector<Tower> TOWERS{dartMonkey, boomerangMonkey};
