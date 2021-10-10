@@ -21,5 +21,6 @@ std::vector<Tower> loadTowers() {
 		.pierce(1)
 		.projectiles(8)
 		.build();
-	std::vector<Tower> TOWERS{ dartMonkey, boomerangMonkey, tackShooter };
+	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, tackShooter };
+	return towers;
 }
