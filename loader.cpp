@@ -1,8 +1,25 @@
 #include "loader.h"
+#include "tower/towerbuilder.h"
 
 std::vector<Tower> loadTowers() {
-	Tower dartMonkey = Tower(std::string("Dart Monkey"), 200, 0.95, 2);
-	Tower boomerangMonkey = Tower(std::string("Boomerang Monkey"), 325, 1.2, 4);
-	Tower tackShooter = Tower(std::string("Tack Shooter"), 280, 1.4, 1, 1, 8);
+	Tower dartMonkey = TowerBuilder()
+		.name("Dart Monkey")
+		.cost(200)
+		.cooldown(0.95)
+		.pierce(2)
+		.build();
+	Tower boomerangMonkey = TowerBuilder()
+		.name("Boomerang Monkey")
+		.cost(325)
+		.cooldown(1.2)
+		.pierce(4)
+		.build();
+	Tower tackShooter = TowerBuilder()
+		.name("Tack Shooter")
+		.cost(280)
+		.cooldown(1.4)
+		.pierce(1)
+		.projectiles(8)
+		.build();
 	std::vector<Tower> TOWERS{ dartMonkey, boomerangMonkey, tackShooter };
 }
