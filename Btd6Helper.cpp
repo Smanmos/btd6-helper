@@ -30,9 +30,9 @@ int main(int argc, char *argv[]){
                     towerFound = true;
                     break;
                 }
-                if (!towerFound) {
-                    std::cout << "No such tower found" << std::endl;
-                }
+            }
+            if (!towerFound) {
+                std::cout << "No such tower found" << std::endl;
             }
         }
         else if (command == std::string("info")) {
