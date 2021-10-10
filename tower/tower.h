@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include "difficulty.h"
+class TowerBuilder;
+
 class Tower {
 private:
 	std::string name;
@@ -20,6 +22,6 @@ public:
 	int getCost(Difficulty diff);
 	std::string getName();
 	std::string getStats();
+	friend class TowerBuilder;
 };
-extern std::vector<Tower> TOWERS;
 #endif
