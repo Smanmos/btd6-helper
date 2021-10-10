@@ -29,6 +29,12 @@ std::vector<Tower> loadTowers() {
 		.damage(2)
 		.build();
 	Tower sniperMonkey = Tower("Sniper Monkey", 350, bullet);
-	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, bombShooter, tackShooter, sniperMonkey };
+	Attack subDart = AttackBuilder()
+		.cooldown(0.75)
+		.pierce(2)
+		.build();
+	Tower monkeySub = Tower("Monkey Sub", 325, subDart);
+	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, bombShooter, tackShooter, sniperMonkey, 
+			monkeySub};
 	return towers;
 }
