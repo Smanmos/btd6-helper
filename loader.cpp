@@ -40,7 +40,9 @@ std::vector<Tower> loadTowers() {
 	Tower monkeyAce = Tower("Monkey Ace", 800, aceDart);
 	Attack heliDart = AttackBuilder().cooldown(0.57).pierce(3).projectiles(2).build();
 	Tower heliPilot = Tower("Heli Pilot", 1600, heliDart);
+	Attack shell = AttackBuilder().cooldown(2.0).pierce(40).build();
+	Tower mortarMonkey = Tower("Mortar Monkey", 750, shell);
 	std::vector<Tower> towers{ dartMonkey, boomerangMonkey, bombShooter, tackShooter, sniperMonkey, 
-			monkeySub, monkeyBuccaneer, monkeyAce, heliPilot};
+			monkeySub, monkeyBuccaneer, monkeyAce, heliPilot, mortarMonkey};
 	return towers;
 }
