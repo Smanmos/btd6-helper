@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Visual Studio
+Btd6Helper.sln
+Btd6Helper.vcxproj
+Btd6Helper.vcxproj.filters
