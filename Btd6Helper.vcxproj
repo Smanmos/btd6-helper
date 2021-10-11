@@ -115,6 +115,9 @@
     <ClInclude Include="tower\towers.h" />
     <ClInclude Include="tower\upgrade\upgrade.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\towers.json" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
