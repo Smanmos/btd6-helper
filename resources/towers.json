@@ -1,5 +1,81 @@
 {
-  "Dart Monkey": {
-
-  }
+    "Dart Monkey": {
+        "cost": 200,
+        "attack": {
+            "cooldown": 0.95,
+            "pierce": 2
+        }
+    },
+    "Boomerang Monkey": {
+        "cost": 325,
+        "attack": {
+            "cooldown": 1.2,
+            "pierce": 4
+        }
+    },
+    "Bomb Shooter": {
+        "cost": 650,
+        "attack": {
+            "cooldown": 1.5,
+            "pierce": 14
+        }
+    },
+    "Tack Shooter": {
+        "cost": 280,
+        "attack": {
+            "cooldown": 1.4,
+            "numProjectiles": 8
+        }
+    },
+    "Sniper Monkey": {
+        "cost": 350,
+        "attack": {
+            "cooldown": 1.59,
+            "damage": 2
+        }
+    },
+    "Monkey Sub": {
+        "cost": 325,
+        "attack": {
+            "cooldown": 0.75,
+            "pierce": 2
+        }
+    },
+    "Monkey Buccaneer": {
+        "cost": 500,
+        "attack": {
+            "cooldown": 1.0,
+            "pierce": 4,
+            "numProjectiles": 2
+        }
+    },
+    "Monkey Ace": {
+        "cost": 800,
+        "attack": {
+            "cooldown": 1.68,
+            "pierce": 5,
+            "numProjectiles": 8
+        }
+    },
+    "Heli Pilot": {
+        "cost": 1600,
+        "attack": {
+            "cooldown": 0.57,
+            "pierce": 3,
+            "numProjectiles": 2
+        }
+    },
+    "Mortar Monkey": {
+        "cost": 750,
+        "attack": {
+            "cooldown": 2.0,
+            "pierce": 40
+        }
+    },
+    "Dartling Gunner": {
+        "cost": 850,
+        "attack": {
+            "cooldown": 0.2
+        }
+    }
 }
