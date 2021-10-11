@@ -1,5 +1,7 @@
 #ifndef ATTACK
 #define ATTACK
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 class AttackBuilder;
 class Attack {
 	double cooldown;
@@ -9,6 +11,7 @@ class Attack {
 public:
 	Attack();
 	Attack(double, int, int, int);
+	Attack(json);
 	double getCooldown();
 	int getPierce();
 	int getDamage();
