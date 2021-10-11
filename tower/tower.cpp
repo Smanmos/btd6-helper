@@ -5,7 +5,7 @@ Tower::Tower(std::string name, int cost, Attack attack) :
 	name(name), cost(cost), attack(attack) {}
 
 Tower::Tower(std::string name, json towerJson) :
-	name(name), attack(Attack(towerJson["attack"])) {}
+	name(name), cost(towerJson["cost"].get<int>()), attack(Attack(towerJson["attack"])) {}
 
 double Tower::getDamagePerSecond() {
 	return attack.getPierce() * attack.getDamage() * attack.getNumProjectiles() / attack.getCooldown();
