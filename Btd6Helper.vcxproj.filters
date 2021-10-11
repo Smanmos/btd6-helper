@@ -64,5 +64,6 @@
     <None Include="resources\towers.json">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include=".editorconfig" />
   </ItemGroup>
 </Project>

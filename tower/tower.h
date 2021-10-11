@@ -3,23 +3,22 @@
 #include <string>
 #include <vector>
 #include "difficulty.h"
+#include "attack.h"
+class TowerBuilder;
+
 class Tower {
 private:
 	std::string name;
 	int cost;
-	double cooldown; // Attack speed
-	int pierce;
-	int damage;
-	int numProjectiles;
+	Attack attack;
 public:
-	Tower();
-	Tower(std::string name, int cost, double cooldown, int pierce, int damage = 1, int numProjectiles = 1);
+	Tower(std::string name, int cost, Attack attack);
 	double getDamagePerSecond();
 	double getSingleTargetDps();
 	int getCost();
 	int getCost(Difficulty diff);
 	std::string getName();
 	std::string getStats();
+	friend class TowerBuilder;
 };
-extern std::vector<Tower> TOWERS;
 #endif
