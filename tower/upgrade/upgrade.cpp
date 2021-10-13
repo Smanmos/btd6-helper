@@ -12,10 +12,10 @@ Upgrade::Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 Upgrade::Upgrade(json upgradeJson) {
 	name = upgradeJson.at("name");
 	cost = upgradeJson.at("cost");
-	pierceIncrease = upgradeJson.value("pierce", 0);
-	cooldownDecrease = upgradeJson.value("cooldown", 1.0);
-	damageIncrease = upgradeJson.value("damage", 0);
-	projectileIncrease = upgradeJson.value("numProjectile", 0);
+	pierceIncrease = upgradeJson.value("pierceIncrease", 0);
+	cooldownDecrease = upgradeJson.value("cooldownDecrease", 1.0);
+	damageIncrease = upgradeJson.value("damageIncrease", 0);
+	projectileIncrease = upgradeJson.value("projectileIncrease", 0);
 }
 
 Upgrade Upgrade::ofPierceUpgrade(int cost, int pierceIncrease) {
