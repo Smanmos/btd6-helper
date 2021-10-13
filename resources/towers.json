@@ -27,6 +27,11 @@
                 "name": "Very Quick Shots",
                 "cost": 190,
                 "cooldownDecrease": 0.7882
+            },
+            {
+                "name": "Triple Shot",
+                "cost": 400,
+                "projectileIncrease": 2
             }
         ],
         "botUpgrades": [
@@ -39,6 +44,13 @@
                 "name": "Enhanced Eyesight",
                 "cost": 200,
                 "rangeIncrease": 8
+            },
+            {
+                "name": "Crossbow",
+                "cost": 625,
+                "rangeIncrease": 8,
+                "pierceIncrease": 1,
+                "damageIncrease": 2
             }
         ]
     },
@@ -47,14 +59,99 @@
         "attack": {
             "cooldown": 1.2,
             "pierce": 4
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Improved Rangs",
+                "cost": 200,
+                "pierceIncrease": 4
+            },
+            {
+                "name": "Glaives",
+                "cost": 280,
+                "pierceIncrease": 5
+            },
+            {
+                "name": "Glaive Ricochet",
+                "cost": 1300,
+                "pierceIncrease": 37
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Throwing",
+                "cost": 175,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Faster Rangs",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range Rangs",
+                "cost": 100,
+                "rangeIncrease": 6
+            },
+            {
+                "name": "Red Hot Rangs",
+                "cost": 300,
+                "damageIncrease": 1
+            },
+            {
+                "name": "Kylie Boomerang",
+                "cost": 1300,
+                "pierceIncrease": 14
+            }
+        ]
     },
     "Bomb Shooter": {
         "cost": 650,
         "attack": {
             "cooldown": 1.5,
             "pierce": 14
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Bigger Bombs",
+                "cost": 350,
+                "pierceIncrease": 6
+            },
+            {
+                "name": "Heavy Bombs",
+                "cost": 650,
+                "pierceIncrease": 10,
+                "damageIncrease": 1
+            },
+            {
+                "name": "Really Big Bombs",
+                "cost": 1200,
+                "pierceIncrease": 20,
+                "damageIncrease": 1
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Reload",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Missile Launcher",
+                "cost": 400,
+                "cooldownDecrease": 0.7333,
+                "rangeIncrease": 4
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Extra Range",
+                "cost": 200,
+                "rangeIncrease": 7
+            }
+        ]
     },
     "Tack Shooter": {
         "cost": 280,
