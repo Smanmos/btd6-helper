@@ -27,6 +27,11 @@
                 "name": "Very Quick Shots",
                 "cost": 190,
                 "cooldownDecrease": 0.7882
+            },
+            {
+                "name": "Triple Shot",
+                "cost": 400,
+                "projectileIncrease": 2
             }
         ],
         "botUpgrades": [
@@ -39,6 +44,13 @@
                 "name": "Enhanced Eyesight",
                 "cost": 200,
                 "rangeIncrease": 8
+            },
+            {
+                "name": "Crossbow",
+                "cost": 625,
+                "rangeIncrease": 8,
+                "pierceIncrease": 1,
+                "damageIncrease": 2
             }
         ]
     },
