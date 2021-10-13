@@ -4,7 +4,43 @@
         "attack": {
             "cooldown": 0.95,
             "pierce": 2
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Sharp Shots",
+                "cost": 140,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "Razor Sharp Shots",
+                "cost": 220,
+                "pierceIncrease": 2
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Quick Shots",
+                "cost": 100,
+                "cooldownDecrease": 0.85
+            },
+            {
+                "name": "Very Quick Shots",
+                "cost": 190,
+                "cooldownDecrease": 0.7882
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range Darts",
+                "cost": 90,
+                "rangeIncrease": 8
+            },
+            {
+                "name": "Enhanced Eyesight",
+                "cost": 200,
+                "rangeIncrease": 8
+            }
+        ]
     },
     "Boomerang Monkey": {
         "cost": 325,
