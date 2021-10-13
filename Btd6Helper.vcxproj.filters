@@ -71,5 +71,8 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include=".editorconfig" />
+    <None Include="UserGuide.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
