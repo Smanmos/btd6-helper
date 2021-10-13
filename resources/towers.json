@@ -112,7 +112,46 @@
         "attack": {
             "cooldown": 1.5,
             "pierce": 14
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Bigger Bombs",
+                "cost": 350,
+                "pierceIncrease": 6
+            },
+            {
+                "name": "Heavy Bombs",
+                "cost": 650,
+                "pierceIncrease": 10,
+                "damageIncrease": 1
+            },
+            {
+                "name": "Really Big Bombs",
+                "cost": 1200,
+                "pierceIncrease": 20,
+                "damageIncrease": 1
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Reload",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Missile Launcher",
+                "cost": 400,
+                "cooldownDecrease": 0.7333,
+                "rangeIncrease": 4
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Extra Range",
+                "cost": 200,
+                "rangeIncrease": 7
+            }
+        ]
     },
     "Tack Shooter": {
         "cost": 280,
