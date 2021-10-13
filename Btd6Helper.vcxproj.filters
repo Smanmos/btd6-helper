@@ -71,7 +71,7 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include=".editorconfig" />
-    <None Include="UserGuide.md">
+    <None Include="README.md">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
