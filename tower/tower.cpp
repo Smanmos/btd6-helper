@@ -6,15 +6,15 @@ Tower::Tower(std::string name, int cost, Attack attack) :
 
 Tower::Tower(std::string name, json towerJson) :
 		name(name), cost(towerJson.at("cost").get<int>()), attack(Attack(towerJson.at("attack"))) {
-	json topUpgradesJson = towerJson.at("topUpgrades");
+	json topUpgradesJson = towerJson.value("topUpgrades", json::array());
 	for (auto topUpgrade = topUpgradesJson.begin(); topUpgrade != topUpgradesJson.end(); ++topUpgrade) {
 		topUpgrades.push_back(Upgrade(*topUpgrade));
 	}
-	json midUpgradesJson = towerJson.at("midUpgrades");
+	json midUpgradesJson = towerJson.value("midUpgrades", json::array());
 	for (auto midUpgrade = midUpgradesJson.begin(); midUpgrade != midUpgradesJson.end(); ++midUpgrade) {
 		midUpgrades.push_back(Upgrade(*midUpgrade));
 	}
-	json botUpgradesJson = towerJson.at("botUpgrades");
+	json botUpgradesJson = towerJson.value("botUpgrades", json::array());
 	for (auto botUpgrade = botUpgradesJson.begin(); botUpgrade != botUpgradesJson.end(); ++botUpgrade) {
 		botUpgrades.push_back(Upgrade(*botUpgrade));
 	}
