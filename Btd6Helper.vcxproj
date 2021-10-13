@@ -121,7 +121,6 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="resources\towers.json" />
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
