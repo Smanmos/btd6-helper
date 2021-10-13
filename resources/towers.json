@@ -59,7 +59,53 @@
         "attack": {
             "cooldown": 1.2,
             "pierce": 4
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Improved Rangs",
+                "cost": 200,
+                "pierceIncrease": 4
+            },
+            {
+                "name": "Glaives",
+                "cost": 280,
+                "pierceIncrease": 5
+            },
+            {
+                "name": "Glaive Ricochet",
+                "cost": 1300,
+                "pierceIncrease": 37
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Throwing",
+                "cost": 175,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Faster Rangs",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range Rangs",
+                "cost": 100,
+                "rangeIncrease": 6
+            },
+            {
+                "name": "Red Hot Rangs",
+                "cost": 300,
+                "damageIncrease": 1
+            },
+            {
+                "name": "Kylie Boomerang",
+                "cost": 1300,
+                "pierceIncrease": 14
+            }
+        ]
     },
     "Bomb Shooter": {
         "cost": 650,
