@@ -33,3 +33,35 @@ Upgrade Upgrade::ofDamageUpgrade(int cost, int damageIncrease) {
 Upgrade Upgrade::ofProjectileUpgrade(int cost, int projectileIncrease) {
 	return Upgrade(cost, 0, 1.0, 0, projectileIncrease);
 }
+
+bool Upgrade::isPierceIncreased() {
+	return pierceIncrease != 0;
+}
+
+int Upgrade::getPierceIncrease() {
+	return pierceIncrease;
+}
+
+bool Upgrade::isCooldownDecreased() {
+	return cooldownDecrease != 1.0;
+}
+
+double Upgrade::getCooldownDecrease() {
+	return cooldownDecrease;
+}
+
+bool Upgrade::isDamageIncreased() {
+	return damageIncrease != 0;
+}
+
+int Upgrade::getDamageIncrease() {
+	return damageIncrease;
+}
+
+bool Upgrade::isProjectileIncreased() {
+	return projectileIncrease != 0;
+}
+
+int Upgrade::getProjectileIncrease() {
+	return projectileIncrease;
+}
