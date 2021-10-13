@@ -45,6 +45,27 @@ std::string Tower::getName() {
 	return name;
 }
 
+bool Tower::matches(std::string str) {
+	std::istringstream iss(name);
+	std::string token;
+	while (iss >> token) {
+		if (str.length() == token.length()) {
+			int len = str.length();
+			bool matches = true;
+			for (int i = 0; i < len; i++) {
+				if (tolower(str[i]) != tolower(token[i])) {
+					matches = false;
+					break;
+				}
+			}
+			if (matches) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 std::string Tower::getUpgradePathStats(char initial, std::vector<Upgrade>& upgrades) {
 	std::ostringstream statStream{};
 	for (int i = 0; i < upgrades.size(); i++) {
