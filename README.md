@@ -1,1 +1,1 @@
-Guides are available in docs/UserGuide.md
+Guides are available in [docs/UserGuide.md](docs/UserGuide.md)
