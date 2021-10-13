@@ -29,6 +29,7 @@ public:
 	int getCost();
 	int getCost(Difficulty diff);
 	std::string getName();
+	bool matches(std::string);
 	std::string getStats();
 	friend class TowerBuilder;
 };
