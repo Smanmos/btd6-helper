@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
             towerName = trim(towerName);
             bool towerFound = false;
             for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
-                if (towerName == tower->getName()) {
+                if (tower->matches(towerName)) {
                     std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
                     towerFound = true;
                     break;
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
             towerName = trim(towerName);
             bool towerFound = false;
             for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
-                if (towerName == tower->getName()) {
+                if (tower->matches(towerName)) {
                     std::cout << tower->getStats();
                     towerFound = true;
                     break;
