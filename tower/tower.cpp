@@ -45,6 +45,39 @@ std::string Tower::getName() {
 	return name;
 }
 
+std::string Tower::getUpgradePathStats(char initial, std::vector<Upgrade>& upgrades) {
+	std::ostringstream statStream{};
+	for (int i = 0; i < upgrades.size(); i++) {
+		statStream << initial << i + 1 << ":" << std::endl;
+		statStream << upgrades[i].getName() << " " << upgrades[i].getCost() << std::endl;
+		if (upgrades[i].isCooldownDecreased()) {
+			statStream << upgrades[i].getCooldownDecrease() << "s" << std::endl;
+		}
+		if (upgrades[i].isPierceIncreased()) {
+			statStream << "+" << upgrades[i].getPierceIncrease() << "p" << std::endl;
+		}
+		if (upgrades[i].isDamageIncreased()) {
+			statStream << "+" << upgrades[i].getDamageIncrease() << "d" << std::endl;
+		}
+		if (upgrades[i].isProjectileIncreased()) {
+			statStream << "+" << upgrades[i].getProjectileIncrease() << "j" << std::endl;
+		}
+	}
+	return statStream.str();
+}
+
+std::string Tower::getTopUpgradeStats() {
+	return getUpgradePathStats('T', topUpgrades);
+}
+
+std::string Tower::getMidUpgradeStats() {
+	return getUpgradePathStats('M', midUpgrades);
+}
+
+std::string Tower::getBotUpgradeStats() {
+	return getUpgradePathStats('B', botUpgrades);
+}
+
 std::string Tower::getStats() {
 	std::ostringstream statStream = std::ostringstream();
 	statStream << "Cost: " << cost << std::endl;
@@ -52,5 +85,8 @@ std::string Tower::getStats() {
 	statStream << "Pierce: " << attack.getPierce() << std::endl;
 	statStream << "Damage: " << attack.getDamage() << std::endl;
 	statStream << "Projectiles: " << attack.getNumProjectiles() << std::endl;
+	statStream << getTopUpgradeStats();
+	statStream << getMidUpgradeStats();
+	statStream << getBotUpgradeStats();
 	return statStream.str();
 }

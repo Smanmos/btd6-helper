@@ -12,10 +12,10 @@ Upgrade::Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 Upgrade::Upgrade(json upgradeJson) {
 	name = upgradeJson.at("name");
 	cost = upgradeJson.at("cost");
-	pierceIncrease = upgradeJson.value("pierce", 0);
-	cooldownDecrease = upgradeJson.value("cooldown", 1.0);
-	damageIncrease = upgradeJson.value("damage", 0);
-	projectileIncrease = upgradeJson.value("numProjectile", 0);
+	pierceIncrease = upgradeJson.value("pierceIncrease", 0);
+	cooldownDecrease = upgradeJson.value("cooldownDecrease", 1.0);
+	damageIncrease = upgradeJson.value("damageIncrease", 0);
+	projectileIncrease = upgradeJson.value("projectileIncrease", 0);
 }
 
 Upgrade Upgrade::ofPierceUpgrade(int cost, int pierceIncrease) {
@@ -32,4 +32,44 @@ Upgrade Upgrade::ofDamageUpgrade(int cost, int damageIncrease) {
 
 Upgrade Upgrade::ofProjectileUpgrade(int cost, int projectileIncrease) {
 	return Upgrade(cost, 0, 1.0, 0, projectileIncrease);
+}
+
+std::string Upgrade::getName() {
+	return name;
+}
+
+int Upgrade::getCost() {
+	return cost;
+}
+
+bool Upgrade::isPierceIncreased() {
+	return pierceIncrease != 0;
+}
+
+int Upgrade::getPierceIncrease() {
+	return pierceIncrease;
+}
+
+bool Upgrade::isCooldownDecreased() {
+	return cooldownDecrease != 1.0;
+}
+
+double Upgrade::getCooldownDecrease() {
+	return cooldownDecrease;
+}
+
+bool Upgrade::isDamageIncreased() {
+	return damageIncrease != 0;
+}
+
+int Upgrade::getDamageIncrease() {
+	return damageIncrease;
+}
+
+bool Upgrade::isProjectileIncreased() {
+	return projectileIncrease != 0;
+}
+
+int Upgrade::getProjectileIncrease() {
+	return projectileIncrease;
 }
