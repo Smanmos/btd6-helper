@@ -34,6 +34,14 @@ Upgrade Upgrade::ofProjectileUpgrade(int cost, int projectileIncrease) {
 	return Upgrade(cost, 0, 1.0, 0, projectileIncrease);
 }
 
+std::string Upgrade::getName() {
+	return name;
+}
+
+int Upgrade::getCost() {
+	return cost;
+}
+
 bool Upgrade::isPierceIncreased() {
 	return pierceIncrease != 0;
 }

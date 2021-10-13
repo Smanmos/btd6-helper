@@ -18,6 +18,8 @@ public:
 	static Upgrade ofCooldownUpgrade(int cost, double cooldownDecrease);
 	static Upgrade ofDamageUpgrade(int cost, int damageIncrease);
 	static Upgrade ofProjectileUpgrade(int cost, int projectileIncrease);
+	std::string getName();
+	int getCost();
 	bool isPierceIncreased();
 	int getPierceIncrease();
 	bool isCooldownDecreased();
