@@ -176,7 +176,76 @@
         "attack": {
             "cooldown": 1.4,
             "numProjectiles": 8
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Faster Shooting",
+                "cost": 150,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Even Faster Shooting",
+                "cost": 300,
+                "cooldownDecrease": 0.6
+            },
+            {
+                "name": "Hot Shots",
+                "cost": 600,
+                "damageIncrease": {"base": 1}
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Long Range Tacks",
+                "cost": 100,
+                "rangeIncrease": 4
+            },
+            {
+                "name": "Super Range Tacks",
+                "cost": 225,
+                "rangeIncrease": 4,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "Blade Shooter",
+                "cost": 550,
+                "cooldownDecrease": 0.85,
+                "pierceIncrease": 4
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "More Tacks",
+                "cost": 100,
+                "projectileIncrease": 2
+            },
+            {
+                "name": "Even More Tacks",
+                "cost": 100,
+                "projectileIncrease": 2
+            },
+            {
+                "name": "Tack Sprayer",
+                "cost": 450,
+                "cooldownDecrease": 0.75,
+                "projectileIncrease": 4
+            },
+            {
+                "name": "Overdrive",
+                "cost": 3200,
+                "cooldownDecrease": 0.3333,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "The Tack Zone",
+                "cost": 20000,
+                "cooldownDecrease": 0.75,
+                "pierceIncrease": 2,
+                "rangeIncrease": 7,
+                "damageIncrease": {"base": 1}, 
+                "projectileIncrease": 16
+            }
+        ]
     },
     "Sniper Monkey": {
         "cost": 350,
