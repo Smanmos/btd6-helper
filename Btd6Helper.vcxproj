@@ -103,6 +103,7 @@
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="tower\attack.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
+    <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
     <ClCompile Include="tower\tower.cpp" />
     <ClCompile Include="tower\towerinstance.cpp" />
