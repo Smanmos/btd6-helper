@@ -10,3 +10,15 @@ Damage::Damage(json damageJson) {
 	ceramic = damageJson.value("ceramic", 0);
 	moab = damageJson.value("moab", 0);
 }
+
+int Damage::getDamage() {
+	return base;
+}
+
+int Damage::getCeramicDamage() {
+	return base + ceramic;
+}
+
+int Damage::getMoabDamage() {
+	return base + moab;
+}
