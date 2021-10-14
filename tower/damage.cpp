@@ -22,3 +22,14 @@ int Damage::getCeramicDamage() {
 int Damage::getMoabDamage() {
 	return base + moab;
 }
+
+std::ostream& operator<<(std::ostream& os, const Damage& damage) {
+	os << damage.base + "d";
+	if (damage.ceramic > 0) {
+		os << ", +" << damage.ceramic << "cd (" << damage.base + damage.ceramic << ")";
+	}
+	if (damage.moab > 0) {
+		os << ", +" << damage.moab << "md (" << damage.base + damage.moab << ")";
+	}
+	return os;
+}

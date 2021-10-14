@@ -1,6 +1,7 @@
 #ifndef DAMAGE
 #define DAMAGE
 #include <nlohmann/json.hpp>
+#include <ostream>
 using json = nlohmann::json;
 class Damage {
 	int base;
@@ -13,5 +14,6 @@ public:
 	int getDamage();
 	int getCeramicDamage();
 	int getMoabDamage();
+	friend std::ostream& operator<<(std::ostream&, const Damage&);
 };
 #endif // !DAMAGE
