@@ -108,7 +108,7 @@
         ]
     },
     "Bomb Shooter": {
-        "cost": 650,
+        "cost": 525,
         "attack": {
             "cooldown": 1.5,
             "pierce": 14
