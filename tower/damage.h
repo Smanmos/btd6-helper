@@ -3,12 +3,12 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 class Damage {
-	int dmg;
-	int ceramicDmg;
-	int moabDmg;
+	int base;
+	int ceramic;
+	int moab;
 public:
-	Damage(int dmg);
-	Damage(int dmg, int ceramicDmg, int moabDmg);
+	Damage(int base);
+	Damage(int base, int ceramic, int moab);
 	Damage(json damageJson);
 };
 #endif // !DAMAGE

@@ -1,12 +1,12 @@
 #include "damage.h"
 
-Damage::Damage(int dmg) : dmg(dmg), ceramicDmg(0), moabDmg(0) {}
+Damage::Damage(int base) : base(base), ceramic(0), moab(0) {}
 
-Damage::Damage(int dmg, int ceramicDmg, int moabDmg) :
-	dmg(dmg), ceramicDmg(ceramicDmg), moabDmg(moabDmg) {}
+Damage::Damage(int base, int ceramic, int moab) :
+	base(base), ceramic(ceramic), moab(moab) {}
 
 Damage::Damage(json damageJson) {
-	dmg = damageJson.at("dmg");
-	ceramicDmg = damageJson.value("ceramic", 0);
-	moabDmg = damageJson.value("moab", 0);
+	base = damageJson.at("base");
+	ceramic = damageJson.value("ceramic", 0);
+	moab = damageJson.value("moab", 0);
 }
