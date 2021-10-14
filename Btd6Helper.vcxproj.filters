@@ -68,7 +68,7 @@
     <ClInclude Include="tower\towerinstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="damage.h">
+    <ClInclude Include="tower\damage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

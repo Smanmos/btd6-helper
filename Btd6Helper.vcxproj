@@ -110,10 +110,10 @@
     <ClCompile Include="tower\upgrade\upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="damage.h" />
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\attack.h" />
     <ClInclude Include="tower\attackbuilder.h" />
+    <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
