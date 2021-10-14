@@ -50,7 +50,7 @@
                 "cost": 625,
                 "rangeIncrease": 8,
                 "pierceIncrease": 1,
-                "damageIncrease": 2
+                "damageIncrease": {"base": 2}
             }
         ]
     },
@@ -98,7 +98,7 @@
             {
                 "name": "Red Hot Rangs",
                 "cost": 300,
-                "damageIncrease": 1
+                "damageIncrease": {"base": 1}
             },
             {
                 "name": "Kylie Boomerang",
@@ -123,7 +123,7 @@
                 "name": "Heavy Bombs",
                 "cost": 650,
                 "pierceIncrease": 10,
-                "damageIncrease": 1
+                "damageIncrease": {"base": 1}
             },
             {
                 "name": "Really Big Bombs",
@@ -164,7 +164,7 @@
         "cost": 350,
         "attack": {
             "cooldown": 1.59,
-            "damage": 2
+            "damage": {"base": 2}
         }
     },
     "Monkey Sub": {
