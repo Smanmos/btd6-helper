@@ -75,6 +75,12 @@
                 "name": "Glaive Ricochet",
                 "cost": 1300,
                 "pierceIncrease": 37
+            },
+            {
+                "name": "M.O.A.R Glaives",
+                "cost": 3000,
+                "pierceIncrease": 50,
+                "cooldownDecrease": 0.5
             }
         ],
         "midUpgrades": [
@@ -87,6 +93,12 @@
                 "name": "Faster Rangs",
                 "cost": 250,
                 "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Bionic Boomerang",
+                "cost": 1600,
+                "cooldownDecrease": 0.3526,
+                "damageIncrease": {"moab": 2}
             }
         ],
         "botUpgrades": [
@@ -129,7 +141,7 @@
                 "name": "Really Big Bombs",
                 "cost": 1200,
                 "pierceIncrease": 20,
-                "damageIncrease": 1
+                "damageIncrease": {"base": 1}
             }
         ],
         "midUpgrades": [
@@ -143,6 +155,12 @@
                 "cost": 400,
                 "cooldownDecrease": 0.7333,
                 "rangeIncrease": 4
+            },
+            {
+                "name": "MOAB Mauler",
+                "cost": 1100,
+                "rangeIncrease": 5,
+                "damageIncrease": {"ceramic": 1, "moab": 18}
             }
         ],
         "botUpgrades": [
