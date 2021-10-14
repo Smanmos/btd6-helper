@@ -109,6 +109,7 @@
     <ClCompile Include="tower\upgrade\upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="damage.h" />
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\attack.h" />
     <ClInclude Include="tower\attackbuilder.h" />
