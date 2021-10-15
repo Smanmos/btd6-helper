@@ -33,13 +33,13 @@
     <ClCompile Include="tower\tower.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tower\upgrade\upgrade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tower\towerinstance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tower\damage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tower\upgrade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,13 +62,13 @@
     <ClInclude Include="tower\towers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tower\upgrade\upgrade.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="tower\towerinstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower\damage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tower\upgrade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

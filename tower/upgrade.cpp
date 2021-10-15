@@ -14,7 +14,7 @@ Upgrade::Upgrade(json upgradeJson) {
 	cost = upgradeJson.at("cost");
 	pierceIncrease = upgradeJson.value("pierceIncrease", 0);
 	cooldownDecrease = upgradeJson.value("cooldownDecrease", 1.0);
-	damageIncrease = upgradeJson.value("damageIncrease", 0);
+	damageIncrease = Damage(upgradeJson.value("damageIncrease", json::object({"base", 0})));
 	projectileIncrease = upgradeJson.value("projectileIncrease", 0);
 }
 
@@ -59,10 +59,10 @@ double Upgrade::getCooldownDecrease() {
 }
 
 bool Upgrade::isDamageIncreased() {
-	return damageIncrease != 0;
+	return damageIncrease.isNonzero();
 }
 
-int Upgrade::getDamageIncrease() {
+Damage Upgrade::getDamageIncrease() {
 	return damageIncrease;
 }
 

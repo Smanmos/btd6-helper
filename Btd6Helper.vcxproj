@@ -107,7 +107,7 @@
     <ClCompile Include="tower\difficulty.cpp" />
     <ClCompile Include="tower\tower.cpp" />
     <ClCompile Include="tower\towerinstance.cpp" />
-    <ClCompile Include="tower\upgrade\upgrade.cpp" />
+    <ClCompile Include="tower\upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
@@ -118,7 +118,7 @@
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
     <ClInclude Include="tower\towers.h" />
-    <ClInclude Include="tower\upgrade\upgrade.h" />
+    <ClInclude Include="tower\upgrade.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
