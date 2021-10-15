@@ -1,5 +1,7 @@
 #include "damage.h"
 
+Damage::Damage() : Damage(0) {}
+
 Damage::Damage(int base) : base(base), ceramic(0), moab(0) {}
 
 Damage::Damage(int base, int ceramic, int moab) :
