@@ -34,6 +34,18 @@ Damage Attack::getDamage() {
 	return damage;
 }
 
+int Attack::getBaseDamage() {
+	return damage.getDamage();
+}
+
+int Attack::getCeramicDamage() {
+	return damage.getCeramicDamage();
+}
+
+int Attack::getMoabDamage() {
+	return damage.getMoabDamage();
+}
+
 int Attack::getNumProjectiles() {
 	return numProjectiles;
 }
