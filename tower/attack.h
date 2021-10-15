@@ -16,6 +16,9 @@ public:
 	double getCooldown();
 	int getPierce();
 	Damage getDamage();
+	int getBaseDamage();
+	int getCeramicDamage();
+	int getMoabDamage();
 	int getNumProjectiles();
 	friend class AttackBuilder;
 };
