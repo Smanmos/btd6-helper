@@ -25,6 +25,10 @@ int Damage::getMoabDamage() {
 	return base + moab;
 }
 
+bool Damage::isNonzero() {
+	return base != 0 || ceramic != 0 || moab != 0;
+}
+
 std::ostream& operator<<(std::ostream& os, const Damage& damage) {
 	os << damage.base + "d";
 	if (damage.ceramic > 0) {

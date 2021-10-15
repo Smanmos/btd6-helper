@@ -16,5 +16,6 @@ public:
 	int getCeramicDamage();
 	int getMoabDamage();
 	friend std::ostream& operator<<(std::ostream&, const Damage&);
+	bool isNonzero();
 };
 #endif // !DAMAGE
