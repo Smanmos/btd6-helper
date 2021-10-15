@@ -14,7 +14,9 @@ Upgrade::Upgrade(json upgradeJson) {
 	cost = upgradeJson.at("cost");
 	pierceIncrease = upgradeJson.value("pierceIncrease", 0);
 	cooldownDecrease = upgradeJson.value("cooldownDecrease", 1.0);
-	damageIncrease = Damage(upgradeJson.value("damageIncrease", json::object({"base", 0})));
+	if (upgradeJson.contains("damageIncrease")) {
+		damageIncrease = upgradeJson.at("damageIncrease");
+	}
 	projectileIncrease = upgradeJson.value("projectileIncrease", 0);
 }
 
