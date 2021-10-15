@@ -5,7 +5,7 @@
 #include <nlohmann/json.hpp>
 #include "difficulty.h"
 #include "attack.h"
-#include "upgrade/upgrade.h"
+#include "upgrade.h"
 using json = nlohmann::json;
 class TowerBuilder;
 
