@@ -251,8 +251,42 @@
         "cost": 350,
         "attack": {
             "cooldown": 1.59,
-            "damage": {"base": 2}
-        }
+            "damage": { "base": 2 }
+        },
+        "topUpgrades": [
+            {
+                "name": "Full Metal Jacket",
+                "cost": 350,
+                "damageIncrease": {"base": 2}
+            },
+            {
+                "name": "Large Calibre",
+                "cost": 1500,
+                "damageIncrease": {"base": 3}
+            },
+            {
+                "name": "Deadly Precision",
+                "cost": 3000,
+                "damageIncrease": {"base": 13, "ceramic": 15}
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Fast Firing",
+                "cost": 400,
+                "cooldownDecrease": 0.7
+            },
+            {
+                "name": "Even Faster Firing",
+                "cost": 400,
+                "cooldownDecrease": 0.7
+            },
+            {
+                "name": "Semi-Automatic",
+                "cost": 3500,
+                "cooldownDecrease": 0.3333
+            }
+        ]
     },
     "Monkey Sub": {
         "cost": 325,
