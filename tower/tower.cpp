@@ -133,7 +133,7 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
 		totalCost += botUpgrades[i].getCost();
 	}
-	statStream << "Cost: " << cost << std::endl;
+	statStream << "Cost: " << totalCost << std::endl;
 	statStream << "Cooldown: " << upgradedAttack.getCooldown() << std::endl;
 	statStream << "Pierce: " << upgradedAttack.getPierce() << std::endl;
 	statStream << "Damage: " << upgradedAttack.getDamage() << std::endl;
