@@ -6,6 +6,7 @@
 #include "difficulty.h"
 #include "attack.h"
 #include "upgrade.h"
+#include "upgradepattern.h"
 using json = nlohmann::json;
 class TowerBuilder;
 
@@ -31,6 +32,7 @@ public:
 	std::string getName();
 	bool matches(std::string);
 	std::string getStats();
+	std::string getStats(UpgradePattern);
 	friend class TowerBuilder;
 };
 #endif
