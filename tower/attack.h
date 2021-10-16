@@ -2,6 +2,7 @@
 #define ATTACK
 #include <nlohmann/json.hpp>
 #include "damage.h"
+#include "upgrade.h"
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {
@@ -11,7 +12,7 @@ class Attack {
 	int numProjectiles;
 public:
 	Attack();
-	Attack(double, int, int, int);
+	Attack(double, int, Damage, int);
 	Attack(json);
 	double getCooldown();
 	int getPierce();
@@ -20,6 +21,7 @@ public:
 	int getCeramicDamage();
 	int getMoabDamage();
 	int getNumProjectiles();
+	Attack improve(Upgrade);
 	friend class AttackBuilder;
 };
 #endif // !ATTACK

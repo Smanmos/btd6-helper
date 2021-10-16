@@ -29,6 +29,10 @@ bool Damage::isNonzero() {
 	return base != 0 || ceramic != 0 || moab != 0;
 }
 
+Damage Damage::operator+(const Damage& that) {
+	return Damage(this->base + that.base, this->ceramic + that.ceramic, this->moab + that.moab);
+}
+
 std::ostream& operator<<(std::ostream& os, const Damage& damage) {
 	os << damage.base + "d";
 	if (damage.ceramic > 0) {

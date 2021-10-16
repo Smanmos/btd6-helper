@@ -7,7 +7,7 @@ Attack::Attack() {
 	numProjectiles = 1;
 }
 
-Attack::Attack(double cooldown, int pierce, int damage, int numProjectiles) :
+Attack::Attack(double cooldown, int pierce, Damage damage, int numProjectiles) :
 	cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
@@ -48,4 +48,11 @@ int Attack::getMoabDamage() {
 
 int Attack::getNumProjectiles() {
 	return numProjectiles;
+}
+
+Attack Attack::improve(Upgrade upgrade) {
+	return Attack(this->cooldown * upgrade.getCooldownDecrease(),
+		this->pierce + upgrade.getPierceIncrease(),
+		this->damage + upgrade.getDamageIncrease(),
+		this->numProjectiles + upgrade.getProjectileIncrease());
 }

@@ -111,3 +111,32 @@ std::string Tower::getStats() {
 	statStream << getBotUpgradeStats();
 	return statStream.str();
 }
+
+std::string Tower::getStats(UpgradePattern upgradePattern) {
+	if (upgradePattern.top > topUpgrades.size()
+		|| upgradePattern.mid > midUpgrades.size() 
+		|| upgradePattern.bot > botUpgrades.size()) {
+		return name + " does not have that many upgrades";
+	}
+	std::ostringstream statStream = std::ostringstream();
+	Attack upgradedAttack = attack;
+	int totalCost = cost;
+	for (int i = 0; i < upgradePattern.top; i++) {
+		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
+		totalCost += topUpgrades[i].getCost();
+	}
+	for (int i = 0; i < upgradePattern.mid; i++) {
+		upgradedAttack = upgradedAttack.improve(midUpgrades[i]);
+		totalCost += midUpgrades[i].getCost();
+	}
+	for (int i = 0; i < upgradePattern.bot; i++) {
+		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
+		totalCost += botUpgrades[i].getCost();
+	}
+	statStream << "Cost: " << cost << std::endl;
+	statStream << "Cooldown: " << upgradedAttack.getCooldown() << std::endl;
+	statStream << "Pierce: " << upgradedAttack.getPierce() << std::endl;
+	statStream << "Damage: " << upgradedAttack.getDamage() << std::endl;
+	statStream << "Projectiles: " << upgradedAttack.getNumProjectiles() << std::endl;
+	return statStream.str();
+}
