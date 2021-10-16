@@ -34,7 +34,7 @@ Damage Damage::operator+(const Damage& that) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Damage& damage) {
-	os << damage.base + "d";
+	os << damage.base << "d";
 	if (damage.ceramic > 0) {
 		os << ", +" << damage.ceramic << "cd (" << damage.base + damage.ceramic << ")";
 	}
