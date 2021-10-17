@@ -50,6 +50,10 @@ int Attack::getNumProjectiles() {
 	return numProjectiles;
 }
 
+double Attack::getDamagePerSecond() {
+	return pierce * damage.getDamage() * numProjectiles / cooldown;
+}
+
 Attack Attack::improve(Upgrade upgrade) {
 	return Attack(this->cooldown * upgrade.getCooldownDecrease(),
 		this->pierce + upgrade.getPierceIncrease(),

@@ -21,7 +21,21 @@ Tower::Tower(std::string name, json towerJson) :
 }
 
 double Tower::getDamagePerSecond() {
-	return attack.getPierce() * attack.getBaseDamage() * attack.getNumProjectiles() / attack.getCooldown();
+	return attack.getDamagePerSecond();
+}
+
+double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
+	Attack upgradedAttack = attack;
+	for (int i = 0; i < upgradePattern.top; i++) {
+		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
+	}
+	for (int i = 0; i < upgradePattern.mid; i++) {
+		upgradedAttack = upgradedAttack.improve(midUpgrades[i]);
+	}
+	for (int i = 0; i < upgradePattern.bot; i++) {
+		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
+	}
+	return upgradedAttack.getDamagePerSecond();
 }
 
 double Tower::getSingleTargetDps() {

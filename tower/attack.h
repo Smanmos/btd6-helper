@@ -21,6 +21,7 @@ public:
 	int getCeramicDamage();
 	int getMoabDamage();
 	int getNumProjectiles();
+	double getDamagePerSecond();
 	Attack improve(Upgrade);
 	friend class AttackBuilder;
 };

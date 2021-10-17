@@ -26,6 +26,7 @@ public:
 	Tower(std::string name, int cost, Attack attack);
 	Tower(std::string name, json towerJson);
 	double getDamagePerSecond();
+	double getDamagePerSecond(UpgradePattern);
 	double getSingleTargetDps();
 	int getCost();
 	int getCost(Difficulty diff);
