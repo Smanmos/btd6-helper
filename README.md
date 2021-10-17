@@ -5,7 +5,10 @@ of towers in BTD6.
 
 # How to use
 
-Read the user guide at [docs/UserGuide.md](docs/UserGuide.md)
+Download the latest release on Githib, as well as the `resources` folder, putting in the same 
+directory as the downloaded executable. 
+
+To run the program, read the user guide at [docs/UserGuide.md](docs/UserGuide.md)
 
 # Currently supported towers
 
