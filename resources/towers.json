@@ -331,5 +331,12 @@
         "attack": {
             "cooldown": 0.2
         }
+    },
+    "Wizard Monkey": {
+        "cost": 400,
+        "attack": {
+            "cooldown": 1.1,
+            "pierce": 3
+        }
     }
 }
