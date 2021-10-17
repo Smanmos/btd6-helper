@@ -352,5 +352,13 @@
             "cooldown": 0.7,
             "pierce": 2
         }
+    },
+    "Druid": {
+        "cost": 425,
+        "attack": {
+            "cooldown": 1.1,
+            "pierce": 1,
+            "numProjectiles": 5
+        }
     }
 }
