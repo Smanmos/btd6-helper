@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Documentation Files">
+      <UniqueIdentifier>{0f4ee604-620f-421e-915f-4b97a23deac8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Btd6Helper.cpp">
@@ -83,5 +86,11 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include=".editorconfig" />
+    <None Include="docs\UserGuide.md">
+      <Filter>Documentation Files</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Documentation Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
