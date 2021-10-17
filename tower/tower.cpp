@@ -21,7 +21,7 @@ Tower::Tower(std::string name, json towerJson) :
 }
 
 double Tower::getDamagePerSecond() {
-	return attack.getPierce() * attack.getBaseDamage() * attack.getNumProjectiles() / attack.getCooldown();
+	return attack.getDamagePerSecond();
 }
 
 double Tower::getSingleTargetDps() {
