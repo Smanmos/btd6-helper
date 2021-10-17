@@ -338,5 +338,12 @@
             "cooldown": 1.1,
             "pierce": 3
         }
+    },
+    "Super Monkey": {
+        "cost": 2500,
+        "attack": {
+            "cooldown": 0.06,
+            "pierce": 1
+        }
     }
 }
