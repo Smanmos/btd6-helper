@@ -27,3 +27,7 @@ If the upgrade paths are not supplied, it is assumed to be 000.
 Gets the total damage per second the tower has at that upgrade level. 
 
 If the upgrade paths are not supplied, it is assumed to be 000.
+
+## `exit`
+
+Quits the program.
