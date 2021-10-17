@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
                 bool towerFound = false;
                 for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
                     if (tower->matches(towerName)) {
-                        std::cout << tower->getDamagePerSecond(*upgradePattern);
+                        std::cout << tower->getDamagePerSecond(*upgradePattern) << std::endl;
                         towerFound = true;
                         break;
                     }
