@@ -25,6 +25,11 @@ double Tower::getDamagePerSecond() {
 }
 
 double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
+	if (upgradePattern.top > topUpgrades.size()
+		|| upgradePattern.mid > midUpgrades.size()
+		|| upgradePattern.bot > botUpgrades.size()) {
+		throw std::invalid_argument(name + "does not have that many upgrades");
+	}
 	Attack upgradedAttack = attack;
 	for (int i = 0; i < upgradePattern.top; i++) {
 		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
