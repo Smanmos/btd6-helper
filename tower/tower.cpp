@@ -116,7 +116,7 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 	if (upgradePattern.top > topUpgrades.size()
 		|| upgradePattern.mid > midUpgrades.size() 
 		|| upgradePattern.bot > botUpgrades.size()) {
-		return name + " does not have that many upgrades";
+		return name + " does not have that many upgrades\n";
 	}
 	std::ostringstream statStream = std::ostringstream();
 	Attack upgradedAttack = attack;
