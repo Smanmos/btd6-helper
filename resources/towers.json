@@ -345,5 +345,12 @@
             "cooldown": 0.06,
             "pierce": 1
         }
+    },
+    "Ninja Monkey": {
+        "cost": 500,
+        "attack": {
+            "cooldown": 0.7,
+            "pierce": 2
+        }
     }
 }
