@@ -24,6 +24,20 @@ double Tower::getDamagePerSecond() {
 	return attack.getDamagePerSecond();
 }
 
+double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
+	Attack upgradedAttack = attack;
+	for (int i = 0; i < upgradePattern.top; i++) {
+		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
+	}
+	for (int i = 0; i < upgradePattern.mid; i++) {
+		upgradedAttack = upgradedAttack.improve(midUpgrades[i]);
+	}
+	for (int i = 0; i < upgradePattern.bot; i++) {
+		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
+	}
+	return upgradedAttack.getDamagePerSecond();
+}
+
 double Tower::getSingleTargetDps() {
 	return attack.getBaseDamage() * attack.getNumProjectiles() / attack.getCooldown();
 }
