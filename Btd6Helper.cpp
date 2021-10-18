@@ -21,34 +21,70 @@ int main(int argc, char *argv[]){
         tokener >> command;
         if (command == std::string("dps")) {
             std::string towerName;
-            std::getline(tokener, towerName);
+            tokener >> towerName;
             towerName = trim(towerName);
-            bool towerFound = false;
-            for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
-                if (towerName == tower->getName()) {
-                    std::cout << "dps: " << tower->getDamagePerSecond() << std::endl;
-                    towerFound = true;
-                    break;
+            try {
+                std::string upgradeStr;
+                tokener >> upgradeStr;
+                UpgradePattern* upgradePattern;
+                if (upgradeStr.size() == 0) {
+                    upgradePattern = new UpgradePattern();
+                }
+                else if (upgradeStr.size() == 3) {
+                    upgradePattern = new UpgradePattern(
+                        upgradeStr[0] - '0', upgradeStr[1] - '0', upgradeStr[2] - '0');
+                }
+                else {
+                    throw std::invalid_argument("Illegal upgrade pattern");
+                }
+                bool towerFound = false;
+                for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
+                    if (tower->matches(towerName)) {
+                        std::cout << tower->getDamagePerSecond(*upgradePattern) << std::endl;
+                        towerFound = true;
+                        break;
+                    }
+                }
+                if (!towerFound) {
+                    std::cout << "Tower not found" << std::endl;
                 }
             }
-            if (!towerFound) {
-                std::cout << "No such tower found" << std::endl;
+            catch (std::invalid_argument e) {
+                std::cout << "Invalid Upgrade format" << std::endl;
             }
         }
         else if (command == std::string("info")) {
             std::string towerName;
-            std::getline(tokener, towerName);
+            tokener >> towerName;
             towerName = trim(towerName);
-            bool towerFound = false;
-            for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
-                if (towerName == tower->getName()) {
-                    std::cout << tower->getStats();
-                    towerFound = true;
-                    break;
+            try {
+                std::string upgradeStr;
+                tokener >> upgradeStr;
+                UpgradePattern* upgradePattern;
+                if (upgradeStr.size() == 0) {
+                    upgradePattern = new UpgradePattern();
+                }
+                else if (upgradeStr.size() == 3) {
+                    upgradePattern = new UpgradePattern(
+                        upgradeStr[0] - '0', upgradeStr[1] - '0', upgradeStr[2] - '0');
+                }
+                else {
+                    throw std::invalid_argument("Illegal upgrade pattern");
+                }
+                bool towerFound = false;
+                for (auto tower = towers.begin(); tower != towers.end(); ++tower) {
+                    if (tower->matches(towerName)) {
+                        std::cout << tower->getStats(*upgradePattern);
+                        towerFound = true;
+                        break;
+                    }
+                }
+                if (!towerFound) {
+                    std::cout << "Tower not found" << std::endl;
                 }
             }
-            if (!towerFound) {
-                std::cout << "Tower not found" << std::endl;
+            catch (std::invalid_argument e) {
+                std::cout << "Invalid Upgrade format" << std::endl;
             }
         }
         else if (command == std::string("exit")) {

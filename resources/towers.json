@@ -4,35 +4,289 @@
         "attack": {
             "cooldown": 0.95,
             "pierce": 2
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Sharp Shots",
+                "cost": 140,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "Razor Sharp Shots",
+                "cost": 220,
+                "pierceIncrease": 2
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Quick Shots",
+                "cost": 100,
+                "cooldownDecrease": 0.85
+            },
+            {
+                "name": "Very Quick Shots",
+                "cost": 190,
+                "cooldownDecrease": 0.7882
+            },
+            {
+                "name": "Triple Shot",
+                "cost": 400,
+                "projectileIncrease": 2
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range Darts",
+                "cost": 90,
+                "rangeIncrease": 8
+            },
+            {
+                "name": "Enhanced Eyesight",
+                "cost": 200,
+                "rangeIncrease": 8
+            },
+            {
+                "name": "Crossbow",
+                "cost": 625,
+                "rangeIncrease": 8,
+                "pierceIncrease": 1,
+                "damageIncrease": {"base": 2}
+            }
+        ]
     },
     "Boomerang Monkey": {
         "cost": 325,
         "attack": {
             "cooldown": 1.2,
             "pierce": 4
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Improved Rangs",
+                "cost": 200,
+                "pierceIncrease": 4
+            },
+            {
+                "name": "Glaives",
+                "cost": 280,
+                "pierceIncrease": 5
+            },
+            {
+                "name": "Glaive Ricochet",
+                "cost": 1300,
+                "pierceIncrease": 37
+            },
+            {
+                "name": "M.O.A.R Glaives",
+                "cost": 3000,
+                "pierceIncrease": 50,
+                "cooldownDecrease": 0.5
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Throwing",
+                "cost": 175,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Faster Rangs",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Bionic Boomerang",
+                "cost": 1600,
+                "cooldownDecrease": 0.3526,
+                "damageIncrease": {"moab": 2}
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range Rangs",
+                "cost": 100,
+                "rangeIncrease": 6
+            },
+            {
+                "name": "Red Hot Rangs",
+                "cost": 300,
+                "damageIncrease": {"base": 1}
+            },
+            {
+                "name": "Kylie Boomerang",
+                "cost": 1300,
+                "pierceIncrease": 14
+            }
+        ]
     },
     "Bomb Shooter": {
-        "cost": 650,
+        "cost": 525,
         "attack": {
             "cooldown": 1.5,
             "pierce": 14
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Bigger Bombs",
+                "cost": 350,
+                "pierceIncrease": 6
+            },
+            {
+                "name": "Heavy Bombs",
+                "cost": 650,
+                "pierceIncrease": 10,
+                "damageIncrease": {"base": 1}
+            },
+            {
+                "name": "Really Big Bombs",
+                "cost": 1200,
+                "pierceIncrease": 20,
+                "damageIncrease": {"base": 1}
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Reload",
+                "cost": 250,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Missile Launcher",
+                "cost": 400,
+                "cooldownDecrease": 0.7333,
+                "rangeIncrease": 4
+            },
+            {
+                "name": "MOAB Mauler",
+                "cost": 1100,
+                "rangeIncrease": 5,
+                "damageIncrease": {"ceramic": 1, "moab": 18}
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Extra Range",
+                "cost": 200,
+                "rangeIncrease": 7
+            }
+        ]
     },
     "Tack Shooter": {
         "cost": 280,
         "attack": {
             "cooldown": 1.4,
             "numProjectiles": 8
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Faster Shooting",
+                "cost": 150,
+                "cooldownDecrease": 0.75
+            },
+            {
+                "name": "Even Faster Shooting",
+                "cost": 300,
+                "cooldownDecrease": 0.6
+            },
+            {
+                "name": "Hot Shots",
+                "cost": 600,
+                "damageIncrease": {"base": 1}
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Long Range Tacks",
+                "cost": 100,
+                "rangeIncrease": 4
+            },
+            {
+                "name": "Super Range Tacks",
+                "cost": 225,
+                "rangeIncrease": 4,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "Blade Shooter",
+                "cost": 550,
+                "cooldownDecrease": 0.85,
+                "pierceIncrease": 4
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "More Tacks",
+                "cost": 100,
+                "projectileIncrease": 2
+            },
+            {
+                "name": "Even More Tacks",
+                "cost": 100,
+                "projectileIncrease": 2
+            },
+            {
+                "name": "Tack Sprayer",
+                "cost": 450,
+                "cooldownDecrease": 0.75,
+                "projectileIncrease": 4
+            },
+            {
+                "name": "Overdrive",
+                "cost": 3200,
+                "cooldownDecrease": 0.3333,
+                "pierceIncrease": 1
+            },
+            {
+                "name": "The Tack Zone",
+                "cost": 20000,
+                "cooldownDecrease": 0.75,
+                "pierceIncrease": 2,
+                "rangeIncrease": 7,
+                "damageIncrease": {"base": 1}, 
+                "projectileIncrease": 16
+            }
+        ]
     },
     "Sniper Monkey": {
         "cost": 350,
         "attack": {
             "cooldown": 1.59,
-            "damage": 2
-        }
+            "damage": { "base": 2 }
+        },
+        "topUpgrades": [
+            {
+                "name": "Full Metal Jacket",
+                "cost": 350,
+                "damageIncrease": {"base": 2}
+            },
+            {
+                "name": "Large Calibre",
+                "cost": 1500,
+                "damageIncrease": {"base": 3}
+            },
+            {
+                "name": "Deadly Precision",
+                "cost": 3000,
+                "damageIncrease": {"base": 13, "ceramic": 15}
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Fast Firing",
+                "cost": 400,
+                "cooldownDecrease": 0.7
+            },
+            {
+                "name": "Even Faster Firing",
+                "cost": 400,
+                "cooldownDecrease": 0.7
+            },
+            {
+                "name": "Semi-Automatic",
+                "cost": 3500,
+                "cooldownDecrease": 0.3333
+            }
+        ]
     },
     "Monkey Sub": {
         "cost": 325,
