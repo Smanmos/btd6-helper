@@ -99,17 +99,18 @@ std::string Tower::getUpgradePathStats(char initial, std::vector<Upgrade>& upgra
 	for (int i = 0; i < upgrades.size(); i++) {
 		statStream << initial << i + 1 << ":" << std::endl;
 		statStream << upgrades[i].getName() << " " << upgrades[i].getCost() << std::endl;
-		if (upgrades[i].isCooldownDecreased()) {
-			statStream << upgrades[i].getCooldownDecrease() << "s" << std::endl;
+		AttackBuff buff = upgrades[i].getBuff();
+		if (buff.isCooldownDecreased()) {
+			statStream << buff.getCooldownDecrease() << "s" << std::endl;
 		}
-		if (upgrades[i].isPierceIncreased()) {
-			statStream << "+" << upgrades[i].getPierceIncrease() << "p" << std::endl;
+		if (buff.isPierceIncreased()) {
+			statStream << "+" << buff.getPierceIncrease() << "p" << std::endl;
 		}
-		if (upgrades[i].isDamageIncreased()) {
-			statStream << "+" << upgrades[i].getDamageIncrease() << "d" << std::endl;
+		if (buff.isDamageIncreased()) {
+			statStream << "+" << buff.getDamageIncrease() << "d" << std::endl;
 		}
-		if (upgrades[i].isProjectileIncreased()) {
-			statStream << "+" << upgrades[i].getProjectileIncrease() << "j" << std::endl;
+		if (buff.isProjectileIncreased()) {
+			statStream << "+" << buff.getProjectileIncrease() << "j" << std::endl;
 		}
 	}
 	return statStream.str();
