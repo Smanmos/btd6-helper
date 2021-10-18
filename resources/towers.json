@@ -2,6 +2,7 @@
     "Dart Monkey": {
         "cost": 200,
         "attack": {
+            "name": "dart",
             "cooldown": 0.95,
             "pierce": 2
         },
@@ -57,6 +58,7 @@
     "Boomerang Monkey": {
         "cost": 325,
         "attack": {
+            "name": "boomerang",
             "cooldown": 1.2,
             "pierce": 4
         },
@@ -122,6 +124,7 @@
     "Bomb Shooter": {
         "cost": 525,
         "attack": {
+            "name": "bomb",
             "cooldown": 1.5,
             "pierce": 14
         },
@@ -174,6 +177,7 @@
     "Tack Shooter": {
         "cost": 280,
         "attack": {
+            "name": "tack",
             "cooldown": 1.4,
             "numProjectiles": 8
         },
@@ -250,6 +254,7 @@
     "Sniper Monkey": {
         "cost": 350,
         "attack": {
+            "name": "bullet",
             "cooldown": 1.59,
             "damage": { "base": 2 }
         },
@@ -291,6 +296,7 @@
     "Monkey Sub": {
         "cost": 325,
         "attack": {
+            "name": "dart",
             "cooldown": 0.75,
             "pierce": 2
         },
@@ -323,6 +329,7 @@
     "Monkey Buccaneer": {
         "cost": 500,
         "attack": {
+            "name": "dart",
             "cooldown": 1.0,
             "pierce": 4,
             "numProjectiles": 2
@@ -331,6 +338,7 @@
     "Monkey Ace": {
         "cost": 800,
         "attack": {
+            "name": "dart",
             "cooldown": 1.68,
             "pierce": 5,
             "numProjectiles": 8
@@ -339,6 +347,7 @@
     "Heli Pilot": {
         "cost": 1600,
         "attack": {
+            "name": "dart",
             "cooldown": 0.57,
             "pierce": 3,
             "numProjectiles": 2
@@ -347,6 +356,7 @@
     "Mortar Monkey": {
         "cost": 750,
         "attack": {
+            "name": "shell",
             "cooldown": 2.0,
             "pierce": 40
         }
@@ -354,12 +364,14 @@
     "Dartling Gunner": {
         "cost": 850,
         "attack": {
+            "name": "dart",
             "cooldown": 0.2
         }
     },
     "Wizard Monkey": {
         "cost": 400,
         "attack": {
+            "name": "dart",
             "cooldown": 1.1,
             "pierce": 3
         }
@@ -367,6 +379,7 @@
     "Super Monkey": {
         "cost": 2500,
         "attack": {
+            "name": "dart",
             "cooldown": 0.06,
             "pierce": 1
         }
@@ -374,6 +387,7 @@
     "Ninja Monkey": {
         "cost": 500,
         "attack": {
+            "name": "shuriken",
             "cooldown": 0.7,
             "pierce": 2
         }
@@ -381,6 +395,7 @@
     "Druid": {
         "cost": 425,
         "attack": {
+            "name": "thorn",
             "cooldown": 1.1,
             "pierce": 1,
             "numProjectiles": 5
