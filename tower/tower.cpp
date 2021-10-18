@@ -20,6 +20,15 @@ Tower::Tower(std::string name, json towerJson) :
 	}
 }
 
+Tower::Tower(const Tower& tower) {
+	name = tower.name;
+	cost = tower.cost;
+	attacks = tower.attacks;
+	topUpgrades = tower.topUpgrades;
+	midUpgrades = tower.midUpgrades;
+	botUpgrades = tower.botUpgrades;
+}
+
 double Tower::getDamagePerSecond() {
 	return attacks.getTotalDps();
 }
