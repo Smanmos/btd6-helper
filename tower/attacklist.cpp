@@ -27,10 +27,10 @@ std::ostream& AttackList::streamStats(std::ostream& os) {
 	return os;
 }
 
-AttackList AttackList::improve(Upgrade upgrade) {
+AttackList AttackList::improve(AttackBuff attackBuff) {
 	std::vector<Attack> upgradedAttacks;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
-		upgradedAttacks.push_back(attack->improve(upgrade));
+		upgradedAttacks.push_back(attack->improve(attackBuff));
 	}
 	return AttackList(upgradedAttacks);
 }

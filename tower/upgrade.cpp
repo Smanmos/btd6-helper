@@ -64,3 +64,7 @@ bool Upgrade::isProjectileIncreased() {
 int Upgrade::getProjectileIncrease() {
 	return attackBuff.getProjectileIncrease();
 }
+
+AttackBuff Upgrade::getBuff() {
+	return attackBuff;
+}

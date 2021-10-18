@@ -2,7 +2,7 @@
 #define ATTACK
 #include <nlohmann/json.hpp>
 #include "damage.h"
-#include "upgrade.h"
+#include "attackbuff.h"
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {
@@ -23,7 +23,7 @@ public:
 	int getNumProjectiles();
 	double getDamagePerSecond();
 	std::ostream& streamStats(std::ostream&);
-	Attack improve(Upgrade);
+	Attack improve(AttackBuff);
 	friend class AttackBuilder;
 };
 #endif // !ATTACK

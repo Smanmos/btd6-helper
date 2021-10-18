@@ -27,5 +27,6 @@ public:
 	Damage getDamageIncrease();
 	bool isProjectileIncreased();
 	int getProjectileIncrease();
+	AttackBuff getBuff();
 };
 #endif // UPGRADE

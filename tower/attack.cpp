@@ -65,9 +65,9 @@ std::ostream& Attack::streamStats(std::ostream& os) {
 	return os;
 }
 
-Attack Attack::improve(Upgrade upgrade) {
-	return Attack(this->cooldown * upgrade.getCooldownDecrease(),
-		this->pierce + upgrade.getPierceIncrease(),
-		this->damage + upgrade.getDamageIncrease(),
-		this->numProjectiles + upgrade.getProjectileIncrease());
+Attack Attack::improve(AttackBuff attackBuff) {
+	return Attack(this->cooldown * attackBuff.getCooldownDecrease(),
+		this->pierce + attackBuff.getPierceIncrease(),
+		this->damage + attackBuff.getDamageIncrease(),
+		this->numProjectiles + attackBuff.getProjectileIncrease());
 }

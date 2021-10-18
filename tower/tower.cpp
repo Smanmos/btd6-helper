@@ -41,13 +41,13 @@ double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
 	}
 	AttackList upgradedAttacks = attacks;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i].getBuff());
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i].getBuff());
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i].getBuff());
 	}
 	return upgradedAttacks.getTotalDps();
 }
@@ -147,15 +147,15 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 	AttackList upgradedAttacks = attacks;
 	int totalCost = cost;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i].getBuff());
 		totalCost += topUpgrades[i].getCost();
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i].getBuff());
 		totalCost += midUpgrades[i].getCost();
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i].getBuff());
 		totalCost += botUpgrades[i].getCost();
 	}
 	statStream << "Cost: " << totalCost << std::endl;
