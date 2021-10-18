@@ -20,6 +20,13 @@ double AttackList::getTotalDps() {
 	return dps;
 }
 
+std::ostream& AttackList::streamStats(std::ostream& os) {
+	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
+		attack->streamStats(os);
+	}
+	return os;
+}
+
 AttackList AttackList::improve(Upgrade upgrade) {
 	std::vector<Attack> upgradedAttacks;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
