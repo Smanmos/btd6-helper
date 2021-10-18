@@ -54,6 +54,17 @@ double Attack::getDamagePerSecond() {
 	return pierce * damage.getDamage() * numProjectiles / cooldown;
 }
 
+std::ostream& Attack::streamStats(std::ostream& os) {
+	os << cooldown << "s";
+	os << ", " << pierce << "p";
+	os << ", " << damage;
+	if (numProjectiles > 1) {
+		os << ", " << numProjectiles << "j";
+	}
+	os << std::endl;
+	return os;
+}
+
 Attack Attack::improve(Upgrade upgrade) {
 	return Attack(this->cooldown * upgrade.getCooldownDecrease(),
 		this->pierce + upgrade.getPierceIncrease(),
