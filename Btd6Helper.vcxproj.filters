@@ -98,5 +98,6 @@
     <None Include="README.md">
       <Filter>Documentation Files</Filter>
     </None>
+    <None Include="Btd6Helper.cd" />
   </ItemGroup>
 </Project>
