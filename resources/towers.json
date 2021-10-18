@@ -179,6 +179,7 @@
         "attack": {
             "name": "tack",
             "cooldown": 1.4,
+            "pierce": 1,
             "numProjectiles": 8
         },
         "topUpgrades": [
@@ -256,6 +257,7 @@
         "attack": {
             "name": "bullet",
             "cooldown": 1.59,
+            "pierce": 1,
             "damage": { "base": 2 }
         },
         "topUpgrades": [
@@ -365,7 +367,8 @@
         "cost": 850,
         "attack": {
             "name": "dart",
-            "cooldown": 0.2
+            "cooldown": 0.2,
+            "pierce": 1
         }
     },
     "Wizard Monkey": {
