@@ -3,18 +3,18 @@
 #define UPGRADE
 #include<nlohmann/json.hpp>
 #include "damage.h"
-#include "attackbuff.h"
+#include "attacksbuff.h"
 using json = nlohmann::json;
 class Upgrade {
 	std::string name;
 	int cost;
-	AttackBuff attackBuff;
+	AttacksBuff attacksBuff;
 public:
 	Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 		int damageIncrease, int projectileIncrease);
 	Upgrade(json upgradeJson);
 	std::string getName();
 	int getCost();
-	AttackBuff getBuff();
+	AttacksBuff getBuff();
 };
 #endif // UPGRADE

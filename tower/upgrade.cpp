@@ -2,9 +2,9 @@
 
 Upgrade::Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 	int damageIncrease, int projectileIncrease) : cost(cost), 
-	attackBuff(pierceIncrease, cooldownDecrease, damageIncrease, projectileIncrease) {}
+	attacksBuff(AttackBuff(pierceIncrease, cooldownDecrease, damageIncrease, projectileIncrease)) {}
 
-Upgrade::Upgrade(json upgradeJson) : attackBuff(upgradeJson) {
+Upgrade::Upgrade(json upgradeJson) : attacksBuff(upgradeJson) {
 	name = upgradeJson.at("name");
 	cost = upgradeJson.at("cost");
 }
@@ -17,6 +17,6 @@ int Upgrade::getCost() {
 	return cost;
 }
 
-AttackBuff Upgrade::getBuff() {
-	return attackBuff;
+AttacksBuff Upgrade::getBuff() {
+	return attacksBuff;
 }
