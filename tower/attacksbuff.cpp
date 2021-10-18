@@ -8,7 +8,9 @@ AttackList AttacksBuff::buff(AttackList attacks) {
 	return attacks.improve(attackBuff);
 }
 
-std::ostream& AttacksBuff::operator<<(std::ostream& os) {
+
+std::ostream& operator<<(std::ostream& os, const AttacksBuff& attacksBuff) {
+	AttackBuff attackBuff = attacksBuff.attackBuff;
 	if (attackBuff.isCooldownDecreased()) {
 		os << attackBuff.getCooldownDecrease() << "s" << std::endl;
 	}

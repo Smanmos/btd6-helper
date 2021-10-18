@@ -9,6 +9,6 @@ public:
 	AttacksBuff(AttackBuff);
 	AttacksBuff(json);
 	AttackList buff(AttackList);
-	std::ostream& operator<<(std::ostream&);
+	friend std::ostream& operator<<(std::ostream&, const AttacksBuff&);
 };
 #endif // !ATTACKS_BUFF
