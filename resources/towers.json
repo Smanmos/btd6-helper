@@ -293,7 +293,32 @@
         "attack": {
             "cooldown": 0.75,
             "pierce": 2
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Longer Range",
+                "cost": 100,
+                "rangeIncrease": 10
+            },
+            {
+                "name": "Advanced Intel",
+                "cost": 500
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Barbed Darts",
+                "cost": 450,
+                "pierceIncrease": 3
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Twin Guns",
+                "cost": 450,
+                "cooldownDecrease": 0.5
+            }
+        ]
     },
     "Monkey Buccaneer": {
         "cost": 500,
