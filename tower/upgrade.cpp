@@ -1,23 +1,12 @@
 #include "upgrade.h"
 
 Upgrade::Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
-	int damageIncrease, int projectileIncrease) {
-	this->cost = cost;
-	this->pierceIncrease = pierceIncrease;
-	this->cooldownDecrease = cooldownDecrease;
-	this->damageIncrease = damageIncrease;
-	this->projectileIncrease = projectileIncrease;
-}
+	int damageIncrease, int projectileIncrease) : cost(cost), 
+	attackBuff(pierceIncrease, cooldownDecrease, damageIncrease, projectileIncrease) {}
 
-Upgrade::Upgrade(json upgradeJson) {
+Upgrade::Upgrade(json upgradeJson) : attackBuff(upgradeJson) {
 	name = upgradeJson.at("name");
 	cost = upgradeJson.at("cost");
-	pierceIncrease = upgradeJson.value("pierceIncrease", 0);
-	cooldownDecrease = upgradeJson.value("cooldownDecrease", 1.0);
-	if (upgradeJson.contains("damageIncrease")) {
-		damageIncrease = upgradeJson.at("damageIncrease");
-	}
-	projectileIncrease = upgradeJson.value("projectileIncrease", 0);
 }
 
 Upgrade Upgrade::ofPierceUpgrade(int cost, int pierceIncrease) {
@@ -45,33 +34,33 @@ int Upgrade::getCost() {
 }
 
 bool Upgrade::isPierceIncreased() {
-	return pierceIncrease != 0;
+	return attackBuff.isPierceIncreased();
 }
 
 int Upgrade::getPierceIncrease() {
-	return pierceIncrease;
+	return attackBuff.getPierceIncrease();
 }
 
 bool Upgrade::isCooldownDecreased() {
-	return cooldownDecrease != 1.0;
+	return attackBuff.isCooldownDecreased();
 }
 
 double Upgrade::getCooldownDecrease() {
-	return cooldownDecrease;
+	return attackBuff.getCooldownDecrease();
 }
 
 bool Upgrade::isDamageIncreased() {
-	return damageIncrease.isNonzero();
+	return attackBuff.isDamageIncreased();
 }
 
 Damage Upgrade::getDamageIncrease() {
-	return damageIncrease;
+	return attackBuff.getDamageIncrease();
 }
 
 bool Upgrade::isProjectileIncreased() {
-	return projectileIncrease != 0;
+	return attackBuff.isProjectileIncreased();
 }
 
 int Upgrade::getProjectileIncrease() {
-	return projectileIncrease;
+	return attackBuff.getProjectileIncrease();
 }
