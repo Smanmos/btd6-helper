@@ -106,6 +106,7 @@
     <ClCompile Include="tower\attackbuff.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
     <ClCompile Include="tower\attacklist.cpp" />
+    <ClCompile Include="tower\attacksbuff.cpp" />
     <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
     <ClCompile Include="tower\tower.cpp" />
@@ -125,7 +126,6 @@
     <ClInclude Include="tower\difficulty.h" />
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
-    <ClInclude Include="tower\towers.h" />
     <ClInclude Include="tower\upgrade.h" />
     <ClInclude Include="tower\upgradepattern.h" />
   </ItemGroup>

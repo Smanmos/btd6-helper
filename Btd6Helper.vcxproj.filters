@@ -54,6 +54,9 @@
     <ClCompile Include="tower\attackbuff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tower\attacksbuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
@@ -69,9 +72,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower\tower.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tower\towers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower\towerinstance.h">
