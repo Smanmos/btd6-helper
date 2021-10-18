@@ -102,6 +102,7 @@
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="tower\attack.cpp" />
+    <ClCompile Include="tower\attackbuff.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
     <ClCompile Include="tower\attacklist.cpp" />
     <ClCompile Include="tower\damage.cpp" />
@@ -114,8 +115,10 @@
   <ItemGroup>
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\attack.h" />
+    <ClInclude Include="tower\attackbuff.h" />
     <ClInclude Include="tower\attackbuilder.h" />
     <ClInclude Include="tower\attacklist.h" />
+    <ClInclude Include="tower\attacksbuff.h" />
     <ClInclude Include="tower\buff.h" />
     <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
