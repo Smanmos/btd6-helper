@@ -8,6 +8,7 @@ class AttackList {
 public:
 	AttackList();
 	AttackList(Attack);
+	AttackList(std::vector<Attack>);
 	AttackList(AttackList&);
 	double getTotalDps();
 	AttackList improve(Upgrade);
