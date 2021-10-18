@@ -48,6 +48,9 @@
     <ClCompile Include="tower\upgradepattern.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tower\attacklist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower\upgradepattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tower\attacklist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,10 +2,10 @@
 #include <sstream>
 
 Tower::Tower(std::string name, int cost, Attack attack) :
-	name(name), cost(cost), attack(attack) {}
+	name(name), cost(cost), attacks(attack) {}
 
 Tower::Tower(std::string name, json towerJson) :
-		name(name), cost(towerJson.at("cost").get<int>()), attack(Attack(towerJson.at("attack"))) {
+		name(name), cost(towerJson.at("cost").get<int>()), attacks(Attack(towerJson.at("attack"))) {
 	json topUpgradesJson = towerJson.value("topUpgrades", json::array());
 	for (auto topUpgrade = topUpgradesJson.begin(); topUpgrade != topUpgradesJson.end(); ++topUpgrade) {
 		topUpgrades.push_back(Upgrade(*topUpgrade));
@@ -21,7 +21,7 @@ Tower::Tower(std::string name, json towerJson) :
 }
 
 double Tower::getDamagePerSecond() {
-	return attack.getDamagePerSecond();
+	return attacks.getTotalDps();
 }
 
 double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
@@ -30,21 +30,21 @@ double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
 		|| upgradePattern.bot > botUpgrades.size()) {
 		throw std::invalid_argument(name + "does not have that many upgrades");
 	}
-	Attack upgradedAttack = attack;
+	AttackList upgradedAttacks = attacks;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i]);
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttack = upgradedAttack.improve(midUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i]);
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i]);
 	}
-	return upgradedAttack.getDamagePerSecond();
+	return upgradedAttacks.getTotalDps();
 }
 
 double Tower::getSingleTargetDps() {
-	return attack.getBaseDamage() * attack.getNumProjectiles() / attack.getCooldown();
+	return 0;
 }
 
 int Tower::getCost() {
@@ -121,10 +121,7 @@ std::string Tower::getBotUpgradeStats() {
 std::string Tower::getStats() {
 	std::ostringstream statStream = std::ostringstream();
 	statStream << "Cost: " << cost << std::endl;
-	statStream << "Cooldown: " << attack.getCooldown() << std::endl;
-	statStream << "Pierce: " << attack.getPierce() << std::endl;
-	statStream << "Damage: " << attack.getDamage() << std::endl;
-	statStream << "Projectiles: " << attack.getNumProjectiles() << std::endl;
+	attacks.streamStats(statStream);
 	statStream << getTopUpgradeStats();
 	statStream << getMidUpgradeStats();
 	statStream << getBotUpgradeStats();
@@ -138,24 +135,21 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 		return name + " does not have that many upgrades\n";
 	}
 	std::ostringstream statStream = std::ostringstream();
-	Attack upgradedAttack = attack;
+	AttackList upgradedAttacks = attacks;
 	int totalCost = cost;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttack = upgradedAttack.improve(topUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(topUpgrades[i]);
 		totalCost += topUpgrades[i].getCost();
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttack = upgradedAttack.improve(midUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(midUpgrades[i]);
 		totalCost += midUpgrades[i].getCost();
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttack = upgradedAttack.improve(botUpgrades[i]);
+		upgradedAttacks = upgradedAttacks.improve(botUpgrades[i]);
 		totalCost += botUpgrades[i].getCost();
 	}
 	statStream << "Cost: " << totalCost << std::endl;
-	statStream << "Cooldown: " << upgradedAttack.getCooldown() << std::endl;
-	statStream << "Pierce: " << upgradedAttack.getPierce() << std::endl;
-	statStream << "Damage: " << upgradedAttack.getDamage() << std::endl;
-	statStream << "Projectiles: " << upgradedAttack.getNumProjectiles() << std::endl;
+	upgradedAttacks.streamStats(statStream);
 	return statStream.str();
 }

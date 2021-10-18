@@ -22,6 +22,7 @@ public:
 	int getMoabDamage();
 	int getNumProjectiles();
 	double getDamagePerSecond();
+	std::ostream& streamStats(std::ostream&);
 	Attack improve(Upgrade);
 	friend class AttackBuilder;
 };

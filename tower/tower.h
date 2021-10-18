@@ -4,7 +4,7 @@
 #include <vector>
 #include <nlohmann/json.hpp>
 #include "difficulty.h"
-#include "attack.h"
+#include "attacklist.h"
 #include "upgrade.h"
 #include "upgradepattern.h"
 using json = nlohmann::json;
@@ -14,7 +14,7 @@ class Tower {
 private:
 	std::string name;
 	int cost;
-	Attack attack;
+	AttackList attacks;
 	std::vector<Upgrade> topUpgrades;
 	std::vector<Upgrade> midUpgrades;
 	std::vector<Upgrade> botUpgrades;

@@ -104,6 +104,7 @@
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="tower\attack.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
+    <ClCompile Include="tower\attacklist.cpp" />
     <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
     <ClCompile Include="tower\tower.cpp" />
@@ -115,6 +116,7 @@
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\attack.h" />
     <ClInclude Include="tower\attackbuilder.h" />
+    <ClInclude Include="tower\attacklist.h" />
     <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
     <ClInclude Include="tower\tower.h" />
