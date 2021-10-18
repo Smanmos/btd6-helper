@@ -13,20 +13,8 @@ public:
 	Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 		int damageIncrease, int projectileIncrease);
 	Upgrade(json upgradeJson);
-	static Upgrade ofPierceUpgrade(int cost, int pierceIncrease);
-	static Upgrade ofCooldownUpgrade(int cost, double cooldownDecrease);
-	static Upgrade ofDamageUpgrade(int cost, int damageIncrease);
-	static Upgrade ofProjectileUpgrade(int cost, int projectileIncrease);
 	std::string getName();
 	int getCost();
-	bool isPierceIncreased();
-	int getPierceIncrease();
-	bool isCooldownDecreased();
-	double getCooldownDecrease();
-	bool isDamageIncreased();
-	Damage getDamageIncrease();
-	bool isProjectileIncreased();
-	int getProjectileIncrease();
 	AttackBuff getBuff();
 };
 #endif // UPGRADE
