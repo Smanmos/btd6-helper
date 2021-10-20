@@ -4,7 +4,7 @@
 
 Buff* createBuff(json buffJson) {
 	if (buffJson.contains("buffAttacks")) {
-		return new AttacksBuff(buffJson.at("json"));
+		return new AttacksBuff(buffJson.at("buffAttacks"));
 	}
 	else if (buffJson.contains("addAttack")) {
 		return new AddAttack(buffJson.at("addAttack"));

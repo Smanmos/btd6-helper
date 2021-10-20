@@ -1,12 +1,6 @@
 #include "upgrade.h"
 
-Upgrade::Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
-	int damageIncrease, int projectileIncrease) : cost(cost) {
-	internalBuff = new AttacksBuff(
-		AttackBuff(pierceIncrease, cooldownDecrease, damageIncrease, projectileIncrease));
-}
-
-Upgrade::Upgrade(json upgradeJson) : internalBuff(new AttacksBuff(AttackBuff(upgradeJson))) {
+Upgrade::Upgrade(json upgradeJson) : internalBuff(createBuff(upgradeJson)) {
 	name = upgradeJson.at("name");
 	cost = upgradeJson.at("cost");
 }

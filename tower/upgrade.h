@@ -10,8 +10,6 @@ class Upgrade {
 	int cost;
 	Buff* internalBuff;
 public:
-	Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
-		int damageIncrease, int projectileIncrease);
 	Upgrade(json upgradeJson);
 	std::string getName();
 	int getCost();
