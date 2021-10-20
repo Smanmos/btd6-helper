@@ -8,13 +8,13 @@ using json = nlohmann::json;
 class Upgrade {
 	std::string name;
 	int cost;
-	AttacksBuff attacksBuff;
+	Buff* internalBuff;
 public:
 	Upgrade(int cost, int pierceIncrease, double cooldownDecrease,
 		int damageIncrease, int projectileIncrease);
 	Upgrade(json upgradeJson);
 	std::string getName();
 	int getCost();
-	AttacksBuff getBuff();
+	Buff* getBuff();
 };
 #endif // UPGRADE
