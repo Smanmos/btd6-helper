@@ -5,12 +5,12 @@
 #include <vector>
 class AttackList {
 	std::vector<Attack> attacks;
-	void add(Attack);
 public:
 	AttackList();
 	AttackList(Attack);
 	AttackList(std::vector<Attack>);
 	AttackList(AttackList&);
+	void add(Attack);
 	double getTotalDps();
 	std::ostream& streamStats(std::ostream&);
 	AttackList improve(AttackBuff);
