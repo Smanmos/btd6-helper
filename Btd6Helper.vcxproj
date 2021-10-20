@@ -102,6 +102,7 @@
   <ItemGroup>
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
+    <ClCompile Include="tower\addattack.cpp" />
     <ClCompile Include="tower\attack.cpp" />
     <ClCompile Include="tower\attackbuff.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />

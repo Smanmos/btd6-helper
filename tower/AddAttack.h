@@ -3,7 +3,7 @@
 #include "buff.h"
 class AddAttack : public Buff {
 	Attack attackToAdd;
-	void printToOstram(std::ostream&);
+	void printToOstream(std::ostream&);
 public:
 	AddAttack(Attack);
 	AddAttack(json);
