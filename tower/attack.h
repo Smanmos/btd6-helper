@@ -13,7 +13,7 @@ class Attack {
 	int numProjectiles;
 public:
 	Attack();
-	Attack(double, int, Damage, int);
+	Attack(std::string, double, int, Damage, int);
 	Attack(json);
 	std::string getName();
 	double getCooldown();

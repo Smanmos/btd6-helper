@@ -7,8 +7,8 @@ Attack::Attack() {
 	numProjectiles = 1;
 }
 
-Attack::Attack(double cooldown, int pierce, Damage damage, int numProjectiles) :
-	cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
+Attack::Attack(std::string name, double cooldown, int pierce, Damage damage, int numProjectiles) :
+	name(name), cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
 	name = attackJson.at("name");
@@ -72,7 +72,8 @@ std::ostream& Attack::streamStats(std::ostream& os) {
 }
 
 Attack Attack::improve(AttackBuff attackBuff) {
-	return Attack(this->cooldown * attackBuff.getCooldownDecrease(),
+	return Attack(this->name,
+		this->cooldown * attackBuff.getCooldownDecrease(),
 		this->pierce + attackBuff.getPierceIncrease(),
 		this->damage + attackBuff.getDamageIncrease(),
 		this->numProjectiles + attackBuff.getProjectileIncrease());

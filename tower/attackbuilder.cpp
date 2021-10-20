@@ -29,6 +29,6 @@ Attack AttackBuilder::build() {
 	if (!isCooldownSet) {
 		throw std::invalid_argument("Cooldown must be set");
 	}
-	return Attack(cd, p, d, j);
+	return Attack("", cd, p, d, j);
 }
 
