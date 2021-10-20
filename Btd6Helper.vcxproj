@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
+    <ClInclude Include="tower\AddAttack.h" />
     <ClInclude Include="tower\attack.h" />
     <ClInclude Include="tower\attackbuff.h" />
     <ClInclude Include="tower\attackbuilder.h" />
