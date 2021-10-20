@@ -10,4 +10,6 @@ public:
 		return os;
 	}
 };
+
+Buff* createBuff(json);
 #endif // !BUFF
