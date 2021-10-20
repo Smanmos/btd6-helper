@@ -98,7 +98,7 @@
     <ClInclude Include="tower\attackbuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tower\AddAttack.h">
+    <ClInclude Include="tower\addattack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
