@@ -49,7 +49,7 @@
             {
                 "name": "Crossbow",
                 "cost": 625,
-                "buffAttacks" {
+                "buffAttacks": {
                     "rangeIncrease": 8,
                     "pierceIncrease": 1,
                     "damageIncrease": { "base": 2 }
