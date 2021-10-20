@@ -5,10 +5,10 @@
 using json = nlohmann::json;
 class AttacksBuff : public Buff {
 	AttackBuff attackBuff;
+	void printToOstream(std::ostream&);
 public:
 	AttacksBuff(AttackBuff);
 	AttacksBuff(json);
 	AttackList buff(AttackList);
-	friend std::ostream& operator<<(std::ostream&, const AttacksBuff&);
 };
 #endif // !ATTACKS_BUFF

@@ -8,9 +8,8 @@ AttackList AttacksBuff::buff(AttackList attacks) {
 	return attacks.improve(attackBuff);
 }
 
-
-std::ostream& operator<<(std::ostream& os, const AttacksBuff& attacksBuff) {
-	AttackBuff attackBuff = attacksBuff.attackBuff;
+void AttacksBuff::printToOstream(std::ostream& os) {
+	AttackBuff attackBuff = this->attackBuff;
 	if (attackBuff.isCooldownDecreased()) {
 		os << attackBuff.getCooldownDecrease() << "s" << std::endl;
 	}
@@ -23,5 +22,4 @@ std::ostream& operator<<(std::ostream& os, const AttacksBuff& attacksBuff) {
 	if (attackBuff.isProjectileIncreased()) {
 		os << "+" << attackBuff.getProjectileIncrease() << "j" << std::endl;
 	}
-	return os;
 }

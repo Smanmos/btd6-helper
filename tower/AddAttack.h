@@ -3,10 +3,10 @@
 #include "buff.h"
 class AddAttack : public Buff {
 	Attack attackToAdd;
+	void printToOstram(std::ostream&);
 public:
 	AddAttack(Attack);
 	AddAttack(json);
 	AttackList buff(AttackList);
-	friend std::ostream& operator<<(std::ostream&, const AddAttack&);
 };
 #endif // !ADD_ATTACK
