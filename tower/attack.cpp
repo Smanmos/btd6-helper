@@ -23,7 +23,7 @@ Attack::Attack(json attackJson) {
 	numProjectiles = attackJson.value("numProjectiles", 1);
 }
 
-std::string getName() {
+std::string Attack::getName() {
 	return name;
 }
 
