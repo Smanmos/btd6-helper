@@ -11,6 +11,7 @@ Attack::Attack(double cooldown, int pierce, Damage damage, int numProjectiles) :
 	cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
+	name = attackJson.at("name");
 	cooldown = attackJson.at("cooldown").get<double>();
 	pierce = attackJson.value("pierce", 1);
 	if (attackJson.contains("damage")) {
@@ -20,6 +21,10 @@ Attack::Attack(json attackJson) {
 		damage = Damage(1);
 	}
 	numProjectiles = attackJson.value("numProjectiles", 1);
+}
+
+std::string getName() {
+	return name;
 }
 
 double Attack::getCooldown() {
@@ -55,6 +60,7 @@ double Attack::getDamagePerSecond() {
 }
 
 std::ostream& Attack::streamStats(std::ostream& os) {
+	os << name << ": ";
 	os << cooldown << "s";
 	os << ", " << pierce << "p";
 	os << ", " << damage;
