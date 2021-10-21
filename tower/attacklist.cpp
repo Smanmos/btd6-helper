@@ -34,3 +34,16 @@ AttackList AttackList::improve(AttackBuff attackBuff) {
 	}
 	return AttackList(upgradedAttacks);
 }
+
+AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> targets) {
+	std::vector<Attack> upgradedAttacks;
+	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
+		if (std::find(targets.begin(), targets.end(), attack->getName()) != targets.end()) {
+			upgradedAttacks.push_back(attack->improve(attackBuff));
+		}
+		else {
+			upgradedAttacks.push_back(*attack);
+		}
+	}
+	return AttackList(upgradedAttacks);
+}

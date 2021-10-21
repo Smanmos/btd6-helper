@@ -14,5 +14,6 @@ public:
 	double getTotalDps();
 	std::ostream& streamStats(std::ostream&);
 	AttackList improve(AttackBuff);
+	AttackList improve(AttackBuff, std::vector<std::string>);
 };
 #endif // !ATTACK_LIST

@@ -15,7 +15,12 @@ AttacksBuff::AttacksBuff(json buffJson) : attackBuff(buffJson) {
 }
 
 AttackList AttacksBuff::buff(AttackList attacks) {
-	return attacks.improve(attackBuff);
+	if (targets == nullptr) {
+		return attacks.improve(attackBuff);
+	}
+	else {
+		return attacks.improve(attackBuff, *targets);
+	}
 }
 
 void AttacksBuff::printToOstream(std::ostream& os) {
