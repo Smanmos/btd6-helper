@@ -5,6 +5,7 @@
 using json = nlohmann::json;
 class AttacksBuff : public Buff {
 	AttackBuff attackBuff;
+	std::vector<std::string>* targets;
 	void printToOstream(std::ostream&);
 public:
 	AttacksBuff(AttackBuff);
