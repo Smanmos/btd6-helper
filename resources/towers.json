@@ -370,7 +370,12 @@
             {
                 "name": "Grape Shot",
                 "cost": 550,
-                "numProjectiles": 10
+                "addAttack": {
+                    "name": "grape",
+                    "cooldown": 1.3,
+                    "pierce": 1,
+                    "numProjectiles": 10
+                }
             }
         ]
     },
