@@ -365,7 +365,14 @@
             "cooldown": 1.0,
             "pierce": 4,
             "numProjectiles": 2
-        }
+        },
+        "midUpgrades": [
+            {
+                "name": "Grape Shot",
+                "cost": 550,
+                "numProjectiles": 10
+            }
+        ]
     },
     "Monkey Ace": {
         "cost": 800,
