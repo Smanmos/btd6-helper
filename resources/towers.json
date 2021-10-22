@@ -366,6 +366,21 @@
             "pierce": 4,
             "numProjectiles": 2
         },
+        "topUpgrades": [
+            {
+                "name": "Faster Shooting",
+                "cost": 350,
+                "buffAttacks": {"cooldownDecrease": 0.75}
+            },
+            {
+                "name": "Double Shot",
+                "cost": 550,
+                "buffAttacks": {
+                    "targets": ["dart"],
+                    "projectileIncrease": 2
+                }
+            }
+        ],
         "midUpgrades": [
             {
                 "name": "Grape Shot",
