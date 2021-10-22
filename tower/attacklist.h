@@ -5,6 +5,7 @@
 #include <vector>
 class AttackList {
 	std::vector<Attack> attacks;
+	std::vector<AttackBuff> appliedBuffs;
 public:
 	AttackList();
 	AttackList(Attack);
