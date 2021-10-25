@@ -1,0 +1,10 @@
+@startuml
+interface Buff
+
+Upgrade o-- Buff
+AttacksBuff ..|> Buff
+AddAttack ..|> Buff
+AttackList o-- Attack
+Tower "1" *--> "15" Upgrade
+Tower --> AttackList
+@enduml
