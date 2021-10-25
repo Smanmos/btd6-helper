@@ -1,6 +1,11 @@
 @startuml
 interface Buff
 
+Attack : int pierce
+Attack : double cooldown
+Attack : Damage damage
+Attack : int numProjectiles
+
 Upgrade o-- Buff
 AttacksBuff ..|> Buff
 AddAttack ..|> Buff
