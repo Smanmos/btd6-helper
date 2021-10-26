@@ -5,10 +5,14 @@ Damage : int base
 Damage : int ceramic
 Damage : int moab
 
-Attack : int pierce
+Projectile : int pierce
+Projectile : int numSubProjectiles
+Projectile -- Damage 
+Projectile -- "subProjectile" Projectile
+
 Attack : double cooldown
 Attack : int numProjectiles
-Attack -- Damage
+Attack -- Projectile : > uses
 
 AttackBuff : int pierceIncrease
 AttackBuff : double cooldownDecrease
