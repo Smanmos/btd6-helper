@@ -5,7 +5,7 @@ AttacksBuff::AttacksBuff(AttackBuff attackBuff) : attackBuff(attackBuff) {}
 AttacksBuff::AttacksBuff(json buffJson) : attackBuff(buffJson) {
 	if (buffJson.contains("targets")) {
 		targets = new std::vector<std::string>();
-		for (json::iterator target = buffJson.at("target").begin(); target != buffJson.at("target").end(); ++target) {
+		for (json::iterator target = buffJson.at("targets").begin(); target != buffJson.at("targets").end(); ++target) {
 			targets->push_back(target->get<std::string>());
 		}
 	}
