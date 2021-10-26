@@ -102,9 +102,13 @@
   <ItemGroup>
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
+    <ClCompile Include="tower\addattack.cpp" />
     <ClCompile Include="tower\attack.cpp" />
+    <ClCompile Include="tower\attackbuff.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
     <ClCompile Include="tower\attacklist.cpp" />
+    <ClCompile Include="tower\attacksbuff.cpp" />
+    <ClCompile Include="tower\buff.cpp" />
     <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
     <ClCompile Include="tower\tower.cpp" />
@@ -114,14 +118,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
+    <ClInclude Include="tower\addattack.h" />
     <ClInclude Include="tower\attack.h" />
+    <ClInclude Include="tower\attackbuff.h" />
     <ClInclude Include="tower\attackbuilder.h" />
     <ClInclude Include="tower\attacklist.h" />
+    <ClInclude Include="tower\attacksbuff.h" />
+    <ClInclude Include="tower\buff.h" />
     <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
-    <ClInclude Include="tower\towers.h" />
     <ClInclude Include="tower\upgrade.h" />
     <ClInclude Include="tower\upgradepattern.h" />
   </ItemGroup>
