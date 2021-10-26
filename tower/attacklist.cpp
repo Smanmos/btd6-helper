@@ -13,7 +13,7 @@ void AttackList::add(Attack attack) {
 	for (auto buff = appliedBuffs.begin(); buff != appliedBuffs.end(); ++buff) {
 		upgradedAttack = upgradedAttack.improve(*buff);
 	}
-	attacks.push_back(attack);
+	attacks.push_back(upgradedAttack);
 }
 
 double AttackList::getTotalDps() {
