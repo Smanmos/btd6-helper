@@ -1,10 +1,15 @@
 @startuml
 interface Buff
 
+Damage : int base
+Damage : int ceramic
+Damage : int moab
+
 Attack : int pierce
 Attack : double cooldown
-Attack : Damage damage
 Attack : int numProjectiles
+
+Attack -- Damage
 
 Upgrade o-- Buff
 AttacksBuff ..|> Buff
