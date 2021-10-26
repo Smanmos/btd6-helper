@@ -6,7 +6,8 @@ AttackList::AttackList(Attack attack) : attacks(std::vector<Attack>{attack}) {}
 
 AttackList::AttackList(std::vector<Attack> attackVector) : attacks(attackVector) {}
 
-AttackList::AttackList(AttackList& copy) : attacks(std::vector<Attack>(copy.attacks)) {}
+AttackList::AttackList(AttackList& copy) : 
+	attacks(copy.attacks), appliedBuffs(copy.appliedBuffs){}
 
 void AttackList::add(Attack attack) {
 	Attack upgradedAttack = attack;
