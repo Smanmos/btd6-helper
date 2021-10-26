@@ -10,6 +10,8 @@ Upgrade o-- Buff
 AttacksBuff ..|> Buff
 AddAttack ..|> Buff
 AttackList o-- Attack
-Tower "1" *--> "15" Upgrade
+Tower "1" *--> "5" Upgrade
+Tower "1" *--> "5" Upgrade
+Tower "1" *--> "5" Upgrade
 Tower --> AttackList
 @enduml
