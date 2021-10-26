@@ -10,6 +10,7 @@ public:
 	AttackList();
 	AttackList(Attack);
 	AttackList(std::vector<Attack>);
+	AttackList(std::vector<Attack>, std::vector<AttackBuff>);
 	AttackList(AttackList&);
 	void add(Attack);
 	double getTotalDps();

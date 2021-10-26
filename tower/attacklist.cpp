@@ -6,6 +6,9 @@ AttackList::AttackList(Attack attack) : attacks(std::vector<Attack>{attack}) {}
 
 AttackList::AttackList(std::vector<Attack> attackVector) : attacks(attackVector) {}
 
+AttackList::AttackList(std::vector<Attack> attackVector, std::vector<AttackBuff> buffs) : 
+	attacks(attackVector), appliedBuffs(buffs) {}
+
 AttackList::AttackList(AttackList& copy) : 
 	attacks(copy.attacks), appliedBuffs(copy.appliedBuffs){}
 
@@ -33,16 +36,18 @@ std::ostream& AttackList::streamStats(std::ostream& os) {
 }
 
 AttackList AttackList::improve(AttackBuff attackBuff) {
-	appliedBuffs.push_back(attackBuff);
+	std::vector<AttackBuff> newBuffs = appliedBuffs;
+	newBuffs.push_back(attackBuff);
 	std::vector<Attack> upgradedAttacks;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
 		upgradedAttacks.push_back(attack->improve(attackBuff));
 	}
-	return AttackList(upgradedAttacks);
+	return AttackList(upgradedAttacks, newBuffs);
 }
 
 AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> targets) {
-	appliedBuffs.push_back(attackBuff);
+	std::vector<AttackBuff> newBuffs = appliedBuffs;
+	newBuffs.push_back(attackBuff);
 	std::vector<Attack> upgradedAttacks;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
 		if (std::find(targets.begin(), targets.end(), attack->getName()) != targets.end()) {
@@ -52,5 +57,5 @@ AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> t
 			upgradedAttacks.push_back(*attack);
 		}
 	}
-	return AttackList(upgradedAttacks);
+	return AttackList(upgradedAttacks, newBuffs);
 }
