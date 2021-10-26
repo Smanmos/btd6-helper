@@ -8,11 +8,16 @@ Damage : int moab
 Attack : int pierce
 Attack : double cooldown
 Attack : int numProjectiles
-
 Attack -- Damage
+
+AttackBuff : int pierceIncrease
+AttackBuff : double cooldownDecrease
+AttackBuff : int projectileIncrease
+AttackBuff -- Damage
 
 Upgrade o-- Buff
 AttacksBuff ..|> Buff
+AttacksBuff -- AttackBuff
 AddAttack ..|> Buff
 AttackList o-- Attack
 Tower "1" *--> "5" Upgrade
