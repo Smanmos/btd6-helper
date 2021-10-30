@@ -347,14 +347,14 @@
             {
                 "name": "Barbed Darts",
                 "cost": 450,
-                "buffs": ["buffAttacks", {"pierceIncrease": 3}]
+                "buffs": [["buffAttacks", {"pierceIncrease": 3}]]
             }
         ],
         "botUpgrades": [
             {
                 "name": "Twin Guns",
                 "cost": 450,
-                "buffs": ["buffAttacks", {"cooldownDecrease": 0.5}]
+                "buffs": [["buffAttacks", {"cooldownDecrease": 0.5}]]
             }
         ]
     },
