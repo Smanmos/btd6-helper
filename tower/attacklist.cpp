@@ -9,7 +9,9 @@ AttackList::AttackList(std::vector<Attack> attackVector) :
 
 AttackList::AttackList(std::vector<Attack> attackVector, 
 	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > buffs) :
-	attacks(attackVector), appliedBuffs(buffs) {}
+	attacks(attackVector), appliedBuffs(buffs) {
+	;
+}
 
 AttackList::AttackList(AttackList& copy) : 
 	attacks(copy.attacks), appliedBuffs(copy.appliedBuffs){}
@@ -54,7 +56,8 @@ AttackList AttackList::improve(AttackBuff attackBuff) {
 
 AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> targets) {
 	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > newBuffs = appliedBuffs;
-	newBuffs.push_back(std::pair<AttackBuff, std::vector<std::string>* >(attackBuff, &targets));
+	newBuffs.push_back(std::pair<AttackBuff, std::vector<std::string>* >(attackBuff, 
+		new std::vector<std::string>(targets)));
 	std::vector<Attack> upgradedAttacks;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
 		if (std::find(targets.begin(), targets.end(), attack->getName()) != targets.end()) {
