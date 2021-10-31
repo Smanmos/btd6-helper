@@ -5,12 +5,12 @@
 #include <vector>
 class AttackList {
 	std::vector<Attack> attacks;
-	std::vector<AttackBuff> appliedBuffs;
+	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > appliedBuffs;
 public:
 	AttackList();
 	AttackList(Attack);
 	AttackList(std::vector<Attack>);
-	AttackList(std::vector<Attack>, std::vector<AttackBuff>);
+	AttackList(std::vector<Attack>, std::vector<std::pair<AttackBuff, std::vector<std::string>* > >);
 	AttackList(AttackList&);
 	void add(Attack);
 	double getTotalDps();
