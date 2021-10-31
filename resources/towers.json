@@ -379,6 +379,14 @@
                     "targets": ["dart"],
                     "projectileIncrease": 2
                 }]]
+            },
+            {
+                "name": "Destroyer",
+                "cost": 2950,
+                "buffs": [
+                    ["buffAttacks", {"targets": ["dart"], "cooldownDecrease": 0.2}],
+                    ["buffAttacks", {"targets": ["grape"], "cooldownDecrease": 0.4}]
+                ]
             }
         ],
         "midUpgrades": [
