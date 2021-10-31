@@ -148,18 +148,21 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 	AttackList upgradedAttacks = attacks;
 	int totalCost = cost;
 	for (int i = 0; i < upgradePattern.top; i++) {
+		totalCost += topUpgrades[i].getCost();
 		std::vector<Buff*> topBuffs = topUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator topBuff = topBuffs.begin(); topBuff != topBuffs.end(); ++topBuff) {
 			upgradedAttacks = (*topBuff)->buff(upgradedAttacks);
 		}
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
+		totalCost += midUpgrades[i].getCost();
 		std::vector<Buff*> midBuffs = midUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator midBuff = midBuffs.begin(); midBuff != midBuffs.end(); ++midBuff) {
 			upgradedAttacks = (*midBuff)->buff(upgradedAttacks);
 		}
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
+		totalCost += botUpgrades[i].getCost();
 		std::vector<Buff*> botBuffs = botUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator botBuff = botBuffs.begin(); botBuff != botBuffs.end(); ++botBuff) {
 			upgradedAttacks = (*botBuff)->buff(upgradedAttacks);
