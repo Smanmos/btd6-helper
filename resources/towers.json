@@ -10,12 +10,34 @@
             {
                 "name": "Sharp Shots",
                 "cost": 140,
-                "buffs": [["buffAttacks", { "pierceIncrease": 1 }]]
+                "buffs": [["buffAttacks", {"targets": ["dart"], "pierceIncrease": 1 }]]
             },
             {
                 "name": "Razor Sharp Shots",
                 "cost": 220,
-                "buffs": [["buffAttacks", {"pierceIncrease": 2}]]
+                "buffs": [["buffAttacks", {"targets": ["dart"], "pierceIncrease": 2}]]
+            },
+            {
+                "name": "Spike-o-pult",
+                "cost": 300,
+                "buffs": [["replaceAttack", {
+                               "target": "dart",
+                               "newAttack": {
+                                   "name": "juggernaut",
+                                   "cooldown": 1.15,
+                                   "pierce": 22,
+                                   "damage": {"base": 1, "ceramic": 1}
+                               }
+                           }]]
+            },
+            {
+                "name": "Juggernaut",
+                "cost": 1800,
+                "buffs": [["buffAttacks", {
+                               "damageIncrease": {"base": 1, "ceramic": 1},
+                               "pierceIncrease": 28,
+                               "cooldownDecrease": 0.87
+                           }]]
             }
         ],
         "midUpgrades": [
