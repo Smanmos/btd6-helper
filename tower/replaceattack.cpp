@@ -8,6 +8,12 @@ ReplaceAttack::ReplaceAttack(json replaceAttackJson) {
 	newAttack = Attack(replaceAttackJson.at("newAttack"));
 }
 
+AttackList ReplaceAttack::buff(AttackList attacks) {
+	AttackList newAttacks = attacks;
+	newAttacks.replace(attackToReplace, newAttack);
+	return newAttacks;
+}
+
 void ReplaceAttack::printToOstream(std::ostream& os) {
 	os << attackToReplace << " replaced with " << newAttack.getName() << ":" << std::endl;
 	newAttack.streamStats(os);

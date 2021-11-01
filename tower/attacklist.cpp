@@ -29,6 +29,26 @@ void AttackList::add(Attack attack) {
 	attacks.push_back(upgradedAttack);
 }
 
+void AttackList::replace(std::string target, Attack newAttack) {
+	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
+		if (attack->getName() == target) {
+			Attack upgradedAttack = newAttack;
+			for (auto appliedBuff = appliedBuffs.begin(); appliedBuff != appliedBuffs.end(); ++appliedBuff) {
+				AttackBuff buff = appliedBuff->first;
+				std::vector<std::string>* targets = appliedBuff->second;
+				if (targets == nullptr ||
+					std::find(targets->begin(), targets->end(), newAttack.getName()) != targets->end()) {
+					upgradedAttack = upgradedAttack.improve(buff);
+				}
+			}
+			*attack = newAttack;
+			return;
+		}
+	}
+	// Attack to replace wasn't found
+	add(newAttack);
+}
+
 double AttackList::getTotalDps() {
 	double dps = 0;
 	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {

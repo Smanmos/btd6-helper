@@ -9,5 +9,6 @@ class ReplaceAttack : public Buff {
 public:
 	ReplaceAttack(std::string, Attack);
 	ReplaceAttack(json replaceAttackJson);
+	AttackList buff(AttackList);
 };
 #endif

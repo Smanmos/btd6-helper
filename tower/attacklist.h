@@ -13,6 +13,7 @@ public:
 	AttackList(std::vector<Attack>, std::vector<std::pair<AttackBuff, std::vector<std::string>* > >);
 	AttackList(AttackList&);
 	void add(Attack);
+	void replace(std::string, Attack);
 	double getTotalDps();
 	std::ostream& streamStats(std::ostream&);
 	AttackList improve(AttackBuff);
