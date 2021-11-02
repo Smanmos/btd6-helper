@@ -128,6 +128,7 @@
     <ClInclude Include="tower\buff.h" />
     <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
+    <ClInclude Include="tower\projectile.h" />
     <ClInclude Include="tower\replaceattack.h" />
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
