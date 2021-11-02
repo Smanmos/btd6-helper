@@ -12,14 +12,19 @@ To run the program, read the user guide at [docs/UserGuide.md](docs/UserGuide.md
 
 # Currently supported towers
 
-- Dart Monkey (233)
+- Dart Monkey (433)
 - Boomerang Monkey (433)
 - Bomb Shooter (331)
-- Tack Shooter (335)
+- Tack Shooter (535)
 - Sniper Monkey (303)
 - Monkey Sub (000)
-- Monkey Buccaneer (000)
+- Monkey Buccaneer (310)
 - Monkey Ace (000)
 - Heli Pilot (000)
 - Mortar Monkey (000)
 - Dartling Gunner (000)
+- Wizard Monkey (000)
+- Super Monkey (000)
+- Ninja Monkey (000)
+- Alchemist (000)
+- Druid (000)
