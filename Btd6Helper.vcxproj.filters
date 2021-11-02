@@ -123,5 +123,8 @@
     <None Include="docs\btd6classdiagram.puml">
       <Filter>Documentation Files</Filter>
     </None>
+    <None Include="docs\btd6classdiagram.svg">
+      <Filter>Documentation Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
