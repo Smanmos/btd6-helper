@@ -236,21 +236,59 @@
                 "name": "Hot Shots",
                 "cost": 600,
                 "buffs": [["buffAttacks", {"damageIncrease": {"base": 1}}]]
+            },
+            {
+                "name": "Ring of Fire",
+                "cost": 3500,
+                "buffs": [["replaceAttack", {
+                               "target": "tack",
+                               "newAttack": {
+                                   "name": "ring-of-fire",
+                                   "cooldown": 0.5355,
+                                   "pierce": 60,
+                                   "damage": {"base": 3}
+                               }
+                           }]]
+            },
+            {
+                "name": "Inferno Ring",
+                "cost": 45500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["ring-of-fire"],
+                         "cooldownDecrease": 0.1867,
+                         "damageIncrease": {"base": 1, "moab": 6}
+                     }],
+                    ["addAttack", {
+                         "name": "meteor",
+                         "cooldown": 4.0,
+                         "damage": {"base": 700},
+                         "pierce": 1
+                     }]
+                ]
             }
         ],
         "midUpgrades": [
             {
                 "name": "Long Range Tacks",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"rangeIncrease": 4}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "rangeIncrease": 4}]]
             },
             {
                 "name": "Super Range Tacks",
                 "cost": 225,
-                "buffs": [["buffAttacks", {
-                    "rangeIncrease": 4,
-                    "pierceIncrease": 1
-                }]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["tack"],
+                         "rangeIncrease": 4,
+                         "pierceIncrease": 1
+                    }],
+                    ["buffAttacks", {
+                         "targets": ["ring-of-fire"],
+                         "rangeIncrease": 4,
+                         "pierceIncrease": 10
+                    }]
+                ]
             },
             {
                 "name": "Blade Shooter",
@@ -265,12 +303,18 @@
             {
                 "name": "More Tacks",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"projectileIncrease": 2}]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["tack"], "projectileIncrease": 2}],
+                    ["buffAttacks", {"targets": ["ring-of-fire"], "damageIncrease": {"base": 1}}]
+                ]
             },
             {
                 "name": "Even More Tacks",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"projectileIncrease": 2}]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["tack"], "projectileIncrease": 2}],
+                    ["buffAttacks", {"targets": ["ring-of-fire"], "damageIncrease": {"base": 1}}]
+                ]
             },
             {
                 "name": "Tack Sprayer",
