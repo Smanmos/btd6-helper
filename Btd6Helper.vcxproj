@@ -136,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="Btd6Helper.cd" />
+    <None Include="docs\btd6classdiagram.puml" />
+    <None Include="docs\btd6classdiagram.svg" />
     <None Include="docs\UserGuide.md" />
     <None Include="README.md" />
     <None Include="resources\towers.json" />

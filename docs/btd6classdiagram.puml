@@ -1,0 +1,31 @@
+@startuml
+interface Buff
+
+Damage : int base
+Damage : int ceramic
+Damage : int moab
+
+Projectile : int pierce
+Projectile : int numSubProjectiles
+Projectile -- Damage 
+Projectile -- "subProjectile" Projectile
+
+Attack : double cooldown
+Attack : int numProjectiles
+Attack -- Projectile : > uses
+
+AttackBuff : int pierceIncrease
+AttackBuff : double cooldownDecrease
+AttackBuff : int projectileIncrease
+AttackBuff -- Damage
+
+UpgradePath "1" -- "1..5" Upgrade
+
+Upgrade o-- Buff
+AttacksBuff ..|> Buff
+AttacksBuff -- AttackBuff
+AddAttack ..|> Buff
+AttackList o-- Attack
+Tower "1" *--> "0..3" UpgradePath
+Tower --> AttackList
+@enduml
