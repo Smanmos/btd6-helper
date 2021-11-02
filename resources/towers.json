@@ -360,10 +360,8 @@
         "attack": {
             "name": "bullet",
             "cooldown": 1.59,
-            "buffs": [["buffAttacks", {
-                "pierce": 1,
-                "damage": { "base": 2 }
-            }]]
+            "pierce": 1,
+            "damage": { "base": 2 }
         },
         "topUpgrades": [
             {
