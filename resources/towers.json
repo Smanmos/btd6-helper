@@ -225,17 +225,17 @@
             {
                 "name": "Faster Shooting",
                 "cost": 150,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "cooldownDecrease": 0.75}]]
             },
             {
                 "name": "Even Faster Shooting",
                 "cost": 300,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.6}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "cooldownDecrease": 0.6}]]
             },
             {
                 "name": "Hot Shots",
                 "cost": 600,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 1}}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "damageIncrease": {"base": 1}}]]
             },
             {
                 "name": "Ring of Fire",
@@ -272,7 +272,17 @@
             {
                 "name": "Long Range Tacks",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"targets": ["tack"], "rangeIncrease": 4}]]
+                "buffs": [
+                    ["buffAttacks", {
+                        "targets": ["tack"],
+                        "rangeIncrease": 4
+                     }],
+                    ["buffAttacks", {
+                        "targets": ["ring-of-fire"],
+                        "rangeIncrease": 4,
+                        "pierceIncrease": 10
+                    }]
+                ]
             },
             {
                 "name": "Super Range Tacks",
