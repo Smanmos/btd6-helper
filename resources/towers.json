@@ -501,7 +501,23 @@
             {
                 "name": "Semi-Automatic",
                 "cost": 3500,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.3333}]]
+                "buffs": [
+                    ["buffAttacks", {"cooldownDecrease": 0.3333}],
+                    ["buffAttacks", {
+                         "targets": ["shrapnel"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Full Auto Rifle",
+                "cost": 4250,
+                "buffs": [["buffAttacks", {"cooldownDecrease": 0.5}]]
+            },
+            {
+                "name": "Elite Defender",
+                "cost": 14000,
+                "buffs": [["buffAttacks", {"cooldownDecrease": 0.5}]]
             }
         ]
     },
