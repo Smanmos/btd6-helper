@@ -454,17 +454,30 @@
             {
                 "name": "Full Metal Jacket",
                 "cost": 350,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 2}}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "damageIncrease": {"base": 2}}]]
             },
             {
                 "name": "Large Calibre",
                 "cost": 1500,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 3}}]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["bullet"], "damageIncrease": {"base": 3}}],
+                    ["buffAttacks", {"targets": ["shrapnel"], "damageIncrease": {"base": 2}}]
+                ]
             },
             {
                 "name": "Deadly Precision",
                 "cost": 3000,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 13, "ceramic": 15}}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bullet"], 
+                         "damageIncrease": {"base": 13, "ceramic": 15}}
+                    ], 
+                    ["buffAttacks", {
+                         "targets": ["shrapnel"],
+                         "damageIncrease": {"base": 1},
+                         "pierceIncrease": {"base": 1}
+                     }]
+                ]
             }
         ],
         "midUpgrades": [
