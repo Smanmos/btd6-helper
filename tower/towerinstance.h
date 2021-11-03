@@ -5,9 +5,7 @@ class TowerInstance {
 private:
 	Tower tower;
 	int moneySpent;
-	int topTier;
-	int midTier;
-	int botTier;
+	UpgradePattern upgrades;
 public:
 	TowerInstance(Tower);
 };
