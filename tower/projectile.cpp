@@ -85,14 +85,14 @@ std::ostream& operator<<(std::ostream& os, Projectile& proj) {
 	os << proj.pierce << "p; ";
 	os << proj.damage;
 	if (proj.subProjOnHit != nullptr) {
-		os << std::endl << proj.subProjOnHit->getName() << "on " << proj.name << "hit: ";
+		os << std::endl << proj.subProjOnHit->getName() << " on " << proj.name << " hit: ";
 		os << *proj.subProjOnHit;
 		if (proj.numSubProjOnHit > 1) {
 			os << "; " << proj.numSubProjOnHit << "j";
 		}
 	}
 	if (proj.subProjOnExpire != nullptr) {
-		os << std::endl << proj.subProjOnExpire->getName() << "on " << proj.name << "Expire: ";
+		os << std::endl << proj.subProjOnExpire->getName() << " on " << proj.name << " expire: ";
 		os << *proj.subProjOnExpire;
 		if (proj.numSubProjOnExpire > 1) {
 			os << "; " << proj.numSubProjOnExpire << "j";
