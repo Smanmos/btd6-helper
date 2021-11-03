@@ -601,10 +601,10 @@
             {
                 "name": "Double Shot",
                 "cost": 550,
-                "buffs": [["buffAttacks", {
-                    "targets": ["dart"],
-                    "projectileIncrease": 2
-                }]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["dart"], "projectileIncrease": 2}],
+                    ["buffAttacks", {"targets": ["grape"], "projectileIncrease": 10}]
+                ]
             },
             {
                 "name": "Destroyer",
