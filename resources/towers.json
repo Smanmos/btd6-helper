@@ -273,6 +273,30 @@
                 "name": "Extra Range",
                 "cost": 200,
                 "buffs": [["buffAttacks", {"rangeIncrease": 7}]]
+            },
+            {
+                "name": "Frag Bombs",
+                "cost": 300,
+                "buffs": [["addSubProjOnExpire", {
+                               "target": "bomb",
+                               "subProjectile": {
+                                   "name": "frag",
+                                   "pierce": 1
+                               },
+                               "num": 8
+                           }]]
+            },
+            {
+                "name": "Cluster Bombs",
+                "cost": 800,
+                "buffs": [["addSubProjOnExpire", {
+                               "target": "bomb",
+                               "subProjectile": {
+                                   "name": "cluster",
+                                   "pierce": 10
+                               },
+                               "num": 8
+                           }]]
             }
         ]
     },
