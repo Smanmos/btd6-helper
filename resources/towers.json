@@ -175,6 +175,40 @@
                 "name": "Kylie Boomerang",
                 "cost": 1300,
                 "buffs": [["buffAttacks", {"pierceIncrease": 14}]]
+            },
+            {
+                "name": "MOAB Press",
+                "cost": 2200,
+                "buffs": [["addAttack", {
+                               "name": "moab-press",
+                               "cooldown": 10.0,
+                               "pierce": 200,
+                               "damage": {"base": 1, "moab": 4}
+                           }]]
+            },
+            {
+                "name": "MOAB Domination",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "cooldownDecrease": 0.5,
+                         "damageIncrease": {"base": 10}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["moab-press"],
+                         "damageIncrease": {"moab": 20},
+                         "pierceIncrease": 100,
+                         "cooldownDecrease": 0.5
+                     }],
+                    ["addSubProjOnExpire", {
+                         "target": "moab-press",
+                         "subProjectile": {
+                             "pierce": 40,
+                             "damage": 100
+                         }
+                     }]
+                ]
             }
         ]
     },
