@@ -111,6 +111,7 @@
     <ClCompile Include="tower\buff.cpp" />
     <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
+    <ClCompile Include="tower\projectile.cpp" />
     <ClCompile Include="tower\replaceattack.cpp" />
     <ClCompile Include="tower\tower.cpp" />
     <ClCompile Include="tower\towerinstance.cpp" />

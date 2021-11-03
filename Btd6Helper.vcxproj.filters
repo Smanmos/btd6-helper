@@ -66,6 +66,9 @@
     <ClCompile Include="tower\replaceattack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tower\projectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
