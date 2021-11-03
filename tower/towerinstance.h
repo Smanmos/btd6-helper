@@ -8,5 +8,6 @@ private:
 	UpgradePattern upgrades;
 public:
 	TowerInstance(Tower);
+	TowerInstance(Tower, UpgradePattern);
 };
 #endif // !TOWER_INSTANCE
