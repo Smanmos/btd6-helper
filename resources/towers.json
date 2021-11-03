@@ -593,7 +593,10 @@
             {
                 "name": "Faster Shooting",
                 "cost": 350,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {
+                               "targets": ["dart", "grape"],
+                               "cooldownDecrease": 0.75
+                           }]]
             },
             {
                 "name": "Double Shot",
@@ -622,6 +625,28 @@
                     "pierce": 1,
                     "numProjectiles": 10
                 }]]
+            },
+            {
+                "name": "Hot Shot",
+                "cost": 500,
+                "buffs": []
+            },
+            {
+                "name": "Cannon Ship",
+                "cost": 900,
+                "buffs": [["addAttack", {
+                               "name": "cannon",
+                               "pierce": 28,
+                               "cooldown": 1.2,
+                               "damage": {"base": 1},
+                               "numProjectiles": 2,
+                               "onExpire": {
+                                   "name": "frag",
+                                   "damage": 1,
+                                   "pierce": 1
+                               },
+                               "numSubProjOnExpire": 8
+                           }]]
             }
         ]
     },
