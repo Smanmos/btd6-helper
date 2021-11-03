@@ -14,6 +14,14 @@ Projectile::Projectile(json projJson) {
 	else {
 		damage = Damage(1);
 	}
+	if (projJson.contains("onHit")) {
+		subProjOnHit = new Projectile(projJson.at("onHit"));
+		numSubProjOnHit = projJson.value("numProjOnHit", 1);
+	}
+	if (projJson.contains("onExpire")) {
+		subProjOnExpire = new Projectile(projJson.at("onExpire"));
+		numSubProjOnExpire = projJson.value("numProjOnExpire", 1);
+	}
 }
 
 std::string Projectile::getName() {
@@ -29,11 +37,48 @@ int Projectile::getPierce() {
 }
 
 int Projectile::getTotalDamage() {
-	return damage.getDamage() * pierce;
+	int totalDamage = damage.getDamage() * pierce;
+	if (subProjOnHit != nullptr) {
+		totalDamage += pierce * numSubProjOnHit * subProjOnHit->getTotalDamage();
+	}
+	if (subProjOnExpire != nullptr) {
+		totalDamage += numSubProjOnExpire * subProjOnHit->getTotalDamage();
+	}
+	return totalDamage;
+}
+
+Projectile* Projectile::getProjectileOnHit() {
+	return subProjOnHit;
+}
+
+int Projectile::getNumProjectileOnHit() {
+	return numSubProjOnHit;
+}
+
+Projectile* Projectile::getProjectileOnExpire() {
+	return subProjOnExpire;
+}
+
+int Projectile::getNumProjectileOnExpire() {
+	return numSubProjOnExpire;
 }
 
 std::ostream& operator<<(std::ostream& os, Projectile& proj) {
 	os << proj.pierce << "p; ";
 	os << proj.damage;
+	if (proj.subProjOnHit != nullptr) {
+		os << std::endl << proj.subProjOnHit->getName() << "on " << proj.name << "hit: ";
+		os << *proj.subProjOnHit;
+		if (proj.numSubProjOnHit > 1) {
+			os << "; " << proj.numSubProjOnHit << "j";
+		}
+	}
+	if (proj.subProjOnExpire != nullptr) {
+		os << std::endl << proj.subProjOnExpire->getName() << "on " << proj.name << "Expire: ";
+		os << *proj.subProjOnExpire;
+		if (proj.numSubProjOnExpire > 1) {
+			os << "; " << proj.numSubProjOnExpire << "j";
+		}
+	}
 	return os;
 }

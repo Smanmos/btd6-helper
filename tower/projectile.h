@@ -22,5 +22,9 @@ public:
 	Damage getDamage();
 	int getPierce();
 	int getTotalDamage();
+	Projectile* getProjectileOnHit();
+	int getNumProjectileOnHit();
+	Projectile* getProjectileOnExpire();
+	int getNumProjectileOnExpire();
 };
 #endif // !PROJECTILE
