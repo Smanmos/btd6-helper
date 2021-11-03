@@ -1,28 +1,19 @@
 #include "attack.h"
 
 Attack::Attack() :
-	cooldown(1.0), projectile(1, 1), numProjectiles(1) {}
+	cooldown(1.0), projectile("", 1, 1), numProjectiles(1) {}
 
 Attack::Attack(std::string name, double cooldown, int pierce, Damage damage, int numProjectiles) :
-	name(name), cooldown(cooldown), projectile(damage, pierce), numProjectiles(numProjectiles) {}
+	cooldown(cooldown), projectile(name, damage, pierce), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
-	name = attackJson.at("name");
 	cooldown = attackJson.at("cooldown").get<double>();
-	int pierce = attackJson.value("pierce", 1);
-	Damage damage;
-	if (attackJson.contains("damage")) {
-		damage = Damage(attackJson.at("damage"));
-	}
-	else {
-		damage = Damage(1);
-	}
-	projectile = Projectile(damage, pierce);
+	projectile = Projectile(attackJson);
 	numProjectiles = attackJson.value("numProjectiles", 1);
 }
 
 std::string Attack::getName() {
-	return name;
+	return projectile.getName();
 }
 
 double Attack::getCooldown() {
@@ -58,7 +49,7 @@ double Attack::getDamagePerSecond() {
 }
 
 std::ostream& Attack::streamStats(std::ostream& os) {
-	os << name << ": ";
+	os << projectile.getName() << ": ";
 	os << cooldown << "s; ";
 	os << projectile;
 	if (numProjectiles > 1) {
@@ -69,7 +60,7 @@ std::ostream& Attack::streamStats(std::ostream& os) {
 }
 
 Attack Attack::improve(AttackBuff attackBuff) {
-	return Attack(this->name,
+	return Attack(this->projectile.getName(),
 		this->cooldown * attackBuff.getCooldownDecrease(),
 		this->projectile.getPierce() + attackBuff.getPierceIncrease(),
 		this->projectile.getDamage() + attackBuff.getDamageIncrease(),

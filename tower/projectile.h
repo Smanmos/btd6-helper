@@ -4,6 +4,7 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 class Projectile {
+	std::string name;
 	Damage damage;
 	int pierce;
 	bool pierceExternalBuffable = true;
@@ -14,9 +15,10 @@ class Projectile {
 	int numSubProjOnExpire = 0;
 public:
 	Projectile();
-	Projectile(Damage, int);
+	Projectile(std::string, Damage, int);
 	Projectile(json);
 	friend std::ostream& operator<<(std::ostream& os, Projectile& proj);
+	std::string getName();
 	Damage getDamage();
 	int getPierce();
 	int getTotalDamage();
