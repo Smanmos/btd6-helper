@@ -5,6 +5,7 @@ class TowerInstance {
 private:
 	Tower tower;
 	int moneySpent;
+	AttackList attacks;
 	UpgradePattern upgrades;
 public:
 	TowerInstance(Tower);
