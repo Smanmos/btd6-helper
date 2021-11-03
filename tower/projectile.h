@@ -13,6 +13,7 @@ class Projectile {
 	Projectile* subProjOnExpire = nullptr;
 	int numSubProjOnExpire = 0;
 public:
+	Projectile();
 	Projectile(Damage, int);
 	Projectile(json);
 	friend std::ostream& operator<<(std::ostream& os, Projectile& proj);

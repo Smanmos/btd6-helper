@@ -1,5 +1,7 @@
 #include "projectile.h"
 
+Projectile::Projectile() : Projectile(0, 0) {}
+
 Projectile::Projectile(Damage damage, int pierce) :
 	damage(damage), pierce(pierce) {}
 
