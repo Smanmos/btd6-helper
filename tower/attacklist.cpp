@@ -99,3 +99,13 @@ AttackList AttackList::addSubProjOnHit(std::string target, Projectile subProj, i
 	}
 	return AttackList(newAttacks, appliedBuffs);
 }
+
+AttackList AttackList::addSubProjOnExpire(std::string target, Projectile subProj, int numSubProj) {
+	std::vector<Attack> newAttacks = attacks;
+	for (auto attack = newAttacks.begin(); attack != newAttacks.end(); ++attack) {
+		if (attack->getName() == target) {
+			*attack = attack->addSubProjOnExpire(subProj, numSubProj);
+		}
+	}
+	return AttackList(newAttacks, appliedBuffs);
+}

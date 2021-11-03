@@ -73,3 +73,7 @@ Attack Attack::improve(AttackBuff attackBuff) {
 Attack Attack::addSubProjOnHit(Projectile subProj, int numSubProj) {
 	return Attack(cooldown, projectile.addSubProjOnHit(subProj, numSubProj), numProjectiles);
 }
+
+Attack Attack::addSubProjOnExpire(Projectile subProj, int numSubProj) {
+	return Attack(cooldown, projectile.addSubProjOnExpire(subProj, numSubProj), numProjectiles);
+}

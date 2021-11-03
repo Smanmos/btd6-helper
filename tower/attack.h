@@ -26,6 +26,7 @@ public:
 	std::ostream& streamStats(std::ostream&);
 	Attack improve(AttackBuff);
 	Attack addSubProjOnHit(Projectile, int);
+	Attack addSubProjOnExpire(Projectile, int);
 	friend class AttackBuilder;
 };
 #endif // !ATTACK

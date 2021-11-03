@@ -19,5 +19,6 @@ public:
 	AttackList improve(AttackBuff);
 	AttackList improve(AttackBuff, std::vector<std::string>);
 	AttackList addSubProjOnHit(std::string, Projectile, int);
+	AttackList addSubProjOnExpire(std::string, Projectile, int);
 };
 #endif // !ATTACK_LIST
