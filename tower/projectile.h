@@ -1,6 +1,7 @@
 #ifndef PROJECTILE
 #define PROJECTILE
 #include "damage.h"
+#include "attackbuff.h"
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 class Projectile {
@@ -29,6 +30,7 @@ public:
 	int getNumProjectileOnHit();
 	Projectile* getProjectileOnExpire();
 	int getNumProjectileOnExpire();
+	Projectile improve(AttackBuff);
 	Projectile addSubProjOnHit(Projectile, int);
 	Projectile addSubProjOnExpire(Projectile, int);
 };

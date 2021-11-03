@@ -2,7 +2,6 @@
 #define ATTACK
 #include <nlohmann/json.hpp>
 #include "projectile.h"
-#include "attackbuff.h"
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {

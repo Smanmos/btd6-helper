@@ -63,11 +63,9 @@ std::ostream& Attack::streamStats(std::ostream& os) {
 }
 
 Attack Attack::improve(AttackBuff attackBuff) {
-	return Attack(this->projectile.getName(),
-		this->cooldown * attackBuff.getCooldownDecrease(),
-		this->projectile.getPierce() + attackBuff.getPierceIncrease(),
-		this->projectile.getDamage() + attackBuff.getDamageIncrease(),
-		this->numProjectiles + attackBuff.getProjectileIncrease());
+	return Attack(cooldown * attackBuff.getCooldownDecrease(),
+		projectile.improve(attackBuff),
+		numProjectiles + attackBuff.getProjectileIncrease());
 }
 
 Attack Attack::addSubProjOnHit(Projectile subProj, int numSubProj) {
