@@ -38,6 +38,25 @@
                                "pierceIncrease": 28,
                                "cooldownDecrease": 0.87
                            }]]
+            },
+            {
+                "name": "Ultra Juggernaut",
+                "cost": 15000,
+                "buffs": [["replaceAttack", {
+                               "target": "juggernaut",
+                               "newAttack": {
+                                   "name": "ultra-juggernaut", 
+                                   "cooldown": 1.0,
+                                   "damage": {"base": 5, "ceramic": 8},
+                                   "pierce": 200,
+                                   "onExpire": {
+                                       "name": "sub-juggernaut",
+                                       "damage": {"base": 1, "ceramic": 2},
+                                       "pierce": 100
+                                   },
+                                   "numProjOnExpire": 12
+                               }
+                           }]]
             }
         ],
         "midUpgrades": [
@@ -378,6 +397,26 @@
                 "name": "Deadly Precision",
                 "cost": 3000,
                 "buffs": [["buffAttacks", {"damageIncrease": {"base": 13, "ceramic": 15}}]]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Night Vision Goggles",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Shrapnel Shot",
+                "cost": 450,
+                "buffs": [["addSubProjOnHit", {
+                               "target": "bullet",
+                               "subProjectile": {
+                                   "name": "shrapnel",
+                                   "pierce": 2,
+                                   "damage": {"base": 1}
+                               },
+                               "num": 5
+                           }]]
             }
         ],
         "botUpgrades": [
