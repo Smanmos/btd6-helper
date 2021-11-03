@@ -8,10 +8,10 @@ class Projectile {
 	int pierce;
 	bool pierceExternalBuffable = true;
 	bool damageExternalBuffable = true;
-	bool subProjOnHit = false;
-	bool subProjOnExpire = false;
-	Projectile* subProj = nullptr;
-	int numSubProjs = 0;
+	Projectile* subProjOnHit = nullptr;
+	int numSubProjOnHit = 0;
+	Projectile* subProjOnExpire = nullptr;
+	int numSubProjOnExpire = 0;
 public:
 	Projectile(Damage, int);
 	Projectile(json);
