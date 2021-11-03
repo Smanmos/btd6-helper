@@ -648,6 +648,19 @@
                                "numSubProjOnExpire": 8
                            }]]
             }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range",
+                "cost": 180,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "grape"],
+                         "pierceIncrease": 1
+                     }],
+                    ["buffAttacks", {"rangeIncrease": 11}]
+                ]
+            }
         ]
     },
     "Monkey Ace": {
