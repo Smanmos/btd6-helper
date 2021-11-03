@@ -6,6 +6,9 @@ Attack::Attack() :
 Attack::Attack(std::string name, double cooldown, int pierce, Damage damage, int numProjectiles) :
 	cooldown(cooldown), projectile(name, damage, pierce), numProjectiles(numProjectiles) {}
 
+Attack::Attack(double cooldown, Projectile projectile, int numProjectiles) :
+	cooldown(cooldown), projectile(projectile), numProjectiles(numProjectiles) {}
+
 Attack::Attack(json attackJson) {
 	cooldown = attackJson.at("cooldown").get<double>();
 	projectile = Projectile(attackJson);
@@ -65,4 +68,8 @@ Attack Attack::improve(AttackBuff attackBuff) {
 		this->projectile.getPierce() + attackBuff.getPierceIncrease(),
 		this->projectile.getDamage() + attackBuff.getDamageIncrease(),
 		this->numProjectiles + attackBuff.getProjectileIncrease());
+}
+
+Attack Attack::addSubProjOnHit(Projectile subProj, int numSubProj) {
+	return Attack(cooldown, projectile.addSubProjOnHit(subProj, numSubProj), numProjectiles);
 }

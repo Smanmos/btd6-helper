@@ -12,6 +12,7 @@ class Attack {
 public:
 	Attack();
 	Attack(std::string, double, int, Damage, int);
+	Attack(double, Projectile, int);
 	Attack(json);
 	std::string getName();
 	double getCooldown();
@@ -24,6 +25,7 @@ public:
 	double getDamagePerSecond();
 	std::ostream& streamStats(std::ostream&);
 	Attack improve(AttackBuff);
+	Attack addSubProjOnHit(Projectile, int);
 	friend class AttackBuilder;
 };
 #endif // !ATTACK

@@ -13,6 +13,9 @@ class Projectile {
 	int numSubProjOnHit = 0;
 	Projectile* subProjOnExpire = nullptr;
 	int numSubProjOnExpire = 0;
+	Projectile(std::string name, Damage damage, int pierce, bool pierceExternalBuffable,
+		bool damageExternalBuffable, Projectile* subProjOnHit, int numSubProjOnHit,
+		Projectile* subProjOnExpire, int numSubProjOnExpire);
 public:
 	Projectile();
 	Projectile(std::string, Damage, int);
@@ -26,5 +29,7 @@ public:
 	int getNumProjectileOnHit();
 	Projectile* getProjectileOnExpire();
 	int getNumProjectileOnExpire();
+	Projectile addSubProjOnHit(Projectile, int);
+	Projectile addSubProjOnExpire(Projectile, int);
 };
 #endif // !PROJECTILE
