@@ -1,19 +1,18 @@
 #ifndef ATTACK
 #define ATTACK
 #include <nlohmann/json.hpp>
-#include "damage.h"
+#include "projectile.h"
 #include "attackbuff.h"
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {
-	std::string name;
 	double cooldown;
-	int pierce;
-	Damage damage;
+	Projectile projectile;
 	int numProjectiles;
 public:
 	Attack();
 	Attack(std::string, double, int, Damage, int);
+	Attack(double, Projectile, int);
 	Attack(json);
 	std::string getName();
 	double getCooldown();
@@ -26,6 +25,8 @@ public:
 	double getDamagePerSecond();
 	std::ostream& streamStats(std::ostream&);
 	Attack improve(AttackBuff);
+	Attack addSubProjOnHit(Projectile, int);
+	Attack addSubProjOnExpire(Projectile, int);
 	friend class AttackBuilder;
 };
 #endif // !ATTACK

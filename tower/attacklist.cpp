@@ -89,3 +89,23 @@ AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> t
 	}
 	return AttackList(upgradedAttacks, newBuffs);
 }
+
+AttackList AttackList::addSubProjOnHit(std::string target, Projectile subProj, int numSubProj) {
+	std::vector<Attack> newAttacks = attacks;
+	for (auto attack = newAttacks.begin(); attack != newAttacks.end(); ++attack) {
+		if (attack->getName() == target) {
+			*attack = attack->addSubProjOnHit(subProj, numSubProj);
+		}
+	}
+	return AttackList(newAttacks, appliedBuffs);
+}
+
+AttackList AttackList::addSubProjOnExpire(std::string target, Projectile subProj, int numSubProj) {
+	std::vector<Attack> newAttacks = attacks;
+	for (auto attack = newAttacks.begin(); attack != newAttacks.end(); ++attack) {
+		if (attack->getName() == target) {
+			*attack = attack->addSubProjOnExpire(subProj, numSubProj);
+		}
+	}
+	return AttackList(newAttacks, appliedBuffs);
+}

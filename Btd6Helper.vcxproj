@@ -103,6 +103,8 @@
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="tower\addattack.cpp" />
+    <ClCompile Include="tower\addsubprojonexpire.cpp" />
+    <ClCompile Include="tower\addsubprojonhit.cpp" />
     <ClCompile Include="tower\attack.cpp" />
     <ClCompile Include="tower\attackbuff.cpp" />
     <ClCompile Include="tower\attackbuilder.cpp" />
@@ -111,6 +113,7 @@
     <ClCompile Include="tower\buff.cpp" />
     <ClCompile Include="tower\damage.cpp" />
     <ClCompile Include="tower\difficulty.cpp" />
+    <ClCompile Include="tower\projectile.cpp" />
     <ClCompile Include="tower\replaceattack.cpp" />
     <ClCompile Include="tower\tower.cpp" />
     <ClCompile Include="tower\towerinstance.cpp" />
@@ -120,6 +123,8 @@
   <ItemGroup>
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\addattack.h" />
+    <ClInclude Include="tower\addsubprojonexpire.h" />
+    <ClInclude Include="tower\addsubprojonhit.h" />
     <ClInclude Include="tower\attack.h" />
     <ClInclude Include="tower\attackbuff.h" />
     <ClInclude Include="tower\attackbuilder.h" />
@@ -128,6 +133,7 @@
     <ClInclude Include="tower\buff.h" />
     <ClInclude Include="tower\damage.h" />
     <ClInclude Include="tower\difficulty.h" />
+    <ClInclude Include="tower\projectile.h" />
     <ClInclude Include="tower\replaceattack.h" />
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />

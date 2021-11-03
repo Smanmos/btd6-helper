@@ -1,30 +1,22 @@
 #include "attack.h"
 
-Attack::Attack() {
-	cooldown = 1.0;
-	pierce = 1;
-	damage = Damage(1);
-	numProjectiles = 1;
-}
+Attack::Attack() :
+	cooldown(1.0), projectile("", 1, 1), numProjectiles(1) {}
 
 Attack::Attack(std::string name, double cooldown, int pierce, Damage damage, int numProjectiles) :
-	name(name), cooldown(cooldown), pierce(pierce), damage(damage), numProjectiles(numProjectiles) {}
+	cooldown(cooldown), projectile(name, damage, pierce), numProjectiles(numProjectiles) {}
+
+Attack::Attack(double cooldown, Projectile projectile, int numProjectiles) :
+	cooldown(cooldown), projectile(projectile), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
-	name = attackJson.at("name");
 	cooldown = attackJson.at("cooldown").get<double>();
-	pierce = attackJson.value("pierce", 1);
-	if (attackJson.contains("damage")) {
-		damage = Damage(attackJson.at("damage"));
-	}
-	else {
-		damage = Damage(1);
-	}
+	projectile = Projectile(attackJson);
 	numProjectiles = attackJson.value("numProjectiles", 1);
 }
 
 std::string Attack::getName() {
-	return name;
+	return projectile.getName();
 }
 
 double Attack::getCooldown() {
@@ -32,23 +24,23 @@ double Attack::getCooldown() {
 }
 
 int Attack::getPierce() {
-	return pierce;
+	return projectile.getPierce();
 }
 
 Damage Attack::getDamage() {
-	return damage;
+	return projectile.getDamage();
 }
 
 int Attack::getBaseDamage() {
-	return damage.getDamage();
+	return getDamage().getDamage();
 }
 
 int Attack::getCeramicDamage() {
-	return damage.getCeramicDamage();
+	return getDamage().getCeramicDamage();
 }
 
 int Attack::getMoabDamage() {
-	return damage.getMoabDamage();
+	return getDamage().getMoabDamage();
 }
 
 int Attack::getNumProjectiles() {
@@ -56,25 +48,32 @@ int Attack::getNumProjectiles() {
 }
 
 double Attack::getDamagePerSecond() {
-	return pierce * damage.getDamage() * numProjectiles / cooldown;
+	return projectile.getTotalDamage() * numProjectiles / cooldown;
 }
 
 std::ostream& Attack::streamStats(std::ostream& os) {
-	os << name << ": ";
-	os << cooldown << "s";
-	os << ", " << pierce << "p";
-	os << ", " << damage;
+	os << projectile.getName() << ": ";
+	os << cooldown << "s; ";
+	os << projectile;
 	if (numProjectiles > 1) {
-		os << ", " << numProjectiles << "j";
+		os << "; " << numProjectiles << "j";
 	}
 	os << std::endl;
 	return os;
 }
 
 Attack Attack::improve(AttackBuff attackBuff) {
-	return Attack(this->name,
+	return Attack(this->projectile.getName(),
 		this->cooldown * attackBuff.getCooldownDecrease(),
-		this->pierce + attackBuff.getPierceIncrease(),
-		this->damage + attackBuff.getDamageIncrease(),
+		this->projectile.getPierce() + attackBuff.getPierceIncrease(),
+		this->projectile.getDamage() + attackBuff.getDamageIncrease(),
 		this->numProjectiles + attackBuff.getProjectileIncrease());
+}
+
+Attack Attack::addSubProjOnHit(Projectile subProj, int numSubProj) {
+	return Attack(cooldown, projectile.addSubProjOnHit(subProj, numSubProj), numProjectiles);
+}
+
+Attack Attack::addSubProjOnExpire(Projectile subProj, int numSubProj) {
+	return Attack(cooldown, projectile.addSubProjOnExpire(subProj, numSubProj), numProjectiles);
 }
