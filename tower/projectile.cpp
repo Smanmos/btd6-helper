@@ -71,6 +71,12 @@ int Projectile::getNumProjectileOnExpire() {
 	return numSubProjOnExpire;
 }
 
+Projectile Projectile::improve(AttackBuff attackBuff) {
+	return Projectile(name, damage + attackBuff.getDamageIncrease(), 
+		pierce + attackBuff.getPierceIncrease(), pierceExternalBuffable, damageExternalBuffable,
+		subProjOnHit, numSubProjOnHit, subProjOnExpire, numSubProjOnExpire);
+}
+
 Projectile Projectile::addSubProjOnHit(Projectile subProj, int numSubProj) {
 	return Projectile(name, damage, pierce, pierceExternalBuffable, damageExternalBuffable,
 		new Projectile(subProj), numSubProj, subProjOnExpire, numSubProjOnExpire);
