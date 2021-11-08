@@ -6,6 +6,7 @@ private:
 	Tower tower;
 	int moneySpent;
 	AttackList attacks;
+	std::vector<AttackBuff> buffs;
 	UpgradePattern upgrades;
 public:
 	TowerInstance(Tower);
