@@ -41,13 +41,22 @@ double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
 	}
 	AttackList upgradedAttacks = attacks;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttacks = topUpgrades[i].getBuff()->buff(upgradedAttacks);
+		std::vector<Buff*> topBuffs = topUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator topBuff = topBuffs.begin(); topBuff != topBuffs.end(); ++topBuff) {
+			upgradedAttacks = (*topBuff)->buff(upgradedAttacks);
+		}
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttacks = midUpgrades[i].getBuff()->buff(upgradedAttacks);
+		std::vector<Buff*> midBuffs = midUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator midBuff = midBuffs.begin(); midBuff != midBuffs.end(); ++midBuff) {
+			upgradedAttacks = (*midBuff)->buff(upgradedAttacks);
+		}
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttacks = botUpgrades[i].getBuff()->buff(upgradedAttacks);
+		std::vector<Buff*> botBuffs = botUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator botBuff = botBuffs.begin(); botBuff != botBuffs.end(); ++botBuff) {
+			upgradedAttacks = (*botBuff)->buff(upgradedAttacks);
+		}
 	}
 	return upgradedAttacks.getTotalDps();
 }
@@ -99,7 +108,10 @@ std::string Tower::getUpgradePathStats(char initial, std::vector<Upgrade>& upgra
 	for (int i = 0; i < upgrades.size(); i++) {
 		statStream << initial << i + 1 << ":" << std::endl;
 		statStream << upgrades[i].getName() << " " << upgrades[i].getCost() << std::endl;
-		statStream << upgrades[i].getBuff();
+		for (std::vector<Buff*>::iterator buff = upgrades[i].getBuffs().begin(); 
+				buff != upgrades[i].getBuffs().end(); ++buff) {
+			statStream << **buff << std::endl;
+		}
 	}
 	return statStream.str();
 }
@@ -136,16 +148,25 @@ std::string Tower::getStats(UpgradePattern upgradePattern) {
 	AttackList upgradedAttacks = attacks;
 	int totalCost = cost;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		upgradedAttacks = topUpgrades[i].getBuff()->buff(upgradedAttacks);
 		totalCost += topUpgrades[i].getCost();
+		std::vector<Buff*> topBuffs = topUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator topBuff = topBuffs.begin(); topBuff != topBuffs.end(); ++topBuff) {
+			upgradedAttacks = (*topBuff)->buff(upgradedAttacks);
+		}
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		upgradedAttacks = midUpgrades[i].getBuff()->buff(upgradedAttacks);
 		totalCost += midUpgrades[i].getCost();
+		std::vector<Buff*> midBuffs = midUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator midBuff = midBuffs.begin(); midBuff != midBuffs.end(); ++midBuff) {
+			upgradedAttacks = (*midBuff)->buff(upgradedAttacks);
+		}
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		upgradedAttacks = botUpgrades[i].getBuff()->buff(upgradedAttacks);
 		totalCost += botUpgrades[i].getCost();
+		std::vector<Buff*> botBuffs = botUpgrades[i].getBuffs();
+		for (std::vector<Buff*>::iterator botBuff = botBuffs.begin(); botBuff != botBuffs.end(); ++botBuff) {
+			upgradedAttacks = (*botBuff)->buff(upgradedAttacks);
+		}
 	}
 	statStream << "Cost: " << totalCost << std::endl;
 	upgradedAttacks.streamStats(statStream);

@@ -8,11 +8,11 @@ using json = nlohmann::json;
 class Upgrade {
 	std::string name;
 	int cost;
-	Buff* internalBuff;
+	std::vector<Buff*> internalBuffs;
 public:
 	Upgrade(json upgradeJson);
 	std::string getName();
 	int getCost();
-	Buff* getBuff();
+	std::vector<Buff*> getBuffs();
 };
 #endif // UPGRADE
