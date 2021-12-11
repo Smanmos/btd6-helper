@@ -832,6 +832,41 @@
                      }]
                 ]
             }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Exploding Pineapple",
+                "cost": 200,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "pineapple",
+                         "pierce": 20,
+                         "damage": {"base": 1},
+                         "reload": 2.0
+                     }]
+                ]
+            },
+            {
+                "name": "Spy Plane",
+                "cost": 400,
+                "buffs": []
+            },
+            {
+                "name": "Bomber Ace",
+                "cost": 900,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "pineapple",
+                         "newAttack": {
+                             "name": "bombs",
+                             "pierce": 20,
+                             "damage": {"base": 3},
+                             "reload": 1.7,
+                             "numProjectiles": 3
+                        }
+                     }]
+                ]
+            }
         ]
     },
     "Heli Pilot": {
