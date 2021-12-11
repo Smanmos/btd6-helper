@@ -564,6 +564,42 @@
                 "name": "Advanced Intel",
                 "cost": 500,
                 "buffs": []
+            },
+            {
+                "name": "Submerge and Support",
+                "cost": 500,
+                "buffs": [["replaceAttack", {
+                               "target": "dart",
+                               "newAttack": {
+                                   "name": "sonar",
+                                   "pierce": 9999,
+                                   "damage": 0,
+                                   "reload": 1.5
+                               }
+                           }]]
+            },
+            {
+                "name": "Bloontonium Reactor",
+                "cost": 2800,
+                "buffs": [
+                    ["buffAttack", {"targets": ["sonar"], "reloadDecrease": 0.2}],
+                    ["addAttack", {
+                               "name": "radiation",
+                               "pierce": 50,
+                               "damage": 1,
+                               "reload": 0.3
+                           }]]
+            },
+            {
+                "name": "Energizer",
+                "cost": 32000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["radiation"],
+                         "pierceIncrease": 950,
+                         "damageIncrease": 2
+                     }]
+                ]
             }
         ],
         "midUpgrades": [
