@@ -586,7 +586,7 @@
                     ["addAttack", {
                                "name": "radiation",
                                "pierce": 50,
-                               "damage": 1,
+                               "damage": {"base": 1},
                                "reload": 0.3
                            }]]
             },
@@ -597,7 +597,7 @@
                     ["buffAttack", {
                          "targets": ["radiation"],
                          "pierceIncrease": 950,
-                         "damageIncrease": 2
+                         "damageIncrease": {"base": 2}
                      }]
                 ]
             }
