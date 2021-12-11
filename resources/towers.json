@@ -752,7 +752,64 @@
             "reload": 1.68,
             "pierce": 5,
             "numProjectiles": 8
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Rapid Fire", 
+                "cost": 650,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.75}]]
+            },
+            {
+                "name": "Lots More Darts",
+                "cost": 650,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "projectileIncrease": 4}]]
+            },
+            {
+                "name": "Fighter Plane",
+                "cost": 1000,
+                "buffs": [["addAttack", {
+                               "name": "missile",
+                               "damage": {"moab": 18},
+                               "pierce": 4,
+                               "reload": 3,
+                               "numProjectiles": 2
+                           }]]
+            },
+            {
+                "name": "Operation Dart Storm",
+                "cost": 3000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5,
+                         "projectileIncrease": 4
+                     }],
+                    ["buffAttack", {
+                         "targets": ["missile"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"moab": 6}
+                     }]
+                ]
+            },
+            {
+                "name": "Sky Shredder",
+                "cost": 40000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"base": 2, "ceramic": 2},
+                         "pierceIncrease": 8,
+                         "projectileIncrease": 16
+                     }],
+                    ["buffAttack", {
+                         "targets": ["missile"],
+                         "damageIncrease": 126,
+                         "pierceIncrease": 1
+                     }]
+                ]
+            }
+        ]
     },
     "Heli Pilot": {
         "cost": 1600,
