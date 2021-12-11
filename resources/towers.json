@@ -631,6 +631,35 @@
                 "name": "Twin Guns",
                 "cost": 450,
                 "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
+            },
+            {
+                "name": "Airburst Darts",
+                "cost": 1000,
+                "buffs": [
+                    ["buffAttacks", {"target": ["dart"],"pierceIncrease": -1}],
+                    ["addSubProjOnExpire", {
+                         "target": ["dart"],
+                         "projectile": {
+                             "name": "subdart",
+                             "pierce": 2,
+                             "damage": {"base": 1}
+                         },
+                         "num": 3
+                     }]
+                ]
+            },
+            {
+                "name": "Triple Guns",
+                "cost": 1100,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.67}]]
+            },
+            {
+                "name": "Armor Piercing Darts",
+                "cost": 3000,
+                "buffs": [
+                    ["buffAttacks", {"targets": ["dart"], "damageIncrease": {"base": 1, "moab": 2}}],
+                    ["buffAttacks", {"targets": ["subdart"], "damageIncrease": {"moab": 1}, "pierceIncrease": 3}]
+                ]
             }
         ]
     },
