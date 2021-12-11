@@ -607,6 +607,23 @@
                 "name": "Barbed Darts",
                 "cost": 450,
                 "buffs": [["buffAttacks", {"pierceIncrease": 3}]]
+            },
+            {
+                "name": "Heat-tipped Darts",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Ballistic Missile", 
+                "cost": 1400,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "ballistic-missile",
+                         "pierce": 100,
+                         "damage": {"base": 1, "ceramic": 5, "moab": 5},
+                         "reload": 1.105
+                     }]
+                ]
             }
         ],
         "botUpgrades": [
