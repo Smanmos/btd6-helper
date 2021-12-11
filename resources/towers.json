@@ -630,7 +630,21 @@
             {
                 "name": "Twin Guns",
                 "cost": 450,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["sonar", "radiation"],
+                         "reloadDecrease": 0.85,
+                         "pierceIncrease": 20
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["ballistic-missile"],
+                         "reloadDecrease": 0.875
+                     }]
+                ]
             },
             {
                 "name": "Airburst Darts",
@@ -645,6 +659,15 @@
                              "damage": {"base": 1}
                          },
                          "num": 3
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["sonar", "radiation"],
+                         "reloadDecrease": 0.75,
+                         "pierceIncrease": 30
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["ballistic-missile"],
+                         "reloadDecrease": 0.9
                      }]
                 ]
             },
