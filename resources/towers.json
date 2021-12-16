@@ -204,7 +204,7 @@
                     ["addSubProjOnExpire", {
                          "target": "moab-press",
                          "subProjectile": {
-                             "name": "explosion"
+                             "name": "explosion",
                              "pierce": 40,
                              "damage": 100
                          }
