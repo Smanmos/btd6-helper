@@ -131,6 +131,9 @@
     <ClInclude Include="tower\addsubprojonexpire.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tower\upgradepath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\towers.json">
