@@ -3,7 +3,7 @@
         "cost": 200,
         "attack": {
             "name": "dart",
-            "cooldown": 0.95,
+            "reload": 0.95,
             "pierce": 2
         },
         "topUpgrades": [
@@ -24,7 +24,7 @@
                                "target": "dart",
                                "newAttack": {
                                    "name": "juggernaut",
-                                   "cooldown": 1.15,
+                                   "reload": 1.15,
                                    "pierce": 22,
                                    "damage": {"base": 1, "ceramic": 1}
                                }
@@ -36,7 +36,7 @@
                 "buffs": [["buffAttacks", {
                                "damageIncrease": {"base": 1, "ceramic": 1},
                                "pierceIncrease": 28,
-                               "cooldownDecrease": 0.87
+                               "reloadDecrease": 0.87
                            }]]
             },
             {
@@ -46,7 +46,7 @@
                                "target": "juggernaut",
                                "newAttack": {
                                    "name": "ultra-juggernaut", 
-                                   "cooldown": 1.0,
+                                   "reload": 1.0,
                                    "damage": {"base": 5, "ceramic": 8},
                                    "pierce": 200,
                                    "onExpire": {
@@ -63,12 +63,12 @@
             {
                 "name": "Quick Shots",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.85}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.85}]]
             },
             {
                 "name": "Very Quick Shots",
                 "cost": 190,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.7882}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.7882}]]
             },
             {
                 "name": "Triple Shot",
@@ -102,7 +102,7 @@
         "cost": 325,
         "attack": {
             "name": "boomerang",
-            "cooldown": 1.2,
+            "reload": 1.2,
             "pierce": 4
         },
         "topUpgrades": [
@@ -126,26 +126,36 @@
                 "cost": 3000,
                 "buffs": [["buffAttacks", {
                     "pierceIncrease": 50,
-                    "cooldownDecrease": 0.5
+                    "reloadDecrease": 0.5
                 }]]
+            },
+            {
+                "name": "Glaive Lord",
+                "cost": 32400,
+                "buffs": [["addAttack", {
+                               "name": "glaive-lord",
+                               "reload": 0.1,
+                               "pierce": 1000,
+                               "damage": {"base": 2, "ceramic": 5, "moab": 5}
+                           }]]
             }
         ],
         "midUpgrades": [
             {
                 "name": "Faster Throwing",
                 "cost": 175,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
             },
             {
                 "name": "Faster Rangs",
                 "cost": 250,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
             },
             {
                 "name": "Bionic Boomerang",
                 "cost": 1600,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.3526,
+                    "reloadDecrease": 0.3526,
                     "damageIncrease": { "moab": 2 }
                 }]]
             }
@@ -165,6 +175,40 @@
                 "name": "Kylie Boomerang",
                 "cost": 1300,
                 "buffs": [["buffAttacks", {"pierceIncrease": 14}]]
+            },
+            {
+                "name": "MOAB Press",
+                "cost": 2200,
+                "buffs": [["addAttack", {
+                               "name": "moab-press",
+                               "reload": 10.0,
+                               "pierce": 200,
+                               "damage": {"base": 1, "moab": 4}
+                           }]]
+            },
+            {
+                "name": "MOAB Domination",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"base": 10}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["moab-press"],
+                         "damageIncrease": {"moab": 20},
+                         "pierceIncrease": 100,
+                         "reloadDecrease": 0.5
+                     }],
+                    ["addSubProjOnExpire", {
+                         "target": "moab-press",
+                         "subProjectile": {
+                             "pierce": 40,
+                             "damage": 100
+                         }
+                     }]
+                ]
             }
         ]
     },
@@ -172,7 +216,7 @@
         "cost": 525,
         "attack": {
             "name": "bomb",
-            "cooldown": 1.5,
+            "reload": 1.5,
             "pierce": 14
         },
         "topUpgrades": [
@@ -202,13 +246,13 @@
             {
                 "name": "Faster Reload",
                 "cost": 250,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
             },
             {
                 "name": "Missile Launcher",
                 "cost": 400,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.7333,
+                    "reloadDecrease": 0.7333,
                     "rangeIncrease": 4
                 }]]
             },
@@ -229,6 +273,30 @@
                 "name": "Extra Range",
                 "cost": 200,
                 "buffs": [["buffAttacks", {"rangeIncrease": 7}]]
+            },
+            {
+                "name": "Frag Bombs",
+                "cost": 300,
+                "buffs": [["addSubProjOnExpire", {
+                               "target": "bomb",
+                               "subProjectile": {
+                                   "name": "frag",
+                                   "pierce": 1
+                               },
+                               "num": 8
+                           }]]
+            },
+            {
+                "name": "Cluster Bombs",
+                "cost": 800,
+                "buffs": [["addSubProjOnExpire", {
+                               "target": "bomb",
+                               "subProjectile": {
+                                   "name": "cluster",
+                                   "pierce": 10
+                               },
+                               "num": 8
+                           }]]
             }
         ]
     },
@@ -236,7 +304,7 @@
         "cost": 280,
         "attack": {
             "name": "tack",
-            "cooldown": 1.4,
+            "reload": 1.4,
             "pierce": 1,
             "numProjectiles": 8
         },
@@ -244,12 +312,12 @@
             {
                 "name": "Faster Shooting",
                 "cost": 150,
-                "buffs": [["buffAttacks", {"targets": ["tack"], "cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "reloadDecrease": 0.75}]]
             },
             {
                 "name": "Even Faster Shooting",
                 "cost": 300,
-                "buffs": [["buffAttacks", {"targets": ["tack"], "cooldownDecrease": 0.6}]]
+                "buffs": [["buffAttacks", {"targets": ["tack"], "reloadDecrease": 0.6}]]
             },
             {
                 "name": "Hot Shots",
@@ -263,7 +331,7 @@
                                "target": "tack",
                                "newAttack": {
                                    "name": "ring-of-fire",
-                                   "cooldown": 0.5355,
+                                   "reload": 0.5355,
                                    "pierce": 60,
                                    "damage": {"base": 3}
                                }
@@ -275,12 +343,12 @@
                 "buffs": [
                     ["buffAttacks", {
                          "targets": ["ring-of-fire"],
-                         "cooldownDecrease": 0.1867,
+                         "reloadDecrease": 0.1867,
                          "damageIncrease": {"base": 1, "moab": 6}
                      }],
                     ["addAttack", {
                          "name": "meteor",
-                         "cooldown": 4.0,
+                         "reload": 4.0,
                          "damage": {"base": 700},
                          "pierce": 1
                      }]
@@ -323,7 +391,7 @@
                 "name": "Blade Shooter",
                 "cost": 550,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.85,
+                    "reloadDecrease": 0.85,
                     "pierceIncrease": 4
                 }]]
             }
@@ -349,7 +417,7 @@
                 "name": "Tack Sprayer",
                 "cost": 450,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.75,
+                    "reloadDecrease": 0.75,
                     "projectileIncrease": 4
                 }]]
             },
@@ -357,7 +425,7 @@
                 "name": "Overdrive",
                 "cost": 3200,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.3333,
+                    "reloadDecrease": 0.3333,
                     "pierceIncrease": 1
                 }]]
             },
@@ -365,7 +433,7 @@
                 "name": "The Tack Zone",
                 "cost": 20000,
                 "buffs": [["buffAttacks", {
-                    "cooldownDecrease": 0.75,
+                    "reloadDecrease": 0.75,
                     "pierceIncrease": 2,
                     "rangeIncrease": 7,
                     "damageIncrease": { "base": 1 },
@@ -378,7 +446,7 @@
         "cost": 350,
         "attack": {
             "name": "bullet",
-            "cooldown": 1.59,
+            "reload": 1.59,
             "pierce": 1,
             "damage": { "base": 2 }
         },
@@ -386,17 +454,30 @@
             {
                 "name": "Full Metal Jacket",
                 "cost": 350,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 2}}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "damageIncrease": {"base": 2}}]]
             },
             {
                 "name": "Large Calibre",
                 "cost": 1500,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 3}}]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["bullet"], "damageIncrease": {"base": 3}}],
+                    ["buffAttacks", {"targets": ["shrapnel"], "damageIncrease": {"base": 2}}]
+                ]
             },
             {
                 "name": "Deadly Precision",
                 "cost": 3000,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 13, "ceramic": 15}}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bullet"], 
+                         "damageIncrease": {"base": 13, "ceramic": 15}}
+                    ], 
+                    ["buffAttacks", {
+                         "targets": ["shrapnel"],
+                         "damageIncrease": {"base": 1},
+                         "pierceIncrease": {"base": 1}
+                     }]
+                ]
             }
         ],
         "midUpgrades": [
@@ -417,23 +498,52 @@
                                },
                                "num": 5
                            }]]
+            }, 
+            {
+                "name": "Bouncing Bullet",
+                "cost": 3200,
+                "buffs": [["replaceAttack", {
+                               "target": "bullet",
+                               "subProjectile": {
+                                   "name": "shrapnel",
+                                   "pierce": 3,
+                                   "damage": {"base": 1}
+                               },
+                               "num": 5
+                           }]]
             }
         ],
         "botUpgrades": [
             {
                 "name": "Fast Firing",
                 "cost": 400,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.7}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.7}]]
             },
             {
                 "name": "Even Faster Firing",
                 "cost": 400,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.7}]]
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.7}]]
             },
             {
                 "name": "Semi-Automatic",
                 "cost": 3500,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.3333}]]
+                "buffs": [
+                    ["buffAttacks", {"reloadDecrease": 0.3333}],
+                    ["buffAttacks", {
+                         "targets": ["shrapnel"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Full Auto Rifle",
+                "cost": 4250,
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
+            },
+            {
+                "name": "Elite Defender",
+                "cost": 14000,
+                "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
             }
         ]
     },
@@ -441,7 +551,7 @@
         "cost": 325,
         "attack": {
             "name": "dart",
-            "cooldown": 0.75,
+            "reload": 0.75,
             "pierce": 2
         },
         "topUpgrades": [
@@ -454,6 +564,42 @@
                 "name": "Advanced Intel",
                 "cost": 500,
                 "buffs": []
+            },
+            {
+                "name": "Submerge and Support",
+                "cost": 500,
+                "buffs": [["replaceAttack", {
+                               "target": "dart",
+                               "newAttack": {
+                                   "name": "sonar",
+                                   "pierce": 9999,
+                                   "damage": 0,
+                                   "reload": 1.5
+                               }
+                           }]]
+            },
+            {
+                "name": "Bloontonium Reactor",
+                "cost": 2500,
+                "buffs": [
+                    ["buffAttack", {"targets": ["sonar"], "reloadDecrease": 0.2}],
+                    ["addAttack", {
+                               "name": "radiation",
+                               "pierce": 50,
+                               "damage": {"base": 1},
+                               "reload": 0.3
+                           }]]
+            },
+            {
+                "name": "Energizer",
+                "cost": 32000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["radiation"],
+                         "pierceIncrease": 950,
+                         "damageIncrease": {"base": 2}
+                     }]
+                ]
             }
         ],
         "midUpgrades": [
@@ -461,13 +607,82 @@
                 "name": "Barbed Darts",
                 "cost": 450,
                 "buffs": [["buffAttacks", {"pierceIncrease": 3}]]
+            },
+            {
+                "name": "Heat-tipped Darts",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Ballistic Missile", 
+                "cost": 1400,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "ballistic-missile",
+                         "pierce": 100,
+                         "damage": {"base": 1, "ceramic": 5, "moab": 5},
+                         "reload": 1.105
+                     }]
+                ]
             }
         ],
         "botUpgrades": [
             {
                 "name": "Twin Guns",
                 "cost": 450,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.5}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["sonar", "radiation"],
+                         "reloadDecrease": 0.85,
+                         "pierceIncrease": 20
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["ballistic-missile"],
+                         "reloadDecrease": 0.875
+                     }]
+                ]
+            },
+            {
+                "name": "Airburst Darts",
+                "cost": 1000,
+                "buffs": [
+                    ["buffAttacks", {"target": ["dart"],"pierceIncrease": -1}],
+                    ["addSubProjOnExpire", {
+                         "target": ["dart"],
+                         "projectile": {
+                             "name": "subdart",
+                             "pierce": 2,
+                             "damage": {"base": 1}
+                         },
+                         "num": 3
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["sonar", "radiation"],
+                         "reloadDecrease": 0.75,
+                         "pierceIncrease": 30
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["ballistic-missile"],
+                         "reloadDecrease": 0.9
+                     }]
+                ]
+            },
+            {
+                "name": "Triple Guns",
+                "cost": 1100,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.67}]]
+            },
+            {
+                "name": "Armor Piercing Darts",
+                "cost": 3000,
+                "buffs": [
+                    ["buffAttacks", {"targets": ["dart"], "damageIncrease": {"base": 1, "moab": 2}}],
+                    ["buffAttacks", {"targets": ["subdart"], "damageIncrease": {"moab": 1}, "pierceIncrease": 3}]
+                ]
             }
         ]
     },
@@ -475,7 +690,7 @@
         "cost": 500,
         "attack": {
             "name": "dart",
-            "cooldown": 1.0,
+            "reload": 1.0,
             "pierce": 4,
             "numProjectiles": 2
         },
@@ -483,22 +698,25 @@
             {
                 "name": "Faster Shooting",
                 "cost": 350,
-                "buffs": [["buffAttacks", {"cooldownDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {
+                               "targets": ["dart", "grape"],
+                               "reloadDecrease": 0.75
+                           }]]
             },
             {
                 "name": "Double Shot",
                 "cost": 550,
-                "buffs": [["buffAttacks", {
-                    "targets": ["dart"],
-                    "projectileIncrease": 2
-                }]]
+                "buffs": [
+                    ["buffAttacks", {"targets": ["dart"], "projectileIncrease": 2}],
+                    ["buffAttacks", {"targets": ["grape"], "projectileIncrease": 10}]
+                ]
             },
             {
                 "name": "Destroyer",
                 "cost": 2950,
                 "buffs": [
-                    ["buffAttacks", {"targets": ["dart"], "cooldownDecrease": 0.2}],
-                    ["buffAttacks", {"targets": ["grape"], "cooldownDecrease": 0.4}]
+                    ["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.2}],
+                    ["buffAttacks", {"targets": ["grape"], "reloadDecrease": 0.4}]
                 ]
             }
         ],
@@ -508,10 +726,45 @@
                 "cost": 550,
                 "buffs": [["addAttack", {
                     "name": "grape",
-                    "cooldown": 1.3,
+                    "reload": 1.3,
                     "pierce": 1,
                     "numProjectiles": 10
                 }]]
+            },
+            {
+                "name": "Hot Shot",
+                "cost": 500,
+                "buffs": []
+            },
+            {
+                "name": "Cannon Ship",
+                "cost": 900,
+                "buffs": [["addAttack", {
+                               "name": "cannon",
+                               "pierce": 28,
+                               "reload": 1.2,
+                               "damage": {"base": 1},
+                               "numProjectiles": 2,
+                               "onExpire": {
+                                   "name": "frag",
+                                   "damage": 1,
+                                   "pierce": 1
+                               },
+                               "numSubProjOnExpire": 8
+                           }]]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Long Range",
+                "cost": 180,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "grape"],
+                         "pierceIncrease": 1
+                     }],
+                    ["buffAttacks", {"rangeIncrease": 11}]
+                ]
             }
         ]
     },
@@ -519,16 +772,108 @@
         "cost": 800,
         "attack": {
             "name": "dart",
-            "cooldown": 1.68,
+            "reload": 1.68,
             "pierce": 5,
             "numProjectiles": 8
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Rapid Fire", 
+                "cost": 650,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.75}]]
+            },
+            {
+                "name": "Lots More Darts",
+                "cost": 650,
+                "buffs": [["buffAttacks", {"targets": ["dart"], "projectileIncrease": 4}]]
+            },
+            {
+                "name": "Fighter Plane",
+                "cost": 1000,
+                "buffs": [["addAttack", {
+                               "name": "missile",
+                               "damage": {"moab": 18},
+                               "pierce": 4,
+                               "reload": 3,
+                               "numProjectiles": 2
+                           }]]
+            },
+            {
+                "name": "Operation Dart Storm",
+                "cost": 3000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5,
+                         "projectileIncrease": 4
+                     }],
+                    ["buffAttack", {
+                         "targets": ["missile"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"moab": 6}
+                     }]
+                ]
+            },
+            {
+                "name": "Sky Shredder",
+                "cost": 40000,
+                "buffs": [
+                    ["buffAttack", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"base": 2, "ceramic": 2},
+                         "pierceIncrease": 8,
+                         "projectileIncrease": 16
+                     }],
+                    ["buffAttack", {
+                         "targets": ["missile"],
+                         "damageIncrease": 126,
+                         "pierceIncrease": 1
+                     }]
+                ]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Exploding Pineapple",
+                "cost": 200,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "pineapple",
+                         "pierce": 20,
+                         "damage": {"base": 1},
+                         "reload": 2.0
+                     }]
+                ]
+            },
+            {
+                "name": "Spy Plane",
+                "cost": 400,
+                "buffs": []
+            },
+            {
+                "name": "Bomber Ace",
+                "cost": 900,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "pineapple",
+                         "newAttack": {
+                             "name": "bombs",
+                             "pierce": 20,
+                             "damage": {"base": 3},
+                             "reload": 1.7,
+                             "numProjectiles": 3
+                        }
+                     }]
+                ]
+            }
+        ]
     },
     "Heli Pilot": {
         "cost": 1600,
         "attack": {
             "name": "dart",
-            "cooldown": 0.57,
+            "reload": 0.57,
             "pierce": 3,
             "numProjectiles": 2
         }
@@ -537,7 +882,7 @@
         "cost": 750,
         "attack": {
             "name": "shell",
-            "cooldown": 2.0,
+            "reload": 2.0,
             "pierce": 40
         }
     },
@@ -545,7 +890,7 @@
         "cost": 850,
         "attack": {
             "name": "dart",
-            "cooldown": 0.2,
+            "reload": 0.2,
             "pierce": 1
         }
     },
@@ -553,7 +898,7 @@
         "cost": 400,
         "attack": {
             "name": "dart",
-            "cooldown": 1.1,
+            "reload": 1.1,
             "pierce": 3
         }
     },
@@ -561,7 +906,7 @@
         "cost": 2500,
         "attack": {
             "name": "dart",
-            "cooldown": 0.06,
+            "reload": 0.06,
             "pierce": 1
         }
     },
@@ -569,7 +914,7 @@
         "cost": 500,
         "attack": {
             "name": "shuriken",
-            "cooldown": 0.7,
+            "reload": 0.7,
             "pierce": 2
         }
     },
@@ -577,7 +922,7 @@
         "cost": 425,
         "attack": {
             "name": "thorn",
-            "cooldown": 1.1,
+            "reload": 1.1,
             "pierce": 1,
             "numProjectiles": 5
         }
