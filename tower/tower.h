@@ -6,6 +6,7 @@
 #include "difficulty.h"
 #include "attacklist.h"
 #include "upgrade.h"
+#include "upgradepath.h"
 #include "upgradepattern.h"
 using json = nlohmann::json;
 class TowerBuilder;
@@ -15,10 +16,10 @@ private:
 	std::string name;
 	int cost;
 	AttackList attacks;
-	std::vector<Upgrade> topUpgrades;
-	std::vector<Upgrade> midUpgrades;
-	std::vector<Upgrade> botUpgrades;
-	std::string getUpgradePathStats(char initial, std::vector<Upgrade> &upgrades);
+	UpgradePath topUpgrades;
+	UpgradePath midUpgrades;
+	UpgradePath botUpgrades;
+	std::string getUpgradePathStats(char initial, UpgradePath &upgrades);
 	std::string getTopUpgradeStats();
 	std::string getMidUpgradeStats();
 	std::string getBotUpgradeStats();
