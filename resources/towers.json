@@ -580,7 +580,7 @@
             },
             {
                 "name": "Bloontonium Reactor",
-                "cost": 2800,
+                "cost": 2500,
                 "buffs": [
                     ["buffAttack", {"targets": ["sonar"], "reloadDecrease": 0.2}],
                     ["addAttack", {
