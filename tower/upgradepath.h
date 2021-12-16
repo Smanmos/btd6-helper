@@ -8,6 +8,7 @@ class UpgradePath {
 private:
 	std::vector<Upgrade> upgrades;
 public:
+	UpgradePath();
 	UpgradePath(json upgradePathJson);
 	UpgradePath(std::vector<Upgrade> upgrades);
 	Upgrade getTier(int tier);

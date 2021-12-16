@@ -1,5 +1,8 @@
 #include "upgradepath.h"
 
+UpgradePath::UpgradePath() :
+	upgrades() {}
+
 UpgradePath::UpgradePath(std::vector<Upgrade> upgrades) :
 	upgrades(upgrades) {}
 
