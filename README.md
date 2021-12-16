@@ -28,3 +28,9 @@ To run the program, read the user guide at [docs/UserGuide.md](docs/UserGuide.md
 - Ninja Monkey (000)
 - Alchemist (000)
 - Druid (000)
+
+# References
+
+Data here is obtained from:
+- [Advanced Popology](https://www.reddit.com/r/btd6/comments/atomg3/advanced_popology_vol_1_primary_towers/), 
+	by Topper64
