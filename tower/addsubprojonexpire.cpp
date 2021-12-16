@@ -5,7 +5,7 @@ AddSubProjOnExpire::AddSubProjOnExpire(std::string target, Projectile proj, int 
 
 AddSubProjOnExpire::AddSubProjOnExpire(json buffJson) :
 	target(buffJson.at("target")), subProjToAdd(buffJson.at("subProjectile")),
-	numSubProj(buffJson.at("num")) {}
+	numSubProj(buffJson.value("num", 1)) {}
 
 AttackList AddSubProjOnExpire::buff(AttackList attacks) {
 	return attacks.addSubProjOnExpire(target, subProjToAdd, numSubProj);
