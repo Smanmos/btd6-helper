@@ -583,7 +583,7 @@
                 "name": "Bloontonium Reactor",
                 "cost": 2500,
                 "buffs": [
-                    ["buffAttack", {"targets": ["sonar"], "reloadDecrease": 0.2}],
+                    ["buffAttacks", {"targets": ["sonar"], "reloadDecrease": 0.2}],
                     ["addAttack", {
                                "name": "radiation",
                                "pierce": 50,
@@ -595,7 +595,7 @@
                 "name": "Energizer",
                 "cost": 32000,
                 "buffs": [
-                    ["buffAttack", {
+                    ["buffAttacks", {
                          "targets": ["radiation"],
                          "pierceIncrease": 950,
                          "damageIncrease": {"base": 2}
@@ -803,12 +803,12 @@
                 "name": "Operation Dart Storm",
                 "cost": 3000,
                 "buffs": [
-                    ["buffAttack", {
+                    ["buffAttacks", {
                          "targets": ["dart"],
                          "reloadDecrease": 0.5,
                          "projectileIncrease": 4
                      }],
-                    ["buffAttack", {
+                    ["buffAttacks", {
                          "targets": ["missile"],
                          "reloadDecrease": 0.5,
                          "damageIncrease": {"moab": 6}
@@ -819,14 +819,14 @@
                 "name": "Sky Shredder",
                 "cost": 40000,
                 "buffs": [
-                    ["buffAttack", {
+                    ["buffAttacks", {
                          "targets": ["dart"],
                          "reloadDecrease": 0.5,
                          "damageIncrease": {"base": 2, "ceramic": 2},
                          "pierceIncrease": 8,
                          "projectileIncrease": 16
                      }],
-                    ["buffAttack", {
+                    ["buffAttacks", {
                          "targets": ["missile"],
                          "damageIncrease": {"moab": 126},
                          "pierceIncrease": 1
