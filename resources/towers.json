@@ -206,7 +206,7 @@
                          "subProjectile": {
                              "name": "explosion",
                              "pierce": 40,
-                             "damage": 100
+                             "damage": {"base": 100}
                          }
                      }]
                 ]
@@ -476,7 +476,7 @@
                     ["buffAttacks", {
                          "targets": ["shrapnel"],
                          "damageIncrease": {"base": 1},
-                         "pierceIncrease": {"base": 1}
+                         "pierceIncrease": 1
                      }]
                 ]
             }
@@ -574,7 +574,7 @@
                                "newAttack": {
                                    "name": "sonar",
                                    "pierce": 9999,
-                                   "damage": 0,
+                                   "damage": {"base": 0},
                                    "reload": 1.5
                                }
                            }]]
@@ -748,7 +748,7 @@
                                "numProjectiles": 2,
                                "onExpire": {
                                    "name": "frag",
-                                   "damage": 1,
+                                   "damage": {"base": 1},
                                    "pierce": 1
                                },
                                "numSubProjOnExpire": 8
@@ -828,7 +828,7 @@
                      }],
                     ["buffAttack", {
                          "targets": ["missile"],
-                         "damageIncrease": 126,
+                         "damageIncrease": {"moab": 126},
                          "pierceIncrease": 1
                      }]
                 ]
