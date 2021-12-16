@@ -204,6 +204,7 @@
                     ["addSubProjOnExpire", {
                          "target": "moab-press",
                          "subProjectile": {
+                             "name": "explosion"
                              "pierce": 40,
                              "damage": 100
                          }
@@ -653,7 +654,7 @@
                     ["buffAttacks", {"target": ["dart"],"pierceIncrease": -1}],
                     ["addSubProjOnExpire", {
                          "target": ["dart"],
-                         "projectile": {
+                         "subProjectile": {
                              "name": "subdart",
                              "pierce": 2,
                              "damage": {"base": 1}
