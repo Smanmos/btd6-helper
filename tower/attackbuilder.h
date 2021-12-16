@@ -2,14 +2,14 @@
 #define ATTACK_BUILDER
 #include "attack.h"
 class AttackBuilder {
-	double cd;
+	double r;
 	int p;
 	int d;
 	int j;
-	bool isCooldownSet;
+	bool isReloadSet;
 public:
 	AttackBuilder();
-	AttackBuilder& cooldown(double);
+	AttackBuilder& reload(double);
 	AttackBuilder& pierce(int);
 	AttackBuilder& damage(int);
 	AttackBuilder& projectiles(int);

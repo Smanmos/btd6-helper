@@ -2,11 +2,11 @@
 #include <stdexcept>
 
 AttackBuilder::AttackBuilder() :
-	p(1), d(1), j(1), isCooldownSet(false) { }
+	p(1), d(1), j(1), isReloadSet(false) { }
 
-AttackBuilder& AttackBuilder::cooldown(double cooldown) {
-	cd = cooldown;
-	isCooldownSet = true;
+AttackBuilder& AttackBuilder::reload(double reload) {
+	r = reload;
+	isReloadSet = true;
 	return *this;
 }
 
@@ -26,9 +26,9 @@ AttackBuilder& AttackBuilder::projectiles(int numProjectiles) {
 }
 
 Attack AttackBuilder::build() {
-	if (!isCooldownSet) {
-		throw std::invalid_argument("Cooldown must be set");
+	if (!isReloadSet) {
+		throw std::invalid_argument("Reload must be set");
 	}
-	return Attack("", cd, p, d, j);
+	return Attack("", r, p, d, j);
 }
 

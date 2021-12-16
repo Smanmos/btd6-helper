@@ -5,7 +5,7 @@
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {
-	double cooldown;
+	double reload;
 	Projectile projectile;
 	int numProjectiles;
 public:
@@ -14,7 +14,7 @@ public:
 	Attack(double, Projectile, int);
 	Attack(json);
 	std::string getName();
-	double getCooldown();
+	double getReload();
 	int getPierce();
 	Damage getDamage();
 	int getBaseDamage();

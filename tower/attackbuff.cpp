@@ -1,16 +1,16 @@
 #include "attackbuff.h"
 
-AttackBuff::AttackBuff(int pierceIncrease, double cooldownDecrease,
+AttackBuff::AttackBuff(int pierceIncrease, double reloadDecrease,
 	Damage damageIncrease, int projectileIncrease) {
 	this->pierceIncrease = pierceIncrease;
-	this->cooldownDecrease = cooldownDecrease;
+	this->reloadDecrease = reloadDecrease;
 	this->damageIncrease = damageIncrease;
 	this->projectileIncrease = projectileIncrease;
 }
 
 AttackBuff::AttackBuff(json buffJson) {
 	pierceIncrease = buffJson.value("pierceIncrease", 0);
-	cooldownDecrease = buffJson.value("cooldownDecrease", 1.0);
+	reloadDecrease = buffJson.value("reloadDecrease", 1.0);
 	if (buffJson.contains("damageIncrease")) {
 		damageIncrease = buffJson.at("damageIncrease");
 	}
@@ -25,12 +25,12 @@ int AttackBuff::getPierceIncrease() {
 	return pierceIncrease;
 }
 
-bool AttackBuff::isCooldownDecreased() {
-	return cooldownDecrease != 1.0;
+bool AttackBuff::isReloadDecreased() {
+	return reloadDecrease != 1.0;
 }
 
-double AttackBuff::getCooldownDecrease() {
-	return cooldownDecrease;
+double AttackBuff::getReloadDecrease() {
+	return reloadDecrease;
 }
 
 bool AttackBuff::isDamageIncreased() {

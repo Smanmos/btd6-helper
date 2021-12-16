@@ -4,7 +4,7 @@
 #include <nlohmann/json.hpp>
 class AttackBuff {
 	int pierceIncrease = 0;
-	double cooldownDecrease = 1.0;
+	double reloadDecrease = 1.0;
 	Damage damageIncrease = Damage(0);
 	int projectileIncrease = 0;
 public:
@@ -12,8 +12,8 @@ public:
 	AttackBuff(json);
 	bool isPierceIncreased();
 	int getPierceIncrease();
-	bool isCooldownDecreased();
-	double getCooldownDecrease();
+	bool isReloadDecreased();
+	double getReloadDecrease();
 	bool isDamageIncreased();
 	Damage getDamageIncrease();
 	bool isProjectileIncreased();
