@@ -118,6 +118,7 @@
     <ClCompile Include="tower\tower.cpp" />
     <ClCompile Include="tower\towerinstance.cpp" />
     <ClCompile Include="tower\upgrade.cpp" />
+    <ClCompile Include="tower\upgradepath.cpp" />
     <ClCompile Include="tower\upgradepattern.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="tower\tower.h" />
     <ClInclude Include="tower\towerinstance.h" />
     <ClInclude Include="tower\upgrade.h" />
+    <ClInclude Include="tower\upgradepath.h" />
     <ClInclude Include="tower\upgradepattern.h" />
   </ItemGroup>
   <ItemGroup>

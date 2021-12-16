@@ -75,6 +75,9 @@
     <ClCompile Include="tower\addsubprojonexpire.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tower\upgradepath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower\addsubprojonexpire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tower\upgradepath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

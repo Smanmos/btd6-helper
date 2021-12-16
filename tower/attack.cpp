@@ -1,16 +1,16 @@
 #include "attack.h"
 
 Attack::Attack() :
-	cooldown(1.0), projectile("", 1, 1), numProjectiles(1) {}
+	reload(1.0), projectile("", 1, 1), numProjectiles(1) {}
 
-Attack::Attack(std::string name, double cooldown, int pierce, Damage damage, int numProjectiles) :
-	cooldown(cooldown), projectile(name, damage, pierce), numProjectiles(numProjectiles) {}
+Attack::Attack(std::string name, double reload, int pierce, Damage damage, int numProjectiles) :
+	reload(reload), projectile(name, damage, pierce), numProjectiles(numProjectiles) {}
 
-Attack::Attack(double cooldown, Projectile projectile, int numProjectiles) :
-	cooldown(cooldown), projectile(projectile), numProjectiles(numProjectiles) {}
+Attack::Attack(double reload, Projectile projectile, int numProjectiles) :
+	reload(reload), projectile(projectile), numProjectiles(numProjectiles) {}
 
 Attack::Attack(json attackJson) {
-	cooldown = attackJson.at("cooldown").get<double>();
+	reload = attackJson.at("reload").get<double>();
 	projectile = Projectile(attackJson);
 	numProjectiles = attackJson.value("numProjectiles", 1);
 }
@@ -19,8 +19,8 @@ std::string Attack::getName() {
 	return projectile.getName();
 }
 
-double Attack::getCooldown() {
-	return cooldown;
+double Attack::getReload() {
+	return reload;
 }
 
 int Attack::getPierce() {
@@ -48,12 +48,12 @@ int Attack::getNumProjectiles() {
 }
 
 double Attack::getDamagePerSecond() {
-	return projectile.getTotalDamage() * numProjectiles / cooldown;
+	return projectile.getTotalDamage() * numProjectiles / reload;
 }
 
 std::ostream& Attack::streamStats(std::ostream& os) {
 	os << projectile.getName() << ": ";
-	os << cooldown << "s; ";
+	os << reload << "s; ";
 	os << projectile;
 	if (numProjectiles > 1) {
 		os << "; " << numProjectiles << "j";
@@ -63,15 +63,15 @@ std::ostream& Attack::streamStats(std::ostream& os) {
 }
 
 Attack Attack::improve(AttackBuff attackBuff) {
-	return Attack(cooldown * attackBuff.getCooldownDecrease(),
+	return Attack(reload * attackBuff.getReloadDecrease(),
 		projectile.improve(attackBuff),
 		numProjectiles + attackBuff.getProjectileIncrease());
 }
 
 Attack Attack::addSubProjOnHit(Projectile subProj, int numSubProj) {
-	return Attack(cooldown, projectile.addSubProjOnHit(subProj, numSubProj), numProjectiles);
+	return Attack(reload, projectile.addSubProjOnHit(subProj, numSubProj), numProjectiles);
 }
 
 Attack Attack::addSubProjOnExpire(Projectile subProj, int numSubProj) {
-	return Attack(cooldown, projectile.addSubProjOnExpire(subProj, numSubProj), numProjectiles);
+	return Attack(reload, projectile.addSubProjOnExpire(subProj, numSubProj), numProjectiles);
 }

@@ -25,8 +25,8 @@ AttackList AttacksBuff::buff(AttackList attacks) {
 
 void AttacksBuff::printToOstream(std::ostream& os) {
 	AttackBuff attackBuff = this->attackBuff;
-	if (attackBuff.isCooldownDecreased()) {
-		os << attackBuff.getCooldownDecrease() << "s" << std::endl;
+	if (attackBuff.isReloadDecreased()) {
+		os << attackBuff.getReloadDecrease() << "s" << std::endl;
 	}
 	if (attackBuff.isPierceIncreased()) {
 		os << "+" << attackBuff.getPierceIncrease() << "p" << std::endl;

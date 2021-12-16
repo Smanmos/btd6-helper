@@ -5,10 +5,11 @@ class TowerInstance {
 private:
 	Tower tower;
 	int moneySpent;
-	int topTier;
-	int midTier;
-	int botTier;
+	AttackList attacks;
+	std::vector<AttackBuff> buffs;
+	UpgradePattern upgrades;
 public:
 	TowerInstance(Tower);
+	TowerInstance(Tower, UpgradePattern);
 };
 #endif // !TOWER_INSTANCE
