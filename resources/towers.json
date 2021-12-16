@@ -503,15 +503,16 @@
             {
                 "name": "Bouncing Bullet",
                 "cost": 3200,
-                "buffs": [["replaceAttack", {
-                               "target": "bullet",
-                               "subProjectile": {
-                                   "name": "shrapnel",
-                                   "pierce": 3,
-                                   "damage": {"base": 1}
-                               },
-                               "num": 5
-                           }]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bullet"],
+                         "pierceIncrease": 3
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["shrapnel"],
+                         "pierceIncrease": 1
+                     }]
+                ]
             }
         ],
         "botUpgrades": [
