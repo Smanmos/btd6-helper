@@ -653,7 +653,7 @@
                 "buffs": [
                     ["buffAttacks", {"target": ["dart"],"pierceIncrease": -1}],
                     ["addSubProjOnExpire", {
-                         "target": ["dart"],
+                         "target": "dart",
                          "subProjectile": {
                              "name": "subdart",
                              "pierce": 2,
