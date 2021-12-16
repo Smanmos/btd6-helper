@@ -16,3 +16,7 @@ Upgrade UpgradePath::getTier(int index) {
 Upgrade& UpgradePath::operator[](int index) {
 	return upgrades[index];
 }
+
+int UpgradePath::getNumberOfTiers() {
+	return upgrades.size();
+}

@@ -12,5 +12,6 @@ public:
 	UpgradePath(std::vector<Upgrade> upgrades);
 	Upgrade getTier(int tier);
 	Upgrade& operator[](int index);
+	int getNumberOfTiers();
 };
 #endif
