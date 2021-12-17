@@ -1196,7 +1196,7 @@
                 "cost": 950,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart"],
+                         "targets": ["dart", "buckshot"],
                          "reloadDecrease": 0.66
                      }]
                 ]
@@ -1247,6 +1247,62 @@
                     ["buffAttacks", {
                          "targets": ["explosion"],
                          "damageIncrease": {"base": 2}
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Faster Swivel",
+                "cost": 150,
+                "buffs": []
+            },
+            {
+                "name": "Powerful Darts",
+                "cost": 1200,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "explosion"],
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "Buckshot",
+                "cost": 3400,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "buckshot",
+                             "reload": 1.5,
+                             "damage": {"base": 4},
+                             "pierce": 4,
+                             "numProjectiles": 6
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Area Denial System",
+                "cost": 12000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["buckshot"],
+                         "reloadDecrease": 0.25
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Exclusion Zone",
+                "cost": 58000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["buckshot"],
+                         "reloadDecrease": 0.6666666666666666666666,
+                         "damageIncrease": {"base": 4},
+                         "pierceIncrease": 2,
+                         "projectileIncrease": 6
                      }]
                 ]
             }
