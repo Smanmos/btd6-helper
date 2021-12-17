@@ -782,7 +782,16 @@
             {
                 "name": "Rapid Fire", 
                 "cost": 650,
-                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.75}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.75
+                     }], 
+                    ["buffAttacks", {
+                         "targets": ["pineapple", "bombs"],
+                         "reloadDecrease": 0.6
+                     }]
+                ]
             },
             {
                 "name": "Lots More Darts",
@@ -845,6 +854,10 @@
                          "pierce": 20,
                          "damage": {"base": 1},
                          "reload": 2.0
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["missile"],
+                         "pierceIncrease": 2
                      }]
                 ]
             },
@@ -878,6 +891,10 @@
                     ["buffAttacks", {
                          "targets": ["dart"],
                          "pierceIncrease": 3
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["bomb"],
+                         "pierceIncrease": 12
                      }]
                 ]
             },
