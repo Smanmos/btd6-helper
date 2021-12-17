@@ -33,6 +33,7 @@ public:
 	bool matches(std::string);
 	std::string getStats();
 	std::string getStats(UpgradePattern);
+	AttackList getAttacks(UpgradePattern);
 	friend class TowerBuilder;
 };
 #endif
