@@ -980,7 +980,7 @@
                          "pierceIncrease": 20
                      }],
                     ["buffAttacks", {
-                         "targets": ["machinegun"],
+                         "targets": ["machine-gun"],
                          "damageIncrease": {"base": 4},
                          "pierceIncrease": 6
                      }],
@@ -1026,7 +1026,7 @@
                 "cost": 350,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart", "dart2", "machinegun", "rocket", "downdraft"],
+                         "targets": ["dart", "dart2", "machine-gun", "rocket", "downdraft"],
                          "reloadDecrease": 0.8
                      }]
                 ]
