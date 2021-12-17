@@ -869,6 +869,28 @@
                      }]
                 ]
             }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Sharper Darts",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "pierceIncrease": 3
+                     }]
+                ]
+            },
+            {
+                "name": "Centered Path",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Neva-Miss Targeting",
+                "cost": 2200,
+                "buffs": []
+            }
         ]
     },
     "Heli Pilot": {
