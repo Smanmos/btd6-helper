@@ -958,7 +958,7 @@
                          "pierce": 5
                      }],
                     ["addAttack", {
-                         "name": "rocket",
+                         "name": "apache-rocket",
                          "reload": 1.0,
                          "damage": {"base": 2},
                          "pierce": 40,
@@ -985,7 +985,7 @@
                          "pierceIncrease": 6
                      }],
                     ["buffAttacks", {
-                         "targets": ["rocket"],
+                         "targets": ["apache-rocket"],
                          "damageIncrease": {"moab": 15}
                      }]
                 ]
@@ -1026,7 +1026,7 @@
                 "cost": 350,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart", "dart2", "machine-gun", "rocket", "downdraft"],
+                         "targets": ["dart", "dart2", "machine-gun", "apache-rocket", "downdraft"],
                          "reloadDecrease": 0.8
                      }]
                 ]
