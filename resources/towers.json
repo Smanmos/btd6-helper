@@ -1057,7 +1057,74 @@
             "name": "shell",
             "reload": 2.0,
             "pierce": 40
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Bigger Blast",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "pierceIncrease": 5
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Buster",
+                "cost": 650,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Shell Shock",
+                "cost": 1100,
+                "buffs": [
+                    ["addSubProjOnExpire", {
+                         "target": "shell",
+                         "subProjectile": {
+                             "name": "shockwave",
+                             "pierce": 45
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "The Big One",
+                "cost": 8000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 3}
+                     }],
+                    ["buffAttacks", {
+                         "targets":  ["shell", "shockwave"],
+                         "pierceIncrease": 40
+                     }]
+                ]
+            },
+            {
+                "name": "The Biggest One",
+                "cost": 28000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 15, "ceramic": 20, "moab": 20}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["shockwave"],
+                         "damageIncrease": {"ceramic": 10}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["shell", "shockwave"],
+                         "pierceIncrease": 115
+                     }]
+                ]
+            }
+        ]
     },
     "Dartling Gunner": {
         "cost": 850,
