@@ -1014,6 +1014,41 @@
                      }]
                 ]
             }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Faster Darts",
+                "cost": 250,
+                "buffs": []
+            },
+            {
+                "name": "Faster Firing",
+                "cost": 350,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "dart2", "machinegun", "rocket", "downdraft"],
+                         "reloadDecrease": 0.8
+                     }]
+                ]
+            },
+            {
+                "name": "MOAB Shove", 
+                "cost": 3500,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "shove",
+                         "reload": 1.0,
+                         "damage": {"base": 0},
+                         "pierce": 1
+                     }],
+                    ["addAttack", {
+                         "name": "rocket",
+                         "reload": 3.0,
+                         "damage": {"base": 1, "ceramic": 2, "moab": 2},
+                         "pierce": 10
+                     }]
+                ]
+            }
         ]
     },
     "Mortar Monkey": {
