@@ -91,38 +91,16 @@ bool Tower::matches(std::string str) {
 	return false;
 }
 
-std::string Tower::getUpgradePathStats(char initial, UpgradePath& upgrades) {
-	std::ostringstream statStream{};
-	for (int i = 0; i < upgrades.getNumberOfTiers(); i++) {
-		statStream << initial << i + 1 << ":" << std::endl;
-		statStream << upgrades[i].getName() << " " << upgrades[i].getCost() << std::endl;
-		for (std::vector<Buff*>::iterator buff = upgrades[i].getBuffs().begin(); 
-				buff != upgrades[i].getBuffs().end(); ++buff) {
-			statStream << **buff << std::endl;
-		}
-	}
-	return statStream.str();
-}
-
-std::string Tower::getTopUpgradeStats() {
-	return getUpgradePathStats('T', topUpgrades);
-}
-
-std::string Tower::getMidUpgradeStats() {
-	return getUpgradePathStats('M', midUpgrades);
-}
-
-std::string Tower::getBotUpgradeStats() {
-	return getUpgradePathStats('B', botUpgrades);
-}
-
 std::string Tower::getStats() {
 	std::ostringstream statStream = std::ostringstream();
 	statStream << "Cost: " << cost << std::endl;
 	attacks.streamStats(statStream);
-	statStream << getTopUpgradeStats();
-	statStream << getMidUpgradeStats();
-	statStream << getBotUpgradeStats();
+	statStream << "Top Path:" << std::endl;
+	statStream << topUpgrades.getStats() << std::endl;
+	statStream << "Mid Path:" << std::endl;
+	statStream << midUpgrades.getStats() << std::endl;
+	statStream << "Bottom Path:" << std::endl;
+	statStream << botUpgrades.getStats() << std::endl;
 	return statStream.str();
 }
 

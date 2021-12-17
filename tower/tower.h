@@ -20,9 +20,6 @@ private:
 	UpgradePath midUpgrades;
 	UpgradePath botUpgrades;
 	std::string getUpgradePathStats(char initial, UpgradePath &upgrades);
-	std::string getTopUpgradeStats();
-	std::string getMidUpgradeStats();
-	std::string getBotUpgradeStats();
 public:
 	Tower(std::string name, int cost, Attack attack);
 	Tower(std::string name, json towerJson);

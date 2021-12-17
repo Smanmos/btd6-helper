@@ -14,5 +14,6 @@ public:
 	Upgrade getTier(int tier);
 	Upgrade& operator[](int index);
 	int getNumberOfTiers();
+	std::string getStats();
 };
 #endif
