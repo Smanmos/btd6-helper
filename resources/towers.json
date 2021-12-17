@@ -990,6 +990,30 @@
                      }]
                 ]
             }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Bigger Jets", 
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "IFR",
+                "cost": 600,
+                "buffs": []
+            },
+            {
+                "name": "Downdraft",
+                "cost": 3000,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "downdraft",
+                         "reload": 0.15,
+                         "damage": {"base": 0},
+                         "pierce": 1
+                     }]
+                ]
+            }
         ]
     },
     "Mortar Monkey": {
