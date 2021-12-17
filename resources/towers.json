@@ -1124,6 +1124,58 @@
                      }]
                 ]
             }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Reload",
+                "cost": 300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.75
+                     }]
+                ]
+            },
+            {
+                "name": "Rapid Reload",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.72
+                     }]
+                ]
+            },
+            {
+                "name": "Heavy Shells",
+                "cost": 900,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"ceramic": 3, "moab": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Artillery Battery",
+                "cost": 5500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.25
+                     }]
+                ]
+            },
+            {
+                "name": "Pop and Awe",
+                "cost": 30000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"ceramic": 9, "moab": 3}
+                     }]
+                ]
+            }
         ]
     },
     "Dartling Gunner": {
