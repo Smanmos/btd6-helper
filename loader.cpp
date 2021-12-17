@@ -14,8 +14,14 @@ std::vector<Tower> loadTowers() {
 		json towerJsons;
 		towerFile >> towerJsons;
 		for (json::iterator towerIt = towerJsons.begin(); towerIt != towerJsons.end(); ++towerIt) {
-			Tower tower = Tower(towerIt.key(), towerIt.value());
-			towers.push_back(tower);
+			try {
+				Tower tower = Tower(towerIt.key(), towerIt.value());
+				towers.push_back(tower);
+			}
+			catch (json::exception &e) {
+				std::cout << "Error parsing tower " << towerIt.key() << ":" << std::endl;
+				std::cout << e.what() << std::endl;
+			}
 		}
 	}
 	catch (json::parse_error &e) {
