@@ -1184,7 +1184,73 @@
             "name": "dart",
             "reload": 0.2,
             "pierce": 1
-        }
+        },
+        "midUpgrades": [
+            {
+                "name": "Advanced Targeting",
+                "cost": 250,
+                "buffs": []
+            },
+            {
+                "name": "Faster Barrel Spin",
+                "cost": 950,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.66
+                     }]
+                ]
+            },
+            {
+                "name": "Hydra Rocket Pods", 
+                "cost": 5250,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "rocket",
+                             "reload": 0.132,
+                             "damage": {"base": 0},
+                             "pierce": 3,
+                             "onHit": {
+                                 "name": "explosion",
+                                 "pierce": 6
+                             }
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Rocket Storm",
+                "cost": 5100,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["rocket"],
+                         "pierceIncrease": 1
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["explosion"],
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "M.A.D",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["rocket"],
+                         "reloadDecrease": 3.0,
+                         "pierceIncrease": 2,
+                         "damageIncrease": {"moab": 550}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["explosion"],
+                         "damageIncrease": {"base": 2}
+                     }]
+                ]
+            }
+        ]
     },
     "Wizard Monkey": {
         "cost": 400,
