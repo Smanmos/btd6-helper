@@ -41,7 +41,7 @@ void AttackList::replace(std::string target, Attack newAttack) {
 					upgradedAttack = upgradedAttack.improve(buff);
 				}
 			}
-			*attack = newAttack;
+			*attack = upgradedAttack;
 			return;
 		}
 	}
