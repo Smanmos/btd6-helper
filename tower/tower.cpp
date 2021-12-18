@@ -6,27 +6,15 @@ Tower::Tower(std::string name, int cost, Attack attack) :
 
 Tower::Tower(std::string name, json towerJson) :
 		name(name), cost(towerJson.at("cost").get<int>()), attacks(Attack(towerJson.at("attack"))) {
-	json topUpgradesJson = towerJson.value("topUpgrades", json::array());
-	for (auto topUpgrade = topUpgradesJson.begin(); topUpgrade != topUpgradesJson.end(); ++topUpgrade) {
-		topUpgrades.push_back(Upgrade(*topUpgrade));
-	}
-	json midUpgradesJson = towerJson.value("midUpgrades", json::array());
-	for (auto midUpgrade = midUpgradesJson.begin(); midUpgrade != midUpgradesJson.end(); ++midUpgrade) {
-		midUpgrades.push_back(Upgrade(*midUpgrade));
-	}
-	json botUpgradesJson = towerJson.value("botUpgrades", json::array());
-	for (auto botUpgrade = botUpgradesJson.begin(); botUpgrade != botUpgradesJson.end(); ++botUpgrade) {
-		botUpgrades.push_back(Upgrade(*botUpgrade));
-	}
+	topUpgrades = UpgradePath(towerJson.value("topUpgrades", json::array()));
+	midUpgrades = UpgradePath(towerJson.value("midUpgrades", json::array()));
+	botUpgrades = UpgradePath(towerJson.value("botUpgrades", json::array()));
 }
 
-Tower::Tower(const Tower& tower) {
-	name = tower.name;
-	cost = tower.cost;
+Tower::Tower(const Tower& tower) :
+		name(tower.name), cost(tower.cost), 
+		topUpgrades(topUpgrades), midUpgrades(midUpgrades), botUpgrades(botUpgrades) {
 	attacks = tower.attacks;
-	topUpgrades = tower.topUpgrades;
-	midUpgrades = tower.midUpgrades;
-	botUpgrades = tower.botUpgrades;
 }
 
 double Tower::getDamagePerSecond() {
@@ -34,30 +22,7 @@ double Tower::getDamagePerSecond() {
 }
 
 double Tower::getDamagePerSecond(UpgradePattern upgradePattern) {
-	if (upgradePattern.top > topUpgrades.size()
-		|| upgradePattern.mid > midUpgrades.size()
-		|| upgradePattern.bot > botUpgrades.size()) {
-		throw std::invalid_argument(name + "does not have that many upgrades");
-	}
-	AttackList upgradedAttacks = attacks;
-	for (int i = 0; i < upgradePattern.top; i++) {
-		std::vector<Buff*> topBuffs = topUpgrades[i].getBuffs();
-		for (std::vector<Buff*>::iterator topBuff = topBuffs.begin(); topBuff != topBuffs.end(); ++topBuff) {
-			upgradedAttacks = (*topBuff)->buff(upgradedAttacks);
-		}
-	}
-	for (int i = 0; i < upgradePattern.mid; i++) {
-		std::vector<Buff*> midBuffs = midUpgrades[i].getBuffs();
-		for (std::vector<Buff*>::iterator midBuff = midBuffs.begin(); midBuff != midBuffs.end(); ++midBuff) {
-			upgradedAttacks = (*midBuff)->buff(upgradedAttacks);
-		}
-	}
-	for (int i = 0; i < upgradePattern.bot; i++) {
-		std::vector<Buff*> botBuffs = botUpgrades[i].getBuffs();
-		for (std::vector<Buff*>::iterator botBuff = botBuffs.begin(); botBuff != botBuffs.end(); ++botBuff) {
-			upgradedAttacks = (*botBuff)->buff(upgradedAttacks);
-		}
-	}
+	AttackList upgradedAttacks = getAttacks(upgradePattern);
 	return upgradedAttacks.getTotalDps();
 }
 
@@ -103,70 +68,59 @@ bool Tower::matches(std::string str) {
 	return false;
 }
 
-std::string Tower::getUpgradePathStats(char initial, std::vector<Upgrade>& upgrades) {
-	std::ostringstream statStream{};
-	for (int i = 0; i < upgrades.size(); i++) {
-		statStream << initial << i + 1 << ":" << std::endl;
-		statStream << upgrades[i].getName() << " " << upgrades[i].getCost() << std::endl;
-		for (std::vector<Buff*>::iterator buff = upgrades[i].getBuffs().begin(); 
-				buff != upgrades[i].getBuffs().end(); ++buff) {
-			statStream << **buff << std::endl;
-		}
+AttackList Tower::getAttacks(UpgradePattern upgradePattern) {
+	if (upgradePattern.top > topUpgrades.getNumberOfTiers()
+		|| upgradePattern.mid > midUpgrades.getNumberOfTiers()
+		|| upgradePattern.bot > botUpgrades.getNumberOfTiers()) {
+		throw std::invalid_argument(name + "does not have that many upgrades");
 	}
-	return statStream.str();
-}
-
-std::string Tower::getTopUpgradeStats() {
-	return getUpgradePathStats('T', topUpgrades);
-}
-
-std::string Tower::getMidUpgradeStats() {
-	return getUpgradePathStats('M', midUpgrades);
-}
-
-std::string Tower::getBotUpgradeStats() {
-	return getUpgradePathStats('B', botUpgrades);
-}
-
-std::string Tower::getStats() {
-	std::ostringstream statStream = std::ostringstream();
-	statStream << "Cost: " << cost << std::endl;
-	attacks.streamStats(statStream);
-	statStream << getTopUpgradeStats();
-	statStream << getMidUpgradeStats();
-	statStream << getBotUpgradeStats();
-	return statStream.str();
-}
-
-std::string Tower::getStats(UpgradePattern upgradePattern) {
-	if (upgradePattern.top > topUpgrades.size()
-		|| upgradePattern.mid > midUpgrades.size() 
-		|| upgradePattern.bot > botUpgrades.size()) {
-		return name + " does not have that many upgrades\n";
-	}
-	std::ostringstream statStream = std::ostringstream();
 	AttackList upgradedAttacks = attacks;
-	int totalCost = cost;
 	for (int i = 0; i < upgradePattern.top; i++) {
-		totalCost += topUpgrades[i].getCost();
 		std::vector<Buff*> topBuffs = topUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator topBuff = topBuffs.begin(); topBuff != topBuffs.end(); ++topBuff) {
 			upgradedAttacks = (*topBuff)->buff(upgradedAttacks);
 		}
 	}
 	for (int i = 0; i < upgradePattern.mid; i++) {
-		totalCost += midUpgrades[i].getCost();
 		std::vector<Buff*> midBuffs = midUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator midBuff = midBuffs.begin(); midBuff != midBuffs.end(); ++midBuff) {
 			upgradedAttacks = (*midBuff)->buff(upgradedAttacks);
 		}
 	}
 	for (int i = 0; i < upgradePattern.bot; i++) {
-		totalCost += botUpgrades[i].getCost();
 		std::vector<Buff*> botBuffs = botUpgrades[i].getBuffs();
 		for (std::vector<Buff*>::iterator botBuff = botBuffs.begin(); botBuff != botBuffs.end(); ++botBuff) {
 			upgradedAttacks = (*botBuff)->buff(upgradedAttacks);
 		}
+	}
+	return upgradedAttacks;
+}
+
+std::string Tower::getStats() {
+	std::ostringstream statStream = std::ostringstream();
+	statStream << "Cost: " << cost << std::endl;
+	attacks.streamStats(statStream);
+	statStream << "Top Path:" << std::endl;
+	statStream << topUpgrades.getStats() << std::endl;
+	statStream << "Mid Path:" << std::endl;
+	statStream << midUpgrades.getStats() << std::endl;
+	statStream << "Bottom Path:" << std::endl;
+	statStream << botUpgrades.getStats() << std::endl;
+	return statStream.str();
+}
+
+std::string Tower::getStats(UpgradePattern upgradePattern) {
+	std::ostringstream statStream = std::ostringstream();
+	AttackList upgradedAttacks = getAttacks(upgradePattern);
+	int totalCost = cost;
+	for (int i = 0; i < upgradePattern.top; i++) {
+		totalCost += topUpgrades[i].getCost();
+	}
+	for (int i = 0; i < upgradePattern.mid; i++) {
+		totalCost += midUpgrades[i].getCost();
+	}
+	for (int i = 0; i < upgradePattern.bot; i++) {
+		totalCost += botUpgrades[i].getCost();
 	}
 	statStream << "Cost: " << totalCost << std::endl;
 	upgradedAttacks.streamStats(statStream);
