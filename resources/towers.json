@@ -1468,14 +1468,14 @@
             "name": "dart",
             "reload": 0.06,
             "pierce": 1
-        }
+        },
         "topUpgrades": [
             {
                 "name": "Laser Blasts",
                 "cost": 2500,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart"],
+                         "targets": ["dart", "monkeyrang"],
                          "pierceIncrease": 1
                      }]
                 ]
@@ -1485,7 +1485,7 @@
                 "cost": 4500,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart"],
+                         "targets": ["dart", "monkeyrang"],
                          "pierceIncrease": 1,
                          "reloadDecrease": 0.5
                      }]
@@ -1513,7 +1513,7 @@
                 "cost": 1000,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart", "sunbeam"],
+                         "targets": ["dart", "sunbeam", "monkeyrang"],
                          "pierceIncrease": 1
                      }]
                 ]
@@ -1523,8 +1523,58 @@
                 "cost": 1400,
                 "buffs": [
                     ["buffAttacks", {
-                         "targets": ["dart", "sunbeam"],
+                         "targets": ["dart", "sunbeam", "monkeyrang"],
                          "pierceIncrease": 1
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Knockback",
+                "cost": 3000,
+                "buffs": []
+            },
+            {
+                "name": "Ultravision",
+                "cost": 1200,
+                "buffs": []
+            },
+            {
+                "name": "Dark Knight",
+                "cost": 5500,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "monkeyrang",
+                             "reload": 0.06,
+                             "damage": {"base": 1, "moab": 2},
+                             "pierce": 5
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Dark Champion",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["monkeyrang"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"base": 1, "moab": 1},
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "Legend of the Night",
+                "cost": 240000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["monkeyrang"],
+                         "damageIncrease": {"base": 3},
+                         "pierceIncrease": 15
                      }]
                 ]
             }
