@@ -1469,6 +1469,44 @@
             "reload": 0.06,
             "pierce": 1
         }
+        "topUpgrades": [
+            {
+                "name": "Laser Blasts",
+                "cost": 2500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Plasma Blasts",
+                "cost": 4500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "pierceIncrease": 1,
+                         "reloadDecrease": 0.5
+                     }]
+                ]
+            },
+            {
+                "name": "Sun Avatar",
+                "cost": 22000,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "sunbeam",
+                             "reload": 0.03,
+                             "pierce": 6,
+                             "numProjectiles": 3
+                         }
+                     }]
+                ]
+            }
+        ]
     },
     "Ninja Monkey": {
         "cost": 500,
