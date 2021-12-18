@@ -1423,6 +1423,43 @@
                      }]
                 ]
             }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Intense Magic",
+                "cost": 300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "pierceIncrease": 5
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["dragons-breath"],
+                         "pierceIncrease": 2
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["wall-of-fire"],
+                         "pierceIncrease": 4
+                     }]
+                ]
+            },
+            {
+                "name": "Monkey Sense",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Shimmer",
+                "cost": 1700,
+                "buffs": [
+                    ["addAttack",{
+                         "name": "shimmer",
+                         "reload": 2.5,
+                         "damage": {"base": 0},
+                         "pierce": 70
+                     }]
+                ]
+            }
         ]
     },
     "Super Monkey": {
