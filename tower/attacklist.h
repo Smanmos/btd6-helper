@@ -6,6 +6,7 @@
 class AttackList {
 	std::vector<Attack> attacks;
 	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > appliedBuffs;
+	std::vector<Attack> getBuffedAttacks();
 public:
 	AttackList();
 	AttackList(Attack);

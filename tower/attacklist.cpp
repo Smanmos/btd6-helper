@@ -16,6 +16,22 @@ AttackList::AttackList(std::vector<Attack> attackVector,
 AttackList::AttackList(AttackList& copy) : 
 	attacks(copy.attacks), appliedBuffs(copy.appliedBuffs){}
 
+std::vector<Attack> AttackList::getBuffedAttacks() {
+	std::vector<Attack> buffedAttacks{};
+	for (auto attack : attacks) {
+		Attack buffedAttack = attack;
+		for (auto appliedBuff : appliedBuffs) {
+			std::vector<std::string>* targets = appliedBuff.second;
+			if (targets == nullptr ||
+				std::find(targets->begin(), targets->end(), attack.getName()) != targets->end()) {
+				buffedAttack = buffedAttack.improve(appliedBuff.first);
+			}
+		}
+		buffedAttacks.push_back(buffedAttack);
+	}
+	return buffedAttacks;
+}
+
 void AttackList::add(Attack attack) {
 	Attack upgradedAttack = attack;
 	for (auto appliedBuff = appliedBuffs.begin(); appliedBuff != appliedBuffs.end(); ++appliedBuff) {
