@@ -782,7 +782,16 @@
             {
                 "name": "Rapid Fire", 
                 "cost": 650,
-                "buffs": [["buffAttacks", {"targets": ["dart"], "reloadDecrease": 0.75}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "reloadDecrease": 0.75
+                     }], 
+                    ["buffAttacks", {
+                         "targets": ["pineapple", "bombs"],
+                         "reloadDecrease": 0.6
+                     }]
+                ]
             },
             {
                 "name": "Lots More Darts",
@@ -845,6 +854,10 @@
                          "pierce": 20,
                          "damage": {"base": 1},
                          "reload": 2.0
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["missile"],
+                         "pierceIncrease": 2
                      }]
                 ]
             },
@@ -869,6 +882,32 @@
                      }]
                 ]
             }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Sharper Darts",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "pierceIncrease": 3
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["bomb"],
+                         "pierceIncrease": 12
+                     }]
+                ]
+            },
+            {
+                "name": "Centered Path",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Neva-Miss Targeting",
+                "cost": 2200,
+                "buffs": []
+            }
         ]
     },
     "Heli Pilot": {
@@ -878,7 +917,139 @@
             "reload": 0.57,
             "pierce": 3,
             "numProjectiles": 2
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Quad Darts",
+                "cost": 800,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "dart2",
+                         "reload": 0.57,
+                         "pierce": 3,
+                         "numProjectiles": 2
+                     }]
+                ]
+            },
+            {
+                "name": "Pursuit",
+                "cost": 500,
+                "buffs": []
+            },
+            {
+                "name": "Razor Rotors",
+                "cost": 1750,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "rotor",
+                         "reload": 0.75,
+                         "damage": {"base": 2},
+                         "pierce": 10
+                     }]
+                ]
+            },
+            {
+                "name": "Apache Dartship",
+                "cost": 19600,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "machine-gun",
+                         "reload": 0.05,
+                         "pierce": 5
+                     }],
+                    ["addAttack", {
+                         "name": "apache-rocket",
+                         "reload": 1.0,
+                         "damage": {"base": 2},
+                         "pierce": 40,
+                         "numProjectiles": 4
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["dart", "dart2"], 
+                         "reloadDecrease": 0.75
+                     }]
+                ]
+            },
+            {
+                "name": "Apache Prime",
+                "cost": 45000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "dart2"],
+                         "damageIncrease": {"base": 5},
+                         "pierceIncrease": 20
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["machine-gun"],
+                         "damageIncrease": {"base": 4},
+                         "pierceIncrease": 6
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["apache-rocket"],
+                         "damageIncrease": {"moab": 15}
+                     }]
+                ]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Bigger Jets", 
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "IFR",
+                "cost": 600,
+                "buffs": []
+            },
+            {
+                "name": "Downdraft",
+                "cost": 3000,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "downdraft",
+                         "reload": 0.15,
+                         "damage": {"base": 0},
+                         "pierce": 1
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Faster Darts",
+                "cost": 250,
+                "buffs": []
+            },
+            {
+                "name": "Faster Firing",
+                "cost": 350,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "dart2", "machine-gun", "apache-rocket", "downdraft"],
+                         "reloadDecrease": 0.8
+                     }]
+                ]
+            },
+            {
+                "name": "MOAB Shove", 
+                "cost": 3500,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "shove",
+                         "reload": 1.0,
+                         "damage": {"base": 0},
+                         "pierce": 1
+                     }],
+                    ["addAttack", {
+                         "name": "rocket",
+                         "reload": 3.0,
+                         "damage": {"base": 1, "ceramic": 2, "moab": 2},
+                         "pierce": 10
+                     }]
+                ]
+            }
+        ]
     },
     "Mortar Monkey": {
         "cost": 750,
@@ -886,7 +1057,126 @@
             "name": "shell",
             "reload": 2.0,
             "pierce": 40
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Bigger Blast",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "pierceIncrease": 5
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Buster",
+                "cost": 650,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Shell Shock",
+                "cost": 1100,
+                "buffs": [
+                    ["addSubProjOnExpire", {
+                         "target": "shell",
+                         "subProjectile": {
+                             "name": "shockwave",
+                             "pierce": 45
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "The Big One",
+                "cost": 8000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 3}
+                     }],
+                    ["buffAttacks", {
+                         "targets":  ["shell", "shockwave"],
+                         "pierceIncrease": 40
+                     }]
+                ]
+            },
+            {
+                "name": "The Biggest One",
+                "cost": 28000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"base": 15, "ceramic": 20, "moab": 20}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["shockwave"],
+                         "damageIncrease": {"ceramic": 10}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["shell", "shockwave"],
+                         "pierceIncrease": 115
+                     }]
+                ]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Faster Reload",
+                "cost": 300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.75
+                     }]
+                ]
+            },
+            {
+                "name": "Rapid Reload",
+                "cost": 500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.72
+                     }]
+                ]
+            },
+            {
+                "name": "Heavy Shells",
+                "cost": 900,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"ceramic": 3, "moab": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Artillery Battery",
+                "cost": 5500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "reloadDecrease": 0.25
+                     }]
+                ]
+            },
+            {
+                "name": "Pop and Awe",
+                "cost": 30000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["shell"],
+                         "damageIncrease": {"ceramic": 9, "moab": 3}
+                     }]
+                ]
+            }
+        ]
     },
     "Dartling Gunner": {
         "cost": 850,
@@ -894,15 +1184,283 @@
             "name": "dart",
             "reload": 0.2,
             "pierce": 1
-        }
+        },
+        "midUpgrades": [
+            {
+                "name": "Advanced Targeting",
+                "cost": 250,
+                "buffs": []
+            },
+            {
+                "name": "Faster Barrel Spin",
+                "cost": 950,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "buckshot"],
+                         "reloadDecrease": 0.66
+                     }]
+                ]
+            },
+            {
+                "name": "Hydra Rocket Pods", 
+                "cost": 5250,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "rocket",
+                             "reload": 0.132,
+                             "damage": {"base": 0},
+                             "pierce": 3,
+                             "onHit": {
+                                 "name": "explosion",
+                                 "pierce": 6
+                             }
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Rocket Storm",
+                "cost": 5100,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["rocket"],
+                         "pierceIncrease": 1
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["explosion"],
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "M.A.D",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["rocket"],
+                         "reloadDecrease": 3.0,
+                         "pierceIncrease": 2,
+                         "damageIncrease": {"moab": 550}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["explosion"],
+                         "damageIncrease": {"base": 2}
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Faster Swivel",
+                "cost": 150,
+                "buffs": []
+            },
+            {
+                "name": "Powerful Darts",
+                "cost": 1200,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "explosion"],
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "Buckshot",
+                "cost": 3400,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "buckshot",
+                             "reload": 1.5,
+                             "damage": {"base": 4},
+                             "pierce": 4,
+                             "numProjectiles": 6
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Area Denial System",
+                "cost": 12000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["buckshot"],
+                         "reloadDecrease": 0.25
+                     }]
+                ]
+            },
+            {
+                "name": "Bloon Exclusion Zone",
+                "cost": 58000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["buckshot"],
+                         "reloadDecrease": 0.6666666666666666666666,
+                         "damageIncrease": {"base": 4},
+                         "pierceIncrease": 2,
+                         "projectileIncrease": 6
+                     }]
+                ]
+            }
+        ]
     },
     "Wizard Monkey": {
         "cost": 400,
         "attack": {
-            "name": "dart",
+            "name": "bolt",
             "reload": 1.1,
             "pierce": 3
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Guided Magic",
+                "cost": 150,
+                "buffs": []
+            },
+            {
+                "name": "Arcane Blast",
+                "cost": 600,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Arcane Mastery",
+                "cost": 1300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 1},
+                         "pierceIncrease": 4,
+                         "reloadDecrease": 0.5
+                    }]
+                ]
+            },
+            {
+                "name": "Arcane Spike",
+                "cost": 10900,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 2, "moab": 11},
+                         "reloadDecrease": 0.5
+                     }]
+                ]
+            },
+            {
+                "name": "Archmage",
+                "cost": 32000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 2, "moab": 6},
+                         "pierceIncrease": 4,
+                         "reloadDecrease": 0.5
+                     }],
+                    ["addAttack", {
+                         "name": "dragons-breath",
+                         "reload": 0.1,
+                         "damage": {"base": 1, "ceramic": 1},
+                         "pierce": 4
+                     }]
+                ]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Fireball",
+                "cost": 300,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "fireball",
+                         "reload": 2.2,
+                         "damage": {"base": 1},
+                         "pierce": 1,
+                         "onExpire": {
+                             "name": "fireball-explosion",
+                             "damage": 1,
+                             "pierce": 15
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Wall of Fire",
+                "cost": 900,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "wall-of-fire",
+                         "reload": 5.5,
+                         "damage": {"base": 1},
+                         "pierce": 15
+                     }]
+                ]
+            },
+            {
+                "name": "Dragon's Breath",
+                "cost": 3000,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "dragons-breath",
+                         "reload": 0.1,
+                         "damage": {"base": 1, "ceramic": 1},
+                         "pierce": 4
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["fireball-explosion"],
+                         "damageIncrease": {"base": 8}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["wall-of-fire"],
+                         "reloadDecrease": 0.8182
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Intense Magic",
+                "cost": 300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "pierceIncrease": 5
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["dragons-breath"],
+                         "pierceIncrease": 2
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["wall-of-fire"],
+                         "pierceIncrease": 4
+                     }]
+                ]
+            },
+            {
+                "name": "Monkey Sense",
+                "cost": 300,
+                "buffs": []
+            },
+            {
+                "name": "Shimmer",
+                "cost": 1700,
+                "buffs": [
+                    ["addAttack",{
+                         "name": "shimmer",
+                         "reload": 2.5,
+                         "damage": {"base": 0},
+                         "pierce": 70
+                     }]
+                ]
+            }
+        ]
     },
     "Super Monkey": {
         "cost": 2500,
@@ -910,7 +1468,117 @@
             "name": "dart",
             "reload": 0.06,
             "pierce": 1
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Laser Blasts",
+                "cost": 2500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "monkeyrang"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Plasma Blasts",
+                "cost": 4500,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "monkeyrang"],
+                         "pierceIncrease": 1,
+                         "reloadDecrease": 0.5
+                     }]
+                ]
+            },
+            {
+                "name": "Sun Avatar",
+                "cost": 22000,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "sunbeam",
+                             "reload": 0.03,
+                             "pierce": 6,
+                             "numProjectiles": 3
+                         }
+                     }]
+                ]
+            }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Super Range",
+                "cost": 1000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "sunbeam", "monkeyrang"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Epic Range",
+                "cost": 1400,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "sunbeam", "monkeyrang"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            }
+        ],
+        "botUpgrades": [
+            {
+                "name": "Knockback",
+                "cost": 3000,
+                "buffs": []
+            },
+            {
+                "name": "Ultravision",
+                "cost": 1200,
+                "buffs": []
+            },
+            {
+                "name": "Dark Knight",
+                "cost": 5500,
+                "buffs": [
+                    ["replaceAttack", {
+                         "target": "dart",
+                         "newAttack": {
+                             "name": "monkeyrang",
+                             "reload": 0.06,
+                             "damage": {"base": 1, "moab": 2},
+                             "pierce": 5
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Dark Champion",
+                "cost": 60000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["monkeyrang"],
+                         "reloadDecrease": 0.5,
+                         "damageIncrease": {"base": 1, "moab": 1},
+                         "pierceIncrease": 2
+                     }]
+                ]
+            },
+            {
+                "name": "Legend of the Night",
+                "cost": 240000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["monkeyrang"],
+                         "damageIncrease": {"base": 3},
+                         "pierceIncrease": 15
+                     }]
+                ]
+            }
+        ]
     },
     "Ninja Monkey": {
         "cost": 500,
