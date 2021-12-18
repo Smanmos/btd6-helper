@@ -12,8 +12,8 @@ Tower::Tower(std::string name, json towerJson) :
 }
 
 Tower::Tower(const Tower& tower) :
-		name(tower.name), cost(tower.cost), 
-		topUpgrades(topUpgrades), midUpgrades(midUpgrades), botUpgrades(botUpgrades) {
+		name(tower.name), cost(tower.cost), topUpgrades(tower.topUpgrades), 
+		midUpgrades(tower.midUpgrades), botUpgrades(tower.botUpgrades) {
 	attacks = tower.attacks;
 }
 
