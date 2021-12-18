@@ -1311,10 +1311,68 @@
     "Wizard Monkey": {
         "cost": 400,
         "attack": {
-            "name": "dart",
+            "name": "bolt",
             "reload": 1.1,
             "pierce": 3
-        }
+        },
+        "topUpgrades": [
+            {
+                "name": "Guided Magic",
+                "cost": 150,
+                "buffs": []
+            },
+            {
+                "name": "Arcane Blast",
+                "cost": 600,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 1}
+                     }]
+                ]
+            },
+            {
+                "name": "Arcane Mastery",
+                "cost": 1300,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 1},
+                         "pierceIncrease": 4,
+                         "reloadDecrease": 0.5
+                    }]
+                ]
+            },
+            {
+                "name": "Arcane Spike",
+                "cost": 10900,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 2, "moab": 11},
+                         "reloadDecrease": 0.5
+                     }]
+                ]
+            },
+            {
+                "name": "Archmage",
+                "cost": 32000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["bolt"],
+                         "damageIncrease": {"base": 2, "moab": 6},
+                         "pierceIncrease": 4,
+                         "reloadDecrease": 0.5
+                     }],
+                    ["addAttack", {
+                         "name": "dragons-breath",
+                         "reload": 0.1,
+                         "damage": {"base": 1, "ceramic": 1},
+                         "pierce": 4
+                     }]
+                ]
+            }
+        ]
     },
     "Super Monkey": {
         "cost": 2500,
