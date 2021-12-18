@@ -1506,6 +1506,28 @@
                      }]
                 ]
             }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Super Range",
+                "cost": 1000,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "sunbeam"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            },
+            {
+                "name": "Epic Range",
+                "cost": 1400,
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "sunbeam"],
+                         "pierceIncrease": 1
+                     }]
+                ]
+            }
         ]
     },
     "Ninja Monkey": {
