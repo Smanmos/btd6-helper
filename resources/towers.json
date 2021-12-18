@@ -1372,6 +1372,57 @@
                      }]
                 ]
             }
+        ],
+        "midUpgrades": [
+            {
+                "name": "Fireball",
+                "cost": 300,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "fireball",
+                         "reload": 2.2,
+                         "damage": {"base": 1},
+                         "pierce": 1,
+                         "onExpire": {
+                             "name": "fireball-explosion",
+                             "damage": 1,
+                             "pierce": 15
+                         }
+                     }]
+                ]
+            },
+            {
+                "name": "Wall of Fire",
+                "cost": 900,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "wall-of-fire",
+                         "reload": 5.5,
+                         "damage": {"base": 1},
+                         "pierce": 15
+                     }]
+                ]
+            },
+            {
+                "name": "Dragon's Breath",
+                "cost": 3000,
+                "buffs": [
+                    ["addAttack", {
+                         "name": "dragons-breath",
+                         "reload": 0.1,
+                         "damage": {"base": 1, "ceramic": 1},
+                         "pierce": 4
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["fireball-explosion"],
+                         "damageIncrease": {"base": 8}
+                     }],
+                    ["buffAttacks", {
+                         "targets": ["wall-of-fire"],
+                         "reloadDecrease": 0.8182
+                     }]
+                ]
+            }
         ]
     },
     "Super Monkey": {
