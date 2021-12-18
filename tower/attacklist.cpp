@@ -48,15 +48,17 @@ void AttackList::replace(std::string target, Attack newAttack) {
 }
 
 double AttackList::getTotalDps() {
+	std::vector<Attack> buffedAttacks = getBuffedAttacks();
 	double dps = 0;
-	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
+	for (auto attack = buffedAttacks.begin(); attack != buffedAttacks.end(); ++attack) {
 		dps += attack->getDamagePerSecond();
 	}
 	return dps;
 }
 
 std::ostream& AttackList::streamStats(std::ostream& os) {
-	for (auto attack = attacks.begin(); attack != attacks.end(); ++attack) {
+	std::vector<Attack> buffedAttacks = getBuffedAttacks();
+	for (auto attack = buffedAttacks.begin(); attack != buffedAttacks.end(); ++attack) {
 		attack->streamStats(os);
 	}
 	return os;
