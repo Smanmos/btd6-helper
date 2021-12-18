@@ -1385,7 +1385,7 @@
                          "pierce": 1,
                          "onExpire": {
                              "name": "fireball-explosion",
-                             "damage": 1,
+                             "damage": {"base": 1},
                              "pierce": 15
                          }
                      }]
