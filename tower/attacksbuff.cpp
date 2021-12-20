@@ -3,24 +3,14 @@
 AttacksBuff::AttacksBuff(AttackBuff attackBuff) : attackBuff(attackBuff) {}
 
 AttacksBuff::AttacksBuff(json buffJson) : attackBuff(buffJson) {
-	if (buffJson.contains("targets")) {
-		targets = new std::vector<std::string>();
-		for (json::iterator target = buffJson.at("targets").begin(); target != buffJson.at("targets").end(); ++target) {
-			targets->push_back(target->get<std::string>());
-		}
-	}
-	else {
-		targets = nullptr;
+	targets = std::vector<std::string>();
+	for (json::iterator target = buffJson.at("targets").begin(); target != buffJson.at("targets").end(); ++target) {
+		targets.push_back(target->get<std::string>());
 	}
 }
 
 AttackList AttacksBuff::buff(AttackList attacks) {
-	if (targets == nullptr) {
-		return attacks.improve(attackBuff);
-	}
-	else {
-		return attacks.improve(attackBuff, *targets);
-	}
+	return attacks.improve(attackBuff, targets);
 }
 
 void AttacksBuff::printToOstream(std::ostream& os) {

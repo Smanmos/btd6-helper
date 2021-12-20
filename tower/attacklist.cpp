@@ -8,7 +8,7 @@ AttackList::AttackList(std::vector<Attack> attackVector) :
 	attacks(attackVector), appliedBuffs() {}
 
 AttackList::AttackList(std::vector<Attack> attackVector, 
-	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > buffs) :
+	std::vector<std::pair<AttackBuff, std::vector<std::string> > > buffs) :
 	attacks(attackVector), appliedBuffs(buffs) {
 	;
 }
@@ -21,9 +21,8 @@ std::vector<Attack> AttackList::getBuffedAttacks() {
 	for (auto attack : attacks) {
 		Attack buffedAttack = attack;
 		for (auto appliedBuff : appliedBuffs) {
-			std::vector<std::string>* targets = appliedBuff.second;
-			if (targets == nullptr ||
-				std::find(targets->begin(), targets->end(), attack.getName()) != targets->end()) {
+			std::vector<std::string> targets = appliedBuff.second;
+			if (std::find(targets.begin(), targets.end(), attack.getName()) != targets.end()) {
 				buffedAttack = buffedAttack.improve(appliedBuff.first);
 			}
 		}
@@ -64,16 +63,9 @@ std::ostream& AttackList::streamStats(std::ostream& os) {
 	return os;
 }
 
-AttackList AttackList::improve(AttackBuff attackBuff) {
-	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > newBuffs = appliedBuffs;
-	newBuffs.push_back(std::pair<AttackBuff, std::vector<std::string>* >(attackBuff, nullptr));
-	return AttackList(attacks, newBuffs);
-}
-
 AttackList AttackList::improve(AttackBuff attackBuff, std::vector<std::string> targets) {
-	std::vector<std::pair<AttackBuff, std::vector<std::string>* > > newBuffs = appliedBuffs;
-	newBuffs.push_back(std::pair<AttackBuff, std::vector<std::string>* >(attackBuff, 
-		new std::vector<std::string>(targets)));
+	std::vector<std::pair<AttackBuff, std::vector<std::string> > > newBuffs = appliedBuffs;
+	newBuffs.push_back(std::make_pair(attackBuff, std::vector<std::string>(targets)));
 	return AttackList(attacks, newBuffs);
 }
 
