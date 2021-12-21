@@ -103,6 +103,7 @@
   <ItemGroup>
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
+    <ClCompile Include="tower\ability\ability.cpp" />
     <ClCompile Include="tower\addattack.cpp" />
     <ClCompile Include="tower\addsubprojonexpire.cpp" />
     <ClCompile Include="tower\addsubprojonhit.cpp" />
@@ -124,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
+    <ClInclude Include="tower\ability\ability.h" />
     <ClInclude Include="tower\addattack.h" />
     <ClInclude Include="tower\addsubprojonexpire.h" />
     <ClInclude Include="tower\addsubprojonhit.h" />
