@@ -3,11 +3,11 @@
 #include <string>
 #include <vector>
 #include <nlohmann/json.hpp>
-#include "difficulty.h"
-#include "attacklist.h"
-#include "upgrade.h"
-#include "upgradepath.h"
-#include "upgradepattern.h"
+#include "tower/difficulty.h"
+#include "tower/attacklist.h"
+#include "tower/upgrade.h"
+#include "tower/upgradepath.h"
+#include "tower/upgradepattern.h"
 using json = nlohmann::json;
 class TowerBuilder;
 

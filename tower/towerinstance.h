@@ -1,6 +1,6 @@
 #ifndef TOWER_INSTANCE
 #define TOWER_INSTANCE
-#include "tower.h"
+#include "tower/tower.h"
 class TowerInstance {
 private:
 	Tower tower;

@@ -1,6 +1,6 @@
 #ifndef ATTACK_BUFF
 #define ATTACK_BUFF
-#include "damage.h"
+#include "tower/damage.h"
 #include <nlohmann/json.hpp>
 class AttackBuff {
 	int pierceIncrease = 0;

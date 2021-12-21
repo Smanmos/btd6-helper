@@ -2,8 +2,8 @@
 #ifndef UPGRADE
 #define UPGRADE
 #include<nlohmann/json.hpp>
-#include "damage.h"
-#include "attacksbuff.h"
+#include "tower/damage.h"
+#include "tower/attacksbuff.h"
 using json = nlohmann::json;
 class Upgrade {
 	std::string name;

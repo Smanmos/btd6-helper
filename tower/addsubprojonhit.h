@@ -1,6 +1,6 @@
 #ifndef ADD_SUB_PROJ_ON_HIT
 #define ADD_SUB_PROJ_ON_HIT
-#include "buff.h"
+#include "tower/buff.h"
 class AddSubProjOnHit : public Buff {
 	std::string target;
 	Projectile subProjToAdd;
