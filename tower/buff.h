@@ -1,6 +1,6 @@
 #ifndef BUFF
 #define BUFF
-#include "attacklist.h"
+#include "tower/attacklist.h"
 class Buff {
 	virtual void printToOstream(std::ostream&) = 0;
 public:

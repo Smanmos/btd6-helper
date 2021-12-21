@@ -34,6 +34,7 @@
                 "name": "Juggernaut",
                 "cost": 1800,
                 "buffs": [["buffAttacks", {
+                               "targets": ["spike-o-pult"],
                                "damageIncrease": {"base": 1, "ceramic": 1},
                                "pierceIncrease": 28,
                                "reloadDecrease": 0.87
@@ -63,17 +64,33 @@
             {
                 "name": "Quick Shots",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.85}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "juggernaut", "ultra-juggernaut"],
+                         "reloadDecrease": 0.85
+                     }]
+
+                ]
             },
             {
                 "name": "Very Quick Shots",
                 "cost": 190,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.7882}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart", "juggernaut", "ultra-juggernaut"],
+                         "reloadDecrease": 0.7882
+                     }]
+                ]
             },
             {
                 "name": "Triple Shot",
                 "cost": 400,
-                "buffs": [["buffAttacks", {"projectileIncrease": 2}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["dart"],
+                         "projectileIncrease": 2
+                     }]
+                ]
             }
         ],
         "botUpgrades": [
@@ -91,6 +108,7 @@
                 "name": "Crossbow",
                 "cost": 625,
                 "buffs": [["buffAttacks", {
+                    "targets": ["dart"],
                     "rangeIncrease": 8,
                     "pierceIncrease": 1,
                     "damageIncrease": { "base": 2 }
@@ -109,22 +127,38 @@
             {
                 "name": "Improved Rangs",
                 "cost": 200,
-                "buffs": [["buffAttacks", {"pierceIncrease": 4}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "pierceIncrease": 4
+                     }]
+                ]
             },
             {
                 "name": "Glaives",
                 "cost": 280,
-                "buffs": [["buffAttacks", {"pierceIncrease": 5}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "pierceIncrease": 5
+                     }]
+                ]
             },
             {
                 "name": "Glaive Ricochet",
                 "cost": 1300,
-                "buffs": [["buffAttacks", {"pierceIncrease": 37}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "pierceIncrease": 37
+                     }]
+                ]
             },
             {
                 "name": "M.O.A.R Glaives",
                 "cost": 3000,
                 "buffs": [["buffAttacks", {
+                    "targets": ["boomerang"],
                     "pierceIncrease": 50,
                     "reloadDecrease": 0.5
                 }]]
@@ -144,17 +178,28 @@
             {
                 "name": "Faster Throwing",
                 "cost": 175,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "reloadDecrease": 0.75
+                     }]
+                ]
             },
             {
                 "name": "Faster Rangs",
                 "cost": 250,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "reloadDecrease": 0.75
+                     }]
+                ]
             },
             {
                 "name": "Bionic Boomerang",
                 "cost": 1600,
                 "buffs": [["buffAttacks", {
+                    "targets": ["boomerang"],
                     "reloadDecrease": 0.3526,
                     "damageIncrease": { "moab": 2 }
                 }]]
@@ -164,17 +209,29 @@
             {
                 "name": "Long Range Rangs",
                 "cost": 100,
-                "buffs": [["buffAttacks", {"rangeIncrease": 6}]]
+                "buffs": [
+                    ["buffAttacks", {"rangeIncrease": 6}]
+                ]
             },
             {
                 "name": "Red Hot Rangs",
                 "cost": 300,
-                "buffs": [["buffAttacks", {"damageIncrease": {"base": 1}}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang", "glaive-lord"],
+                         "damageIncrease": {"base": 1}
+                     }]
+                ]
             },
             {
                 "name": "Kylie Boomerang",
                 "cost": 1300,
-                "buffs": [["buffAttacks", {"pierceIncrease": 14}]]
+                "buffs": [
+                    ["buffAttacks", {
+                         "targets": ["boomerang"],
+                         "pierceIncrease": 14
+                     }]
+                ]
             },
             {
                 "name": "MOAB Press",
@@ -224,12 +281,13 @@
             {
                 "name": "Bigger Bombs",
                 "cost": 350,
-                "buffs": [["buffAttacks", {"pierceIncrease": 6}]]
+                "buffs": [["buffAttacks", {"targets": ["bomb"], "pierceIncrease": 6}]]
             },
             {
                 "name": "Heavy Bombs",
                 "cost": 650,
                 "buffs": [["buffAttacks", {
+                    "targets": ["bomb"],
                     "pierceIncrease": 10,
                     "damageIncrease": { "base": 1 }
                 }]]
@@ -238,6 +296,7 @@
                 "name": "Really Big Bombs",
                 "cost": 1200,
                 "buffs": [["buffAttacks", {
+                    "targets": ["bomb"],
                     "pierceIncrease": 20,
                     "damageIncrease": { "base": 1 }
                 }]]
@@ -247,12 +306,13 @@
             {
                 "name": "Faster Reload",
                 "cost": 250,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.75}]]
+                "buffs": [["buffAttacks", {"targets": ["bomb"], "reloadDecrease": 0.75}]]
             },
             {
                 "name": "Missile Launcher",
                 "cost": 400,
                 "buffs": [["buffAttacks", {
+                    "targets": ["bomb"],
                     "reloadDecrease": 0.7333,
                     "rangeIncrease": 4
                 }]]
@@ -261,6 +321,7 @@
                 "name": "MOAB Mauler",
                 "cost": 1100,
                 "buffs": [["buffAttacks", {
+                    "targets": ["bomb"],
                     "rangeIncrease": 5,
                     "damageIncrease": {
                         "ceramic": 1,
@@ -273,7 +334,7 @@
             {
                 "name": "Extra Range",
                 "cost": 200,
-                "buffs": [["buffAttacks", {"rangeIncrease": 7}]]
+                "buffs": [["buffAttacks", {"targets": ["bomb"], "rangeIncrease": 7}]]
             },
             {
                 "name": "Frag Bombs",
@@ -392,6 +453,7 @@
                 "name": "Blade Shooter",
                 "cost": 550,
                 "buffs": [["buffAttacks", {
+                    "targets": ["tack"],
                     "reloadDecrease": 0.85,
                     "pierceIncrease": 4
                 }]]
@@ -418,6 +480,7 @@
                 "name": "Tack Sprayer",
                 "cost": 450,
                 "buffs": [["buffAttacks", {
+                    "targets": ["tack"],
                     "reloadDecrease": 0.75,
                     "projectileIncrease": 4
                 }]]
@@ -426,6 +489,7 @@
                 "name": "Overdrive",
                 "cost": 3200,
                 "buffs": [["buffAttacks", {
+                    "targets": ["tack"],
                     "reloadDecrease": 0.3333,
                     "pierceIncrease": 1
                 }]]
@@ -434,6 +498,7 @@
                 "name": "The Tack Zone",
                 "cost": 20000,
                 "buffs": [["buffAttacks", {
+                    "targets": ["tack"],
                     "reloadDecrease": 0.75,
                     "pierceIncrease": 2,
                     "rangeIncrease": 7,
@@ -519,18 +584,18 @@
             {
                 "name": "Fast Firing",
                 "cost": 400,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.7}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "reloadDecrease": 0.7}]]
             },
             {
                 "name": "Even Faster Firing",
                 "cost": 400,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.7}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "reloadDecrease": 0.7}]]
             },
             {
                 "name": "Semi-Automatic",
                 "cost": 3500,
                 "buffs": [
-                    ["buffAttacks", {"reloadDecrease": 0.3333}],
+                    ["buffAttacks", {"targets": ["bullet"], "reloadDecrease": 0.3333}],
                     ["buffAttacks", {
                          "targets": ["shrapnel"],
                          "pierceIncrease": 1
@@ -540,12 +605,12 @@
             {
                 "name": "Full Auto Rifle",
                 "cost": 4250,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "reloadDecrease": 0.5}]]
             },
             {
                 "name": "Elite Defender",
                 "cost": 14000,
-                "buffs": [["buffAttacks", {"reloadDecrease": 0.5}]]
+                "buffs": [["buffAttacks", {"targets": ["bullet"], "reloadDecrease": 0.5}]]
             }
         ]
     },
@@ -608,7 +673,10 @@
             {
                 "name": "Barbed Darts",
                 "cost": 450,
-                "buffs": [["buffAttacks", {"pierceIncrease": 3}]]
+                "buffs": [["buffAttacks", {
+                               "targets": ["dart"],
+                               "pierceIncrease": 3
+                           }]]
             },
             {
                 "name": "Heat-tipped Darts",

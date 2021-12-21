@@ -1,7 +1,7 @@
 #ifndef PROJECTILE
 #define PROJECTILE
-#include "damage.h"
-#include "attackbuff.h"
+#include "tower/damage.h"
+#include "tower/attackbuff.h"
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 class Projectile {

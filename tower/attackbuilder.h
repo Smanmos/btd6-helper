@@ -1,6 +1,6 @@
 #ifndef ATTACK_BUILDER
 #define ATTACK_BUILDER
-#include "attack.h"
+#include "tower/attack.h"
 class AttackBuilder {
 	double r;
 	int p;
