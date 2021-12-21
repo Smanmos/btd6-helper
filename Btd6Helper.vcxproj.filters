@@ -143,6 +143,9 @@
     <ClInclude Include="tower\ability\ability.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tower\ability\instantability.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\towers.json">

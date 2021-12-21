@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="loader.h" />
     <ClInclude Include="tower\ability\ability.h" />
+    <ClInclude Include="tower\ability\instantability.h" />
     <ClInclude Include="tower\addattack.h" />
     <ClInclude Include="tower\addsubprojonexpire.h" />
     <ClInclude Include="tower\addsubprojonhit.h" />
