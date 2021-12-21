@@ -1,7 +1,7 @@
 #ifndef ATTACK
 #define ATTACK
 #include <nlohmann/json.hpp>
-#include "projectile.h"
+#include "tower/projectile.h"
 using json = nlohmann::json;
 class AttackBuilder;
 class Attack {

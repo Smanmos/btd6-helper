@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <nlohmann/json.hpp>
-#include "upgrade.h"
+#include "tower/upgrade.h"
 class UpgradePath {
 private:
 	std::vector<Upgrade> upgrades;
