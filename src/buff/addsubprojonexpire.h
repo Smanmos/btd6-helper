@@ -1,6 +1,6 @@
 #ifndef ADD_SUB_PROJ_ON_EXPIRE
 #define ADD_SUB_PROJ_ON_EXPIRE
-#include "tower/buff.h"
+#include "buff/buff.h"
 class AddSubProjOnExpire : public Buff {
 	std::string target;
 	Projectile subProjToAdd;

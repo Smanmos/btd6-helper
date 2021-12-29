@@ -1,6 +1,6 @@
 #ifndef REPLACE_ATTACK
 #define REPLACE_ATTACK
-#include "tower/buff.h"
+#include "buff/buff.h"
 
 class ReplaceAttack : public Buff {
 	std::string attackToReplace;
