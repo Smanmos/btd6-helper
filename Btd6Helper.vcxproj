@@ -64,7 +64,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\gabri\source\repos\Btd6Helper;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\gabri\source\repos\Btd6Helper\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -104,51 +104,52 @@
   <ItemGroup>
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
-    <ClCompile Include="tower\ability\ability.cpp" />
-    <ClCompile Include="tower\ability\durationedability.cpp" />
-    <ClCompile Include="tower\ability\durationedability.h" />
-    <ClCompile Include="tower\ability\instantability.cpp" />
-    <ClCompile Include="tower\addattack.cpp" />
-    <ClCompile Include="tower\addsubprojonexpire.cpp" />
-    <ClCompile Include="tower\addsubprojonhit.cpp" />
-    <ClCompile Include="tower\attack.cpp" />
-    <ClCompile Include="tower\attackbuff.cpp" />
-    <ClCompile Include="tower\attackbuilder.cpp" />
-    <ClCompile Include="tower\attacklist.cpp" />
-    <ClCompile Include="tower\attacksbuff.cpp" />
-    <ClCompile Include="tower\buff.cpp" />
-    <ClCompile Include="tower\damage.cpp" />
-    <ClCompile Include="tower\difficulty.cpp" />
-    <ClCompile Include="tower\projectile.cpp" />
-    <ClCompile Include="tower\replaceattack.cpp" />
-    <ClCompile Include="tower\tower.cpp" />
-    <ClCompile Include="tower\towerinstance.cpp" />
-    <ClCompile Include="tower\upgrade.cpp" />
-    <ClCompile Include="tower\upgradepath.cpp" />
-    <ClCompile Include="tower\upgradepattern.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="src\tower\ability\ability.cpp" />
+    <ClCompile Include="src\tower\ability\durationedability.cpp" />
+    <ClCompile Include="src\tower\ability\instantability.cpp" />
+    <ClCompile Include="src\tower\addattack.cpp" />
+    <ClCompile Include="src\tower\addsubprojonexpire.cpp" />
+    <ClCompile Include="src\tower\addsubprojonhit.cpp" />
+    <ClCompile Include="src\tower\attack.cpp" />
+    <ClCompile Include="src\tower\attackbuff.cpp" />
+    <ClCompile Include="src\tower\attackbuilder.cpp" />
+    <ClCompile Include="src\tower\attacklist.cpp" />
+    <ClCompile Include="src\tower\attacksbuff.cpp" />
+    <ClCompile Include="src\tower\buff.cpp" />
+    <ClCompile Include="src\tower\damage.cpp" />
+    <ClCompile Include="src\tower\difficulty.cpp" />
+    <ClCompile Include="src\tower\projectile.cpp" />
+    <ClCompile Include="src\tower\replaceattack.cpp" />
+    <ClCompile Include="src\tower\tower.cpp" />
+    <ClCompile Include="src\tower\towerinstance.cpp" />
+    <ClCompile Include="src\tower\upgrade.cpp" />
+    <ClCompile Include="src\tower\upgradepath.cpp" />
+    <ClCompile Include="src\tower\upgradepattern.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
-    <ClInclude Include="tower\ability\ability.h" />
-    <ClInclude Include="tower\ability\instantability.h" />
-    <ClInclude Include="tower\addattack.h" />
-    <ClInclude Include="tower\addsubprojonexpire.h" />
-    <ClInclude Include="tower\addsubprojonhit.h" />
-    <ClInclude Include="tower\attack.h" />
-    <ClInclude Include="tower\attackbuff.h" />
-    <ClInclude Include="tower\attackbuilder.h" />
-    <ClInclude Include="tower\attacklist.h" />
-    <ClInclude Include="tower\attacksbuff.h" />
-    <ClInclude Include="tower\buff.h" />
-    <ClInclude Include="tower\damage.h" />
-    <ClInclude Include="tower\difficulty.h" />
-    <ClInclude Include="tower\projectile.h" />
-    <ClInclude Include="tower\replaceattack.h" />
-    <ClInclude Include="tower\tower.h" />
-    <ClInclude Include="tower\towerinstance.h" />
-    <ClInclude Include="tower\upgrade.h" />
-    <ClInclude Include="tower\upgradepath.h" />
-    <ClInclude Include="tower\upgradepattern.h" />
+    <ClInclude Include="src\tower\ability\ability.h" />
+    <ClInclude Include="src\tower\ability\durationedability.h" />
+    <ClInclude Include="src\tower\ability\instantability.h" />
+    <ClInclude Include="src\tower\AddAttack.h" />
+    <ClInclude Include="src\tower\addsubprojonexpire.h" />
+    <ClInclude Include="src\tower\addsubprojonhit.h" />
+    <ClInclude Include="src\tower\attack.h" />
+    <ClInclude Include="src\tower\attackbuff.h" />
+    <ClInclude Include="src\tower\attackbuilder.h" />
+    <ClInclude Include="src\tower\attacklist.h" />
+    <ClInclude Include="src\tower\attacksbuff.h" />
+    <ClInclude Include="src\tower\buff.h" />
+    <ClInclude Include="src\tower\damage.h" />
+    <ClInclude Include="src\tower\difficulty.h" />
+    <ClInclude Include="src\tower\projectile.h" />
+    <ClInclude Include="src\tower\replaceattack.h" />
+    <ClInclude Include="src\tower\tower.h" />
+    <ClInclude Include="src\tower\towerinstance.h" />
+    <ClInclude Include="src\tower\upgrade.h" />
+    <ClInclude Include="src\tower\upgradepath.h" />
+    <ClInclude Include="src\tower\upgradepattern.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
