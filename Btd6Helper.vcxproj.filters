@@ -87,6 +87,9 @@
     <ClCompile Include="tower\ability\durationedability.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="tower\ability\durationedability.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">

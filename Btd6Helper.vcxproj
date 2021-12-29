@@ -105,6 +105,7 @@
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="tower\ability\ability.cpp" />
+    <ClCompile Include="tower\ability\durationedability.cpp" />
     <ClCompile Include="tower\ability\durationedability.h" />
     <ClCompile Include="tower\ability\instantability.cpp" />
     <ClCompile Include="tower\addattack.cpp" />
