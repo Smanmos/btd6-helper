@@ -1,6 +1,6 @@
 #ifndef ADD_ATTACK
 #define ADD_ATTACK
-#include "tower/buff.h"
+#include "buff/buff.h"
 class AddAttack : public Buff {
 	Attack attackToAdd;
 	void printToOstream(std::ostream&);

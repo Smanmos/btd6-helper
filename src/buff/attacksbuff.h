@@ -1,6 +1,6 @@
 #ifndef ATTACKS_BUFF
 #define ATTACKS_BUFF
-#include "tower/buff.h"
+#include "buff/buff.h"
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 class AttacksBuff : public Buff {

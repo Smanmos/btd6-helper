@@ -1,7 +1,7 @@
 #ifndef ATTACK_LIST
 #define ATTACK_LIST
 #include "tower/attack.h"
-#include "tower/attackbuff.h"
+#include "buff/attackbuff.h"
 #include <vector>
 class AttackList {
 	std::vector<Attack> attacks;

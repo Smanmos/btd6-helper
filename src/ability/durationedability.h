@@ -1,7 +1,7 @@
 #ifndef DURATIONED_ABILITY
 #define DURATIONED_ABILITY
 #include "ability.h"
-#include "tower/buff.h"
+#include "buff/buff.h"
 class DurationedAbility : public Ability {
 	double duration;
 	std::vector<Buff*> buffs;
