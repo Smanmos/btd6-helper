@@ -24,31 +24,13 @@
     <ClCompile Include="loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\tower\addattack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\addsubprojonexpire.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\addsubprojonhit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\tower\attack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\attackbuff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\tower\attackbuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\tower\attacklist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\attacksbuff.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\buff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\tower\damage.cpp">
@@ -58,9 +40,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\tower\projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tower\replaceattack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\tower\tower.cpp">
@@ -90,36 +69,39 @@
     <ClCompile Include="src\tower\ability\instantability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\buff\addattack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\addsubprojonexpire.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\addsubprojonhit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\attackbuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\attacksbuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\buff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buff\replaceattack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\tower\AddAttack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\addsubprojonexpire.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\addsubprojonhit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\tower\attack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\attackbuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\attackbuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\attacklist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\attacksbuff.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\buff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\damage.h">
@@ -129,9 +111,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\projectile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tower\replaceattack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\tower.h">
@@ -156,6 +135,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tower\ability\instantability.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\AddAttack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\addsubprojonexpire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\addsubprojonhit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\attackbuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\attacksbuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\buff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buff\replaceattack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
