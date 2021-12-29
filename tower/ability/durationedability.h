@@ -5,6 +5,7 @@
 class DurationedAbility : public Ability {
 	double duration;
 	std::vector<Buff*> buffs;
+	void printToOstream(std::ostream&);
 public:
 	DurationedAbility(json abilityJson);
 };

@@ -5,6 +5,7 @@
 class InstantAbility : public Ability {
 	Projectile projectile;
 	int numProjectiles;
+	void printToOstream(std::ostream&);
 public:
 	InstantAbility(json abilityJson);
 };
