@@ -105,6 +105,9 @@
     <ClCompile Include="Btd6Helper.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="src\ability\ability.cpp" />
+    <ClCompile Include="src\ability\durationedability.cpp" />
+    <ClCompile Include="src\ability\instantability.cpp" />
     <ClCompile Include="src\buff\addattack.cpp" />
     <ClCompile Include="src\buff\addsubprojonexpire.cpp" />
     <ClCompile Include="src\buff\addsubprojonhit.cpp" />
@@ -112,9 +115,6 @@
     <ClCompile Include="src\buff\attacksbuff.cpp" />
     <ClCompile Include="src\buff\buff.cpp" />
     <ClCompile Include="src\buff\replaceattack.cpp" />
-    <ClCompile Include="src\tower\ability\ability.cpp" />
-    <ClCompile Include="src\tower\ability\durationedability.cpp" />
-    <ClCompile Include="src\tower\ability\instantability.cpp" />
     <ClCompile Include="src\tower\attack.cpp" />
     <ClCompile Include="src\tower\attackbuilder.cpp" />
     <ClCompile Include="src\tower\attacklist.cpp" />
@@ -129,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h" />
+    <ClInclude Include="src\ability\ability.h" />
+    <ClInclude Include="src\ability\durationedability.h" />
+    <ClInclude Include="src\ability\instantability.h" />
     <ClInclude Include="src\buff\AddAttack.h" />
     <ClInclude Include="src\buff\addsubprojonexpire.h" />
     <ClInclude Include="src\buff\addsubprojonhit.h" />
@@ -136,9 +139,6 @@
     <ClInclude Include="src\buff\attacksbuff.h" />
     <ClInclude Include="src\buff\buff.h" />
     <ClInclude Include="src\buff\replaceattack.h" />
-    <ClInclude Include="src\tower\ability\ability.h" />
-    <ClInclude Include="src\tower\ability\durationedability.h" />
-    <ClInclude Include="src\tower\ability\instantability.h" />
     <ClInclude Include="src\tower\attack.h" />
     <ClInclude Include="src\tower\attackbuilder.h" />
     <ClInclude Include="src\tower\attacklist.h" />
